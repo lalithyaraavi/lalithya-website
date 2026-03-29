@@ -14,24 +14,19 @@ export default function ProjectCard({ project, index }: { project: Project; inde
     >
       <Link href={`/projects/${project.slug}`} className="group block rounded-4xl overflow-hidden border border-rose-light/40 hover:border-rose-DEFAULT/60 transition-all duration-300 hover:shadow-xl hover:shadow-rose-light/30">
         {/* Card header */}
-        <div className="h-48 relative overflow-hidden" style={{ backgroundColor: project.color }}>
-          {project.image || project.images?.[0] ? (
+        {project.image || project.images?.[0] ? (
+          <div className="relative overflow-hidden" style={{ backgroundColor: project.color }}>
             <img
               src={project.images?.[0] ?? project.image}
               alt={project.title}
-              className="absolute inset-0 w-full h-full object-cover"
+              className="w-full h-auto block"
             />
-          ) : (
+          </div>
+        ) : (
+          <div className="h-40 relative overflow-hidden" style={{ backgroundColor: project.color }}>
             <div className="absolute -right-8 -top-8 w-32 h-32 rounded-full opacity-40 blob" style={{ backgroundColor: project.color, filter: "saturate(1.4) brightness(0.9)" }} />
-          )}
-          {project.featured && (
-            <div className="absolute bottom-4 left-6">
-              <span className="inline-block px-3 py-1 rounded-full bg-rose-DEFAULT text-cream-DEFAULT text-xs font-mono">
-                ✦ Featured
-              </span>
-            </div>
-          )}
-        </div>
+          </div>
+        )}
 
         {/* Content */}
         <div className="p-6 bg-cream-DEFAULT">
