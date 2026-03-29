@@ -24,7 +24,7 @@ export default function Home() {
         <div className="absolute bottom-20 left-5 w-52 h-52 rounded-full blob blob-delay opacity-15" style={{ background: "radial-gradient(circle, #E8E2F5 0%, #ADBCA5 100%)" }} />
 
         <div className="relative w-full flex flex-col md:flex-row items-center gap-12 md:gap-20">
-          {/* Left — text */}
+          {/* Left - text */}
           <div className="flex-1 max-w-xl">
             <motion.p
               initial={{ opacity: 0, y: 16 }}
@@ -52,7 +52,7 @@ export default function Home() {
               transition={{ duration: 0.7, delay: 0.35 }}
               className="font-body text-lg text-ink-muted max-w-md leading-relaxed mb-10"
             >
-              I love working on things that make people&apos;s lives a little easier — and a little more interesting.
+              I love working on things that make people&apos;s lives a little easier - and a little more interesting.
             </motion.p>
 
             <motion.div
@@ -77,7 +77,7 @@ export default function Home() {
             </motion.div>
           </div>
 
-          {/* Right — single photo */}
+          {/* Right - single photo */}
           <motion.div
             initial={{ opacity: 0, x: 40 }}
             animate={{ opacity: 1, x: 0 }}
@@ -164,7 +164,7 @@ export default function Home() {
                   I&apos;m a <span className="text-ink-DEFAULT font-medium">Systems Design Engineering</span> student at the University of Waterloo.
                 </p>
                 <p>
-                  I care about designing things that are actually useful — products, tools, and experiences that sit at the intersection of people and technology.
+                  I care about designing things that are actually useful - products, tools, and experiences that sit at the intersection of people and technology.
                 </p>
                 <p>
                   Outside of school, I&apos;m involved in Women in Tech on campus, I bake a lot, and I&apos;m always working on a side project.
@@ -216,7 +216,7 @@ export default function Home() {
               Say <em className="text-rose-DEFAULT">hello</em> ✦
             </h2>
             <p className="font-body text-ink-muted text-lg mb-12 max-w-md">
-              Whether it&apos;s a collab, a co-op, or just a chat — I&apos;m always happy to connect.
+              Whether it&apos;s a collab, a co-op, or just a chat - I&apos;m always happy to connect.
             </p>
           </FadeIn>
 
