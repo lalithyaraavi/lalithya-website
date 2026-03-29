@@ -21,7 +21,7 @@ export default function Home() {
       {/* ── 1. HERO ─────────────────────────────────────────── */}
       <section className="relative min-h-screen flex flex-col justify-center px-8 md:px-20 pt-28 pb-20 overflow-hidden">
         <div className="absolute top-24 right-10 w-40 h-40 rounded-full blob opacity-10" style={{ background: "radial-gradient(circle, #F2DEED 0%, #C4788A 100%)" }} />
-        <div className="absolute bottom-20 left-5 w-32 h-32 rounded-full blob blob-delay opacity-8" style={{ background: "radial-gradient(circle, #E8E2F5 0%, #ADBCA5 100%)" }} />
+        <div className="absolute bottom-20 left-5 w-32 h-32 rounded-full blob blob-delay opacity-10" style={{ background: "radial-gradient(circle, #E8E2F5 0%, #ADBCA5 100%)" }} />
 
         <div className="relative w-full flex flex-col md:flex-row items-center gap-12 md:gap-20">
           {/* Left — text */}
