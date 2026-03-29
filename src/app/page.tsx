@@ -20,16 +20,36 @@ export default function Home() {
 
       {/* ── 1. HERO ─────────────────────────────────────────── */}
       <section className="relative min-h-screen flex flex-col justify-center px-8 md:px-20 pt-28 pb-20 overflow-hidden">
-        <div className="absolute top-24 right-10 w-72 h-72 rounded-full blob opacity-25" style={{ background: "radial-gradient(circle, #F2DEED 0%, #C4788A 100%)" }} />
-        <div className="absolute bottom-20 left-5 w-52 h-52 rounded-full blob blob-delay opacity-15" style={{ background: "radial-gradient(circle, #E8E2F5 0%, #ADBCA5 100%)" }} />
+        {/* Blobs */}
+        <div className="absolute top-16 right-8 w-80 h-80 rounded-full blob opacity-25" style={{ background: "radial-gradient(circle, #F2DEED 0%, #C4788A 100%)" }} />
+        <div className="absolute bottom-24 left-4 w-56 h-56 rounded-full blob blob-delay opacity-15" style={{ background: "radial-gradient(circle, #E8E2F5 0%, #ADBCA5 100%)" }} />
+        <div className="absolute top-1/2 left-[-6rem] w-64 h-64 rounded-full blob opacity-10" style={{ background: "radial-gradient(circle, #F9E4EC 0%, #C4788A 100%)", animationDelay: "1.2s" }} />
+        <div className="absolute bottom-8 right-16 w-44 h-44 rounded-full blob blob-delay opacity-20" style={{ background: "radial-gradient(circle, #EDE8F5 0%, #9B8DB8 100%)", animationDelay: "0.6s" }} />
+        <div className="absolute top-32 left-1/3 w-32 h-32 rounded-full blob opacity-10" style={{ background: "radial-gradient(circle, #FDEEF4 0%, #E8A0B0 100%)", animationDelay: "2s" }} />
 
-        <div className="relative w-full flex flex-col md:flex-row items-center gap-12 md:gap-20">
-          {/* Left - text */}
-          <div className="flex-1 max-w-xl">
+        <div className="relative w-full flex flex-col items-center text-center gap-8">
+          {/* Photo */}
+          <motion.div
+            initial={{ opacity: 0, y: -20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
+            className="w-40 md:w-48 shrink-0"
+          >
+            <div className="relative aspect-square rounded-full overflow-hidden border-4 border-rose-light/50 shadow-xl shadow-rose-light/20 bg-cream-warm">
+              <img
+                src="/photos/me.jpg"
+                alt="Lali"
+                className="absolute inset-0 w-full h-full object-cover object-top"
+              />
+            </div>
+          </motion.div>
+
+          {/* Text */}
+          <div className="max-w-2xl">
             <motion.p
               initial={{ opacity: 0, y: 16 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.1 }}
+              transition={{ duration: 0.6, delay: 0.3 }}
               className="font-mono text-sm text-rose-DEFAULT mb-5 tracking-wider"
             >
               systems design engineering @ university of waterloo
@@ -38,7 +58,7 @@ export default function Home() {
             <motion.h1
               initial={{ opacity: 0, y: 32 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.75, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
+              transition={{ duration: 0.75, delay: 0.4, ease: [0.22, 1, 0.36, 1] }}
               className="font-display text-6xl md:text-8xl font-light leading-[1.05] text-ink-DEFAULT mb-7"
             >
               Hi! I&apos;m{" "}
@@ -49,8 +69,8 @@ export default function Home() {
             <motion.p
               initial={{ opacity: 0, y: 24 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.7, delay: 0.35 }}
-              className="font-body text-lg text-ink-muted max-w-md leading-relaxed mb-10"
+              transition={{ duration: 0.7, delay: 0.55 }}
+              className="font-body text-lg text-ink-muted leading-relaxed mb-10"
             >
               So glad you&apos;re here! I love working on things that make people&apos;s lives a little easier, and a little more interesting.
             </motion.p>
@@ -58,8 +78,8 @@ export default function Home() {
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.48 }}
-              className="flex flex-wrap gap-4"
+              transition={{ duration: 0.6, delay: 0.68 }}
+              className="flex flex-wrap justify-center gap-4"
             >
               <a
                 href="#about"
@@ -76,22 +96,6 @@ export default function Home() {
               </Link>
             </motion.div>
           </div>
-
-          {/* Right - single photo */}
-          <motion.div
-            initial={{ opacity: 0, x: 40 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8, delay: 0.4, ease: [0.22, 1, 0.36, 1] }}
-            className="w-64 md:w-72 lg:w-80 shrink-0"
-          >
-            <div className="relative aspect-[3/4] rounded-4xl overflow-hidden border border-rose-light/40 shadow-xl shadow-rose-light/20 bg-cream-warm">
-              <img
-                src="/photos/me.jpg"
-                alt="Lali"
-                className="absolute inset-0 w-full h-full object-cover"
-              />
-            </div>
-          </motion.div>
         </div>
 
         {/* Scroll hint */}
