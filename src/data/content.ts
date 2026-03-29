@@ -14,6 +14,7 @@ export type Project = {
   description: string;
   outcome?: string;
   image?: string;
+  images?: string[];
   links?: ProjectLink[];
 };
 
