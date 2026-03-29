@@ -4,7 +4,6 @@ import Link from "next/link";
 import { projects } from "@/data/content";
 import ProjectCard from "@/components/ProjectCard";
 import FadeIn from "@/components/FadeIn";
-import InTheNews from "@/components/InTheNews";
 import PhotoCarousel from "@/components/PhotoCarousel";
 
 const ticker = ["UX Design ✦", "Systems Thinking ✦", "C++ ✦", "React ✦", "Figma ✦", "Product Design ✦", "TypeScript ✦", "Speculative Design ✦", "Waterloo SYDE ✦", "Frontend Dev ✦"];
@@ -162,7 +161,7 @@ export default function Home() {
             <FadeIn delay={0.1}>
               <div className="space-y-4 font-body text-ink-muted leading-relaxed">
                 <p>
-                  I&apos;m a <span className="text-ink-DEFAULT font-medium">Systems Design Engineering</span> student at the University of Waterloo, originally from Fort McMurray, Alberta.
+                  I&apos;m a <span className="text-ink-DEFAULT font-medium">Systems Design Engineering</span> student at the University of Waterloo.
                 </p>
                 <p>
                   I care about designing things that are actually useful — products, tools, and experiences that sit at the intersection of people and technology.
@@ -206,8 +205,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ── 4. IN THE NEWS ────────────────────────────────── */}
-      <InTheNews />
+      
 
       {/* ── 5. CONTACT ────────────────────────────────────── */}
       <section id="contact" className="px-8 md:px-20 py-24">
