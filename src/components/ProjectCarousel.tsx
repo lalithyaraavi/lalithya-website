@@ -15,7 +15,7 @@ export default function ProjectCarousel({ images, color, title }: { images: stri
     setIndex(([prev]) => [(prev + newDir + images.length) % images.length, newDir]);
 
   return (
-    <div className="relative w-full aspect-[16/9] rounded-4xl overflow-hidden" style={{ backgroundColor: color }}>
+    <div className="relative w-full aspect-[3/4] rounded-4xl overflow-hidden" style={{ backgroundColor: color }}>
       <AnimatePresence custom={dir} mode="popLayout">
         <motion.img
           key={index}
