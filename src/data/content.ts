@@ -42,7 +42,7 @@ export const projects: Project[] = [
     year: "2024",
     color: "#F2DEED",
     featured: true,
-    image: "/images/presense.jpg",
+    image: "/photos/presense.JPG",
     description:
       "PRESENSE is a safety companion designed for moments of uncertainty. When a user senses that something may be wrong, the app provides quick, accessible tools that help them respond immediately. We focused on designing an interface that prioritizes clarity, speed, and emotional awareness. The goal was to create a system that feels calm and supportive while still allowing users to act instantly when needed. Using Figma's digital design and prototyping tools, we built an experience centered around quick accessibility and minimal friction. Every element was intentionally simplified so users can navigate the app without hesitation, especially during stressful situations.",
     outcome: "Weekend Hackathon hosted by Figma. Prompt: Design a tool that tracks, measures, visualizes or quantifies an aspect of human sensory experience. Within the tool, provide the ability to detect, enhance, or manipulate those same sensory inputs.",
