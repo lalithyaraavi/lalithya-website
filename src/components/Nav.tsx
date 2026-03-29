@@ -7,7 +7,6 @@ import { useState } from "react";
 const links = [
   { href: "/projects", label: "Projects" },
   { href: "/about",    label: "About" },
-  { href: "/#in-the-news", label: "Awards" },
   { href: "/blog",     label: "Blog" },
   { href: "/#contact", label: "Contact" },
 ];
@@ -40,7 +39,6 @@ export default function Nav() {
           </Link>
         ))}
         <Link href="/contact" className="ml-2 px-4 py-1.5 rounded-full bg-rose-DEFAULT text-cream-DEFAULT text-sm font-body hover:bg-rose-dark transition-colors">
-          Say hi ✦
         </Link>
       </nav>
 

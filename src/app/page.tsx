@@ -53,7 +53,7 @@ export default function Home() {
               transition={{ duration: 0.7, delay: 0.35 }}
               className="font-body text-lg text-ink-muted max-w-md leading-relaxed mb-10"
             >
-              I&apos;m a student, designer, and builder from Fort McMurray, Alberta. I love working on things that make people&apos;s lives a little easier — and a little more interesting.
+              I love working on things that make people&apos;s lives a little easier — and a little more interesting.
             </motion.p>
 
             <motion.div
