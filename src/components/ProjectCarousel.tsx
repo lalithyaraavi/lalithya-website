@@ -15,7 +15,7 @@ export default function ProjectCarousel({ images, color, title }: { images: stri
     setIndex(([prev]) => [(prev + newDir + images.length) % images.length, newDir]);
 
   return (
-    <div className="relative w-full aspect-[3/4] rounded-4xl overflow-hidden" style={{ backgroundColor: color }}>
+    <div className="relative w-full rounded-4xl overflow-hidden" style={{ backgroundColor: color }}>
       <AnimatePresence custom={dir} mode="popLayout">
         <motion.img
           key={index}
@@ -34,12 +34,9 @@ export default function ProjectCarousel({ images, color, title }: { images: stri
             if (info.offset.x < -60) paginate(1);
             else if (info.offset.x > 60) paginate(-1);
           }}
-          className="absolute inset-0 w-full h-full object-cover cursor-grab active:cursor-grabbing select-none"
+          className="w-full h-auto block cursor-grab active:cursor-grabbing select-none"
         />
       </AnimatePresence>
-
-      {/* Gradient overlay */}
-      <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent pointer-events-none" />
 
       {images.length > 1 && (
         <>
