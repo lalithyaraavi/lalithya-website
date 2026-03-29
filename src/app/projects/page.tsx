@@ -13,9 +13,11 @@ export default function ProjectsPage() {
         </p>
       </FadeIn>
 
-      <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+      <div className="columns-1 md:columns-2 lg:columns-3 gap-6">
         {projects.map((p, i) => (
-          <ProjectCard key={p.slug} project={p} index={i} />
+          <div key={p.slug} className="break-inside-avoid mb-6">
+            <ProjectCard project={p} index={i} />
+          </div>
         ))}
       </div>
     </div>

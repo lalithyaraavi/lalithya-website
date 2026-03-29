@@ -137,9 +137,11 @@ export default function Home() {
           </div>
         </FadeIn>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="columns-1 md:columns-2 lg:columns-3 gap-6">
           {projects.slice(0, 6).map((p, i) => (
-            <ProjectCard key={p.slug} project={p} index={i} />
+            <div key={p.slug} className="break-inside-avoid mb-6">
+              <ProjectCard project={p} index={i} />
+            </div>
           ))}
         </div>
 
