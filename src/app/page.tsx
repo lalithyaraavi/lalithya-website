@@ -183,7 +183,7 @@ export default function Home() {
             </FadeIn>
 
             <FadeIn delay={0.15}>
-              <PhotoCarousel />
+              <div className="max-w-xs"><PhotoCarousel /></div>
             </FadeIn>
           </div>
 
