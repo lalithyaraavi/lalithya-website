@@ -1,3 +1,8 @@
+export type ProjectLink = {
+  label: string;
+  url: string;
+};
+
 export type Project = {
   slug: string;
   title: string;
@@ -8,6 +13,8 @@ export type Project = {
   featured?: boolean;
   description: string;
   outcome?: string;
+  image?: string;
+  links?: ProjectLink[];
 };
 
 export type Award = {
@@ -35,9 +42,15 @@ export const projects: Project[] = [
     year: "2024",
     color: "#F2DEED",
     featured: true,
+    image: "/images/presense.jpg",
     description:
-      "PreSense uses physiological signal tracking and a spider-sense radar to help women trust their gut in uncomfortable situations. Built around the idea that your body knows before your brain does.",
-    outcome: "Featured speculative design project, pitched to design judges and UWaterloo faculty.",
+      "PRESENSE is a safety companion designed for moments of uncertainty. When a user senses that something may be wrong, the app provides quick, accessible tools that help them respond immediately. We focused on designing an interface that prioritizes clarity, speed, and emotional awareness. The goal was to create a system that feels calm and supportive while still allowing users to act instantly when needed. Using Figma's digital design and prototyping tools, we built an experience centered around quick accessibility and minimal friction. Every element was intentionally simplified so users can navigate the app without hesitation, especially during stressful situations.",
+    outcome: "Weekend Hackathon hosted by Figma. Prompt: Design a tool that tracks, measures, visualizes or quantifies an aspect of human sensory experience. Within the tool, provide the ability to detect, enhance, or manipulate those same sensory inputs.",
+    links: [
+      { label: "Figma Prototype", url: "https://www.figma.com/proto/7tK37MnBUToTgnHMiDYrvp/PreSense?node-id=162-285&t=m0QoN2YpW1sHHIP3-1" },
+      { label: "Pitch", url: "https://www.figma.com/deck/rkmb8o0lnMBy3HOVAzZDiI/Team-Gwendon-tdie?node-id=23-8&t=aGWpJmboONPPQnYo-1&scaling=min-zoom&content-scaling=fixed&page-id=0%3A1" },
+      { label: "Figma Frames / Design", url: "https://www.figma.com/design/7tK37MnBUToTgnHMiDYrvp/PreSense?node-id=162-281&t=2LaEkIvKjip4Nww9-0" },
+    ],
   },
   {
     slug: "tile",
