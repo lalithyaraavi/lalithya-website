@@ -20,8 +20,8 @@ export default function Home() {
 
       {/* ── 1. HERO ─────────────────────────────────────────── */}
       <section className="relative min-h-screen flex flex-col justify-center px-8 md:px-20 pt-28 pb-20 overflow-hidden">
-        <div className="absolute top-24 right-10 w-40 h-40 rounded-full blob opacity-10" style={{ background: "radial-gradient(circle, #F2DEED 0%, #C4788A 100%)" }} />
-        <div className="absolute bottom-20 left-5 w-32 h-32 rounded-full blob blob-delay opacity-10" style={{ background: "radial-gradient(circle, #E8E2F5 0%, #ADBCA5 100%)" }} />
+        <div className="absolute top-24 right-10 w-72 h-72 rounded-full blob opacity-25" style={{ background: "radial-gradient(circle, #F2DEED 0%, #C4788A 100%)" }} />
+        <div className="absolute bottom-20 left-5 w-52 h-52 rounded-full blob blob-delay opacity-15" style={{ background: "radial-gradient(circle, #E8E2F5 0%, #ADBCA5 100%)" }} />
 
         <div className="relative w-full flex flex-col md:flex-row items-center gap-12 md:gap-20">
           {/* Left — text */}
@@ -52,7 +52,7 @@ export default function Home() {
               transition={{ duration: 0.7, delay: 0.35 }}
               className="font-body text-lg text-ink-muted max-w-md leading-relaxed mb-10"
             >
-              So glad you&apos;re here! I love working on things that make people&apos;s lives a little easier — and a little more interesting.
+              I love working on things that make people&apos;s lives a little easier — and a little more interesting.
             </motion.p>
 
             <motion.div
@@ -82,9 +82,9 @@ export default function Home() {
             initial={{ opacity: 0, x: 40 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8, delay: 0.4, ease: [0.22, 1, 0.36, 1] }}
-            className="w-56 md:w-64 shrink-0"
+            className="w-64 md:w-72 lg:w-80 shrink-0"
           >
-            <div className="relative aspect-square rounded-4xl overflow-hidden border border-rose-light/40 shadow-xl shadow-rose-light/20 bg-cream-warm">
+            <div className="relative aspect-[3/4] rounded-4xl overflow-hidden border border-rose-light/40 shadow-xl shadow-rose-light/20 bg-cream-warm">
               <img
                 src="/photos/me.jpg"
                 alt="Lali"
