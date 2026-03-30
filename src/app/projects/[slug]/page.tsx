@@ -82,7 +82,18 @@ export default function ProjectPage({ params }: { params: { slug: string } }) {
             <FadeIn delay={0.3}>
               <div className="p-6 rounded-3xl bg-rose-light/30 border border-rose-light/50 mb-10">
                 <p className="font-mono text-xs text-rose-DEFAULT tracking-widest mb-3">{project.outcomeLabel ?? "OUTCOME"}</p>
-                <p className="font-body text-ink-DEFAULT leading-relaxed">{project.outcome}</p>
+                {project.outcomeLabel === "AWARDS" ? (
+                  <ul className="space-y-1">
+                    {project.outcome!.split("\n").map((item) => (
+                      <li key={item} className="font-body text-ink-DEFAULT flex items-start gap-2">
+                        <span className="text-rose-DEFAULT mt-1 shrink-0">✦</span>
+                        {item}
+                      </li>
+                    ))}
+                  </ul>
+                ) : (
+                  <p className="font-body text-ink-DEFAULT leading-relaxed">{project.outcome}</p>
+                )}
               </div>
             </FadeIn>
           )}

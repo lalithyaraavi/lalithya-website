@@ -46,7 +46,8 @@ export const projects: Project[] = [
     images: ["/photos/presense.JPG", "/photos/presense2.png"],
     description:
       "PRESENSE is a safety companion designed for moments of uncertainty. When a user senses that something may be wrong, the app provides quick, accessible tools that help them respond immediately. We focused on designing an interface that prioritizes clarity, speed, and emotional awareness. The goal was to create a system that feels calm and supportive while still allowing users to act instantly when needed. Using Figma's digital design and prototyping tools, we built an experience centered around quick accessibility and minimal friction. Every element was intentionally simplified so users can navigate the app without hesitation, especially during stressful situations.",
-    outcome: "Weekend Hackathon hosted by Figma. Prompt: Design a tool that tracks, measures, visualizes or quantifies an aspect of human sensory experience. Within the tool, provide the ability to detect, enhance, or manipulate those same sensory inputs.",
+    outcome: "Design a tool that tracks, measures, visualizes or quantifies an aspect of human sensory experience. Within the tool, provide the ability to detect, enhance, or manipulate those same sensory inputs.",
+    outcomeLabel: "DESIGN PROBLEM",
     links: [
       { label: "Figma Prototype", url: "https://www.figma.com/proto/7tK37MnBUToTgnHMiDYrvp/PreSense?node-id=162-285&t=m0QoN2YpW1sHHIP3-1" },
       { label: "Pitch", url: "https://www.figma.com/deck/rkmb8o0lnMBy3HOVAzZDiI/Team-Gwendon-tdie?node-id=23-8&t=aGWpJmboONPPQnYo-1&scaling=min-zoom&content-scaling=fixed&page-id=0%3A1" },
@@ -58,7 +59,7 @@ export const projects: Project[] = [
     title: "TILE (Task Inspired Live Engagement)",
     tagline: "Gamified chore productivity for housemates",
     tags: ["Product Design", "Mobile", "Figma"],
-    year: "2024",
+    year: "2026",
     color: "#E8E2F5",
     images: ["/photos/tile.png", "/photos/tile2.png", "/photos/tile3.png"],
     description:
@@ -91,12 +92,13 @@ export const projects: Project[] = [
     title: "Fuelling the Future: Investigating Cost Efficient Methods of Hydrogen Production",
     tagline: "Making hydrogen production more accessible and cost-friendly",
     tags: ["Research", "Chemistry", "Sustainability", "Science Fair"],
-    year: "2023",
+    year: "2024",
     color: "#D6EAD6",
     images: ["/photos/fuel.png", "/photos/fuel2.jpeg", "/photos/fuel3.jpeg", "/photos/fuel4.png"],
     description:
       "Alternate energy sources have been researched for many years, with hydrogen as a possible option. Sustainably, hydrogen can be produced through water electrolysis, using expensive materials like platinum, sodium hydroxide, and distilled water. In our experimentation, we researched different combinations of readily available electrodes and electrolytes to make hydrogen production more cost friendly. Look into the Project Board for full data and results.",
     outcome: "Canada Wide Science Fair: National Bronze Medal\nWood Buffalo Regional Silver Medalist\nRegional Pathways Alliance Net-Zero Special Award",
+    outcomeLabel: "AWARDS",
     links: [
       { label: "Project Board", url: "https://partner.projectboard.world/ysc/project/fueling-the-future" },
       { label: "In the News", url: "https://www.fmpsdschools.ca/news/post/fmpsd-students-shine-at-canada-wide-science-fair" },
@@ -107,7 +109,7 @@ export const projects: Project[] = [
     title: "Agro S.A.L.T: Sustainable And Low Toxicity De-icers",
     tagline: "Eco-friendly alternatives to traditional road salt",
     tags: ["Science Fair", "Research", "Environmental", "Chemistry"],
-    year: "2023",
+    year: "2025",
     color: "#D6EAD6",
     images: ["/photos/salt.png", "/photos/salt2.jpeg", "/photos/salt3.png"],
     description:
@@ -123,7 +125,7 @@ export const projects: Project[] = [
     title: "Byson Tidal Solutions",
     tagline: "Harnessing tidal energy for remote communities",
     tags: ["Engineering", "Sustainability", "Clean Energy"],
-    year: "2022",
+    year: "2024",
     color: "#CCDFF5",
     images: ["/photos/water.png", "/photos/water2.png", "/photos/water3.png"],
     description:
