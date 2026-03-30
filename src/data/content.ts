@@ -122,11 +122,18 @@ export const projects: Project[] = [
     slug: "byson-tidal",
     title: "Byson Tidal Solutions",
     tagline: "Harnessing tidal energy for remote communities",
-    tags: ["Engineering", "Sustainability", "Science Fair"],
+    tags: ["Engineering", "Sustainability", "Clean Energy"],
     year: "2022",
     color: "#CCDFF5",
+    images: ["/photos/water.png", "/photos/water2.png", "/photos/water3.png"],
     description:
-      "Designed a small-scale tidal turbine concept for remote coastal communities with no grid access, balancing ecological impact with energy output.",
+      "Byson Tidal Solutions proposes the Water Wrap, a tidal energy system designed to generate renewable electricity for remote northern communities. The design captures ocean currents while protecting marine life through a screened, blade-safe structure. This project explores how sustainable engineering solutions can expand access to clean energy while reducing reliance on fossil fuels.",
+    outcome: "Best Business Model",
+    outcomeLabel: "AWARDS",
+    links: [
+      { label: "Project Pitch", url: "https://drive.google.com/file/d/1dO8bQjkUA7rZ46UDmK0Uk_QPMjGgiPAh/view" },
+      { label: "In the News", url: "https://www.shad.ca/shads-unveil-their-innovative-design-challenge-projects-to-help-youth-in-canada-adopt-green-energy-solutions/" },
+    ],
   },
 ];
 
