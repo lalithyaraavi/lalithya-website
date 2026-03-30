@@ -13,6 +13,7 @@ export type Project = {
   featured?: boolean;
   description: string;
   outcome?: string;
+  outcomeLabel?: string;
   image?: string;
   images?: string[];
   links?: ProjectLink[];
@@ -63,6 +64,7 @@ export const projects: Project[] = [
     description:
       "TILE is a socially driven productivity experience designed around competition and visual storytelling. Users join public or private rooms to complete specific tasks and earn custom tiles that represent each win. These tiles are designed to assemble into a growing mosaic of ordinary life, turning everyday achievements into a collaborative digital artwork that visualizes collective progress and connection.",
     outcome: "University students struggle to stay motivated with repetitive chores like laundry and dishes. How might we make these moments more engaging while building social connection?",
+    outcomeLabel: "DESIGN PROBLEM",
     links: [
       { label: "Prototype", url: "https://lair-ardent-50142270.figma.site/" },
     ],
