@@ -53,25 +53,10 @@ export default function ProjectPage({ params }: { params: { slug: string } }) {
             <div className="w-12 h-px bg-rose-DEFAULT/40 mb-10" />
           </FadeIn>
 
-          <FadeIn delay={0.2}>
-            <p className="font-body text-ink-DEFAULT leading-loose text-base mb-12 whitespace-pre-line">
-              {project.description}
-            </p>
-          </FadeIn>
-
-          {project.outcome && (
-            <FadeIn delay={0.25}>
-              <div className="p-6 rounded-3xl bg-rose-light/30 border border-rose-light/50 mb-10">
-                <p className="font-mono text-xs text-rose-DEFAULT tracking-widest mb-3">{project.outcomeLabel ?? "OUTCOME"}</p>
-                <p className="font-body text-ink-DEFAULT leading-relaxed">{project.outcome}</p>
-              </div>
-            </FadeIn>
-          )}
-
           {project.links && project.links.length > 0 && (
-            <FadeIn delay={0.3}>
+            <FadeIn delay={0.2}>
               <p className="font-mono text-xs text-rose-DEFAULT tracking-widest mb-4">VIEW PROJECT</p>
-              <div className="flex flex-wrap gap-3">
+              <div className="flex flex-wrap gap-3 mb-10">
                 {project.links.map((link) => (
                   <a
                     key={link.label}
@@ -83,6 +68,21 @@ export default function ProjectPage({ params }: { params: { slug: string } }) {
                     {link.label} →
                   </a>
                 ))}
+              </div>
+            </FadeIn>
+          )}
+
+          <FadeIn delay={0.25}>
+            <p className="font-body text-ink-DEFAULT leading-loose text-base mb-12 whitespace-pre-line">
+              {project.description}
+            </p>
+          </FadeIn>
+
+          {project.outcome && (
+            <FadeIn delay={0.3}>
+              <div className="p-6 rounded-3xl bg-rose-light/30 border border-rose-light/50 mb-10">
+                <p className="font-mono text-xs text-rose-DEFAULT tracking-widest mb-3">{project.outcomeLabel ?? "OUTCOME"}</p>
+                <p className="font-body text-ink-DEFAULT leading-relaxed">{project.outcome}</p>
               </div>
             </FadeIn>
           )}
