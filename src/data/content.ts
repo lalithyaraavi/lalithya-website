@@ -54,14 +54,18 @@ export const projects: Project[] = [
   },
   {
     slug: "tile",
-    title: "TILE",
+    title: "TILE (Task Inspired Live Engagement)",
     tagline: "Gamified chore productivity for housemates",
     tags: ["Product Design", "Mobile", "Figma"],
     year: "2024",
     color: "#E8E2F5",
+    images: ["/photos/tile.png", "/photos/tile2.png", "/photos/tile3.png"],
     description:
-      "TILE turns household chores into a collaborative game with streaks, points, and friendly competition. Designed to reduce household conflict and make adulting feel less like adulting.",
-    outcome: "Makathon project; iterated through multiple logo and brand directions.",
+      "TILE is a socially driven productivity experience designed around competition and visual storytelling. Users join public or private rooms to complete specific tasks and earn custom tiles that represent each win. These tiles are designed to assemble into a growing mosaic of ordinary life, turning everyday achievements into a collaborative digital artwork that visualizes collective progress and connection.",
+    outcome: "University students struggle to stay motivated with repetitive chores like laundry and dishes. How might we make these moments more engaging while building social connection?",
+    links: [
+      { label: "Prototype", url: "https://lair-ardent-50142270.figma.site/" },
+    ],
   },
   {
     slug: "gut",
