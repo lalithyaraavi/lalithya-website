@@ -124,7 +124,7 @@ export const projects: Project[] = [
     slug: "byson-tidal",
     title: "Byson Tidal Solutions",
     tagline: "Harnessing tidal energy for remote communities",
-    tags: ["Engineering", "Sustainability", "Clean Energy"],
+    tags: ["Engineering", "Sustainability", "Clean Energy", "SolidWorks"],
     year: "2024",
     color: "#CCDFF5",
     images: ["/photos/water.png", "/photos/water2.png", "/photos/water3.png", "/photos/water4.png"],
