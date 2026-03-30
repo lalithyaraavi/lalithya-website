@@ -70,14 +70,21 @@ export const projects: Project[] = [
     ],
   },
   {
-    slug: "gut",
-    title: "GUT",
-    tagline: "A brain tracker for the chronically indecisive",
-    tags: ["Speculative Design", "Wearables", "UX"],
-    year: "2024",
+    slug: "ascorbic-acid",
+    title: "Exploring Cooking Methods on Ascorbic Acid Retention",
+    tagline: "How cooking affects Vitamin C levels in food",
+    tags: ["Science Fair", "Research", "Nutrition"],
+    year: "2023",
     color: "#FDECD7",
+    images: ["/photos/acid.png", "/photos/acid2.jpeg", "/photos/acid3.jpeg"],
     description:
-      "GUT surfaces logical vs. emotional signals side-by-side so users 18–26 can finally make decisions they don't regret. Built around the premise that indecision is a design problem.",
+      "Everyday, we prepare appetizing meals using different cooking methods, which can be harmful to getting a nutritional diet. We tested how different cooking methods such as boiling, microwaving and baking in the oven affects Vitamin C levels in food, since it is an essential nutrient needed by our body. Look into the Project Board for full data and results.",
+    outcome: "Canada Wide Science Fair: National Bronze Medal\nRegional Discovery Special Award",
+    outcomeLabel: "AWARDS",
+    links: [
+      { label: "Project Board", url: "https://partner.projectboard.world/ysc/project/from-raw-to-cooked-exploring-cooking-methods-on-ascorbic-acid-retention-in-tomatoes" },
+      { label: "In the News", url: "https://www.fmpsdschools.ca/news/post/fmpsd-students-win-big-at-canada-wide-science-fair" },
+    ],
   },
   {
     slug: "fuelling-the-future",
@@ -97,13 +104,19 @@ export const projects: Project[] = [
   },
   {
     slug: "agro-salt",
-    title: "Agro S.A.L.T.",
-    tagline: "Soil analysis for smarter farming",
-    tags: ["Science Fair", "Research", "Environmental"],
+    title: "Agro S.A.L.T: Sustainable And Low Toxicity De-icers",
+    tagline: "Eco-friendly alternatives to traditional road salt",
+    tags: ["Science Fair", "Research", "Environmental", "Chemistry"],
     year: "2023",
     color: "#D6EAD6",
+    images: ["/photos/asalt.png", "/photos/salt2.jpeg", "/photos/salt3.png", "/photos/salt4.png"],
     description:
-      "A low-cost soil analysis solution for small-scale farmers, combining sensor hardware with data visualization to improve crop yield decisions.",
+      "AgroSalt explores environmentally friendly alternatives to traditional road salt used to prevent icy roads and sidewalks in Alberta. While sodium chloride improves winter safety, it also damages ecosystems, infrastructure, and vehicles. Through testing agricultural-based de-icing compounds, this project investigates natural materials that can lower water's freezing point while reducing environmental harm. The goal is to identify the most effective agro-based de-icer and design a solution that is practical and scalable for real-world winter road safety.",
+    outcome: "Wood Buffalo Regional Silver Medal\nExcellence in Chemistry Special Award",
+    outcomeLabel: "AWARDS",
+    links: [
+      { label: "Project Board", url: "https://partner.projectboard.world/ysc/project/agro-s-a-l-t-sustainable-and-low-toxicity-de-icers?rc=jzlmwanj" },
+    ],
   },
   {
     slug: "byson-tidal",
