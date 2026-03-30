@@ -109,7 +109,7 @@ export const projects: Project[] = [
     tags: ["Science Fair", "Research", "Environmental", "Chemistry"],
     year: "2023",
     color: "#D6EAD6",
-    images: ["/photos/asalt.png", "/photos/salt2.jpeg", "/photos/salt3.png", "/photos/salt4.png"],
+    images: ["/photos/salt.png", "/photos/salt2.jpeg", "/photos/salt3.png", "/photos/salt4.png"],
     description:
       "AgroSalt explores environmentally friendly alternatives to traditional road salt used to prevent icy roads and sidewalks in Alberta. While sodium chloride improves winter safety, it also damages ecosystems, infrastructure, and vehicles. Through testing agricultural-based de-icing compounds, this project investigates natural materials that can lower water's freezing point while reducing environmental harm. The goal is to identify the most effective agro-based de-icer and design a solution that is practical and scalable for real-world winter road safety.",
     outcome: "Wood Buffalo Regional Silver Medal\nExcellence in Chemistry Special Award",
