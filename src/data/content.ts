@@ -80,7 +80,7 @@ export const projects: Project[] = [
     tags: ["Research", "Chemistry", "Sustainability", "Science Fair"],
     year: "2023",
     color: "#D6EAD6",
-    images: ["/photos/fuel.png", "/photos/fuel2.HEIC", "/photos/fuel3.HEIC", "/photos/fuel4.png"],
+    images: ["/photos/fuel.png", "/photos/fuel2.jpeg", "/photos/fuel3.jpeg", "/photos/fuel4.png"],
     description:
       "Alternate energy sources have been researched for many years, with hydrogen as a possible option. Sustainably, hydrogen can be produced through water electrolysis, using expensive materials like platinum, sodium hydroxide, and distilled water. In our experimentation, we researched different combinations of readily available electrodes and electrolytes to make hydrogen production more cost friendly. Look into the Project Board for full data and results.",
     outcome: "Canada Wide Science Fair: National Bronze Medal\nWood Buffalo Regional Silver Medalist\nRegional Pathways Alliance Net-Zero Special Award",
