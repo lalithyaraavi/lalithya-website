@@ -75,13 +75,19 @@ export const projects: Project[] = [
   },
   {
     slug: "fuelling-the-future",
-    title: "Fuelling the Future",
-    tagline: "Sustainable energy futures for Fort McMurray",
-    tags: ["Research", "Systems Design", "Sustainability"],
+    title: "Fuelling the Future: Investigating Cost Efficient Methods of Hydrogen Production",
+    tagline: "Making hydrogen production more accessible and cost-friendly",
+    tags: ["Research", "Chemistry", "Sustainability", "Science Fair"],
     year: "2023",
     color: "#D6EAD6",
+    images: ["/photos/fuel.png", "/photos/fuel2.png", "/photos/fuel3.png", "/photos/fuel4.png"],
     description:
-      "A systems-level exploration of how oil sands communities can transition toward renewable energy while preserving economic stability and community identity.",
+      "Alternate energy sources have been researched for many years, with hydrogen as a possible option. Sustainably, hydrogen can be produced through water electrolysis, using expensive materials like platinum, sodium hydroxide, and distilled water. In our experimentation, we researched different combinations of readily available electrodes and electrolytes to make hydrogen production more cost friendly. Look into the Project Board for full data and results.",
+    outcome: "Canada Wide Science Fair: National Bronze Medal\nWood Buffalo Regional Silver Medalist\nRegional Pathways Alliance Net-Zero Special Award",
+    links: [
+      { label: "Project Board", url: "https://partner.projectboard.world/ysc/project/fueling-the-future" },
+      { label: "In the News", url: "https://www.fmpsdschools.ca/news/post/fmpsd-students-shine-at-canada-wide-science-fair" },
+    ],
   },
   {
     slug: "agro-salt",
