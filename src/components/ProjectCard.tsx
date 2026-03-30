@@ -30,17 +30,17 @@ export default function ProjectCard({ project, index }: { project: Project; inde
         )}
 
         {/* Content */}
-        <div className="p-6 bg-cream-DEFAULT">
-          <div className="flex items-start justify-between gap-4 mb-2">
-            <h3 className="font-display text-2xl font-light text-ink-DEFAULT group-hover:text-rose-DEFAULT transition-colors">
+        <div className="p-4 bg-cream-DEFAULT">
+          <div className="flex items-start justify-between gap-3 mb-1">
+            <h3 className="font-display text-lg font-light text-ink-DEFAULT group-hover:text-rose-DEFAULT transition-colors">
               {project.title}
             </h3>
-            <span className="font-mono text-xs text-ink-muted mt-1.5 shrink-0">{project.year}</span>
+            <span className="font-mono text-xs text-ink-muted mt-1 shrink-0">{project.year}</span>
           </div>
-          <p className="font-body text-sm text-ink-muted mb-4 leading-relaxed">{project.tagline}</p>
-          <div className="flex flex-wrap gap-2">
+          <p className="font-body text-xs text-ink-muted mb-3 leading-relaxed">{project.tagline}</p>
+          <div className="flex flex-wrap gap-1.5">
             {project.tags.map((tag) => (
-              <span key={tag} className="px-2.5 py-1 rounded-full bg-cream-warm text-ink-muted text-xs font-body border border-rose-light/30">
+              <span key={tag} className="px-2 py-0.5 rounded-full bg-cream-warm text-ink-muted text-xs font-body border border-rose-light/30">
                 {tag}
               </span>
             ))}

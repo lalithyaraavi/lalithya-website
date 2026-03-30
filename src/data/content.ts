@@ -71,23 +71,6 @@ export const projects: Project[] = [
     ],
   },
   {
-    slug: "ascorbic-acid",
-    title: "Exploring Cooking Methods on Ascorbic Acid Retention",
-    tagline: "How cooking affects Vitamin C levels in food",
-    tags: ["Science Fair", "Research", "Nutrition"],
-    year: "2023",
-    color: "#FDECD7",
-    images: ["/photos/acid.png", "/photos/acid2.jpeg", "/photos/acid3.jpeg"],
-    description:
-      "Everyday, we prepare appetizing meals using different cooking methods, which can be harmful to getting a nutritional diet. We tested how different cooking methods such as boiling, microwaving and baking in the oven affects Vitamin C levels in food, since it is an essential nutrient needed by our body. Look into the Project Board for full data and results.",
-    outcome: "Canada Wide Science Fair: National Bronze Medal\nRegional Discovery Special Award",
-    outcomeLabel: "AWARDS",
-    links: [
-      { label: "Project Board", url: "https://partner.projectboard.world/ysc/project/from-raw-to-cooked-exploring-cooking-methods-on-ascorbic-acid-retention-in-tomatoes" },
-      { label: "In the News", url: "https://www.fmpsdschools.ca/news/post/fmpsd-students-win-big-at-canada-wide-science-fair" },
-    ],
-  },
-  {
     slug: "fuelling-the-future",
     title: "Fuelling the Future: Investigating Cost Efficient Methods of Hydrogen Production",
     tagline: "Making hydrogen production more accessible and cost-friendly",
@@ -102,6 +85,23 @@ export const projects: Project[] = [
     links: [
       { label: "Project Board", url: "https://partner.projectboard.world/ysc/project/fueling-the-future" },
       { label: "In the News", url: "https://www.fmpsdschools.ca/news/post/fmpsd-students-shine-at-canada-wide-science-fair" },
+    ],
+  },
+  {
+    slug: "ascorbic-acid",
+    title: "Exploring Cooking Methods on Ascorbic Acid Retention",
+    tagline: "How cooking affects Vitamin C levels in food",
+    tags: ["Science Fair", "Research", "Nutrition"],
+    year: "2023",
+    color: "#FDECD7",
+    images: ["/photos/acid.png", "/photos/acid2.jpeg", "/photos/acid3.jpeg"],
+    description:
+      "Everyday, we prepare appetizing meals using different cooking methods, which can be harmful to getting a nutritional diet. We tested how different cooking methods such as boiling, microwaving and baking in the oven affects Vitamin C levels in food, since it is an essential nutrient needed by our body. Look into the Project Board for full data and results.",
+    outcome: "Canada Wide Science Fair: National Bronze Medal\nRegional Discovery Special Award",
+    outcomeLabel: "AWARDS",
+    links: [
+      { label: "Project Board", url: "https://partner.projectboard.world/ysc/project/from-raw-to-cooked-exploring-cooking-methods-on-ascorbic-acid-retention-in-tomatoes" },
+      { label: "In the News", url: "https://www.fmpsdschools.ca/news/post/fmpsd-students-win-big-at-canada-wide-science-fair" },
     ],
   },
   {
@@ -127,7 +127,7 @@ export const projects: Project[] = [
     tags: ["Engineering", "Sustainability", "Clean Energy"],
     year: "2024",
     color: "#CCDFF5",
-    images: ["/photos/water.png", "/photos/water2.png", "/photos/water3.png"],
+    images: ["/photos/water.png", "/photos/water2.png", "/photos/water3.png", "/photos/water4.png"],
     description:
       "Byson Tidal Solutions proposes the Water Wrap, a tidal energy system designed to generate renewable electricity for remote northern communities. The design captures ocean currents while protecting marine life through a screened, blade-safe structure. This project explores how sustainable engineering solutions can expand access to clean energy while reducing reliance on fossil fuels.",
     outcome: "Best Business Model",
