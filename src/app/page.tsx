@@ -1,4 +1,5 @@
 "use client";
+import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import Link from "next/link";
 import { projects } from "@/data/content";
@@ -7,7 +8,7 @@ import FadeIn from "@/components/FadeIn";
 import PhotoCarousel from "@/components/PhotoCarousel";
 import Blobs from "@/components/Blobs";
 
-const ticker = ["UX Design ✦", "Systems Thinking ✦", "C++ ✦", "React ✦", "Figma ✦", "Product Design ✦", "TypeScript ✦", "Speculative Design ✦", "Waterloo SYDE ✦", "Frontend Dev ✦"];
+const ticker = ["UX Design ✦", "Systems Thinking ✦", "C++ ✦", "React ✦", "Figma ✦", "Product Design ✦", "Data Analysis ✦", "Waterloo SYDE ✦", "Frontend Dev ✦"];
 
 const experience = [
   { role: "Operations Analyst", company: "Suncor Energy", period: "Jan 2026 – Apr 2026" },
@@ -20,6 +21,63 @@ const CONTAINER   = "max-w-5xl mx-auto";
 const LABEL       = "font-mono text-base text-rose-DEFAULT tracking-widest";
 const HEADING     = "font-display text-7xl md:text-8xl font-light text-ink-DEFAULT leading-tight";
 const BODY        = "font-body text-xl text-ink-muted leading-relaxed";
+
+// Typewriter component for "Lali"
+function TypewriterLali() {
+  const [displayed, setDisplayed] = useState("");
+  const [cursorOn, setCursorOn] = useState(true);
+  const full = "Lali";
+
+  useEffect(() => {
+    let i = 0;
+    const start = setTimeout(() => {
+      const interval = setInterval(() => {
+        i++;
+        setDisplayed(full.slice(0, i));
+        if (i === full.length) {
+          clearInterval(interval);
+          setTimeout(() => setCursorOn(false), 1000);
+        }
+      }, 110);
+      return () => clearInterval(interval);
+    }, 500);
+    return () => clearTimeout(start);
+  }, []);
+
+  return (
+    <em className="not-italic text-rose-DEFAULT">
+      {displayed}
+      {cursorOn && (
+        <motion.span
+          animate={{ opacity: [1, 0, 1] }}
+          transition={{ duration: 0.7, repeat: Infinity }}
+          className="inline-block w-[2px] h-[0.8em] bg-rose-DEFAULT ml-0.5 align-middle rounded-sm"
+        />
+      )}
+    </em>
+  );
+}
+
+// Word-by-word slide-up reveal for headings on scroll
+function WordReveal({ words, className, delay = 0 }: { words: { text: string; em?: boolean }[]; className: string; delay?: number }) {
+  return (
+    <span className={className} aria-label={words.map(w => w.text).join(" ")}>
+      {words.map((word, i) => (
+        <span key={i} className="inline-block overflow-hidden leading-[1.1]">
+          <motion.span
+            className={`inline-block${word.em ? " text-rose-DEFAULT" : ""}`}
+            initial={{ y: "110%" }}
+            whileInView={{ y: 0 }}
+            viewport={{ once: true, margin: "-30px" }}
+            transition={{ duration: 0.55, delay: delay + i * 0.1, ease: [0.22, 1, 0.36, 1] }}
+          >
+            {word.text}&nbsp;
+          </motion.span>
+        </span>
+      ))}
+    </span>
+  );
+}
 
 export default function Home() {
   return (
@@ -46,16 +104,42 @@ export default function Home() {
           </motion.div>
 
           <div className="max-w-2xl">
-            <motion.p initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, delay: 0.3 }}
-              className={`${LABEL} mb-5`}>
-              systems design engineering @ university of waterloo
+            {/* Subtitle label: "design" pops in rose, rest fades in muted */}
+            <motion.p initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.01, delay: 0.28 }}
+              className="font-mono text-base tracking-widest mb-5">
+              {[
+                { text: "systems",                   color: "text-ink-muted/60", delay: 0.32 },
+                { text: " design",                   color: "text-rose-DEFAULT", delay: 0.44 },
+                { text: " engineering",              color: "text-ink-muted/60", delay: 0.56 },
+                { text: " @ university of waterloo", color: "text-ink-muted/50", delay: 0.68 },
+              ].map(({ text, color, delay }) => (
+                <motion.span
+                  key={text}
+                  className={color}
+                  initial={{ opacity: 0, y: 6 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.4, delay, ease: [0.22, 1, 0.36, 1] }}
+                >
+                  {text}
+                </motion.span>
+              ))}
             </motion.p>
 
-            <motion.h1 initial={{ opacity: 0, y: 32 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.75, delay: 0.4, ease: [0.22, 1, 0.36, 1] }}
-              className="font-display text-6xl md:text-8xl font-light leading-[1.05] text-ink-DEFAULT mb-6">
+            {/* Hero h1 with typewriter "Lali" */}
+            <motion.h1
+              initial={{ opacity: 0, y: 32 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.75, delay: 0.4, ease: [0.22, 1, 0.36, 1] }}
+              className="font-display text-6xl md:text-8xl font-light leading-[1.05] text-ink-DEFAULT mb-6"
+            >
               Hi! I&apos;m{" "}
-              <em className="not-italic text-rose-DEFAULT">Lali</em>
-              <span className="text-rose-light">.</span>
+              <TypewriterLali />
+              <motion.span
+                className="text-rose-light"
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ delay: 1.6 }}
+              >.</motion.span>
             </motion.h1>
 
             <motion.p initial={{ opacity: 0, y: 24 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7, delay: 0.55 }}
@@ -75,10 +159,10 @@ export default function Home() {
       </section>
 
       {/* ── Skills Ticker ─────────────────────────────────── */}
-      <div className="py-5 bg-cream-warm border-y border-rose-light/30 overflow-hidden">
+      <div className="py-4 bg-cream-warm border-y border-rose-light/30 overflow-hidden">
         <div className="animate-scroll-left whitespace-nowrap">
           {[...ticker, ...ticker].map((item, i) => (
-            <span key={i} className={`inline-block mx-6 ${LABEL} opacity-70`}>{item}</span>
+            <span key={i} className="inline-block mx-5 font-mono text-xs text-ink-muted/60 tracking-widest">{item}</span>
           ))}
         </div>
       </div>
@@ -90,13 +174,16 @@ export default function Home() {
           <div className={`${CONTAINER} flex flex-col md:flex-row md:items-end justify-between gap-4 mb-14`}>
             <div>
               <p className={`${LABEL} mb-3`}>SELECTED WORK</p>
-              <h2 className={`${HEADING} mb-4`}>Projects</h2>
+              <WordReveal
+                words={[{ text: "Projects" }]}
+                className={HEADING + " mb-4 block"}
+              />
               <p className={`${BODY} max-w-xl`}>
                 Welcome to my portfolio. Here you&apos;ll find a collection of design and research projects, exploring systems thinking and problem solving as I navigate the world of engineering.
               </p>
             </div>
             <Link href="/projects" className={`hidden md:flex items-center gap-2 ${BODY} hover:text-rose-DEFAULT transition-colors shrink-0`}>
-              All projects <span className="group-hover:translate-x-1 transition-transform">→</span>
+              All projects →
             </Link>
           </div>
         </FadeIn>
@@ -120,11 +207,10 @@ export default function Home() {
       <section id="about" className={`relative ${SECTION_PAD} py-24 bg-cream-warm border-y border-rose-light/30 overflow-hidden`}>
         <Blobs />
         <div className={CONTAINER}>
-          <FadeIn>
-            <h2 className={`${HEADING} mb-8`}>
-              A little about <em className="text-rose-DEFAULT">me</em>
-            </h2>
-          </FadeIn>
+          <WordReveal
+            words={[{ text: "A" }, { text: "little" }, { text: "about" }, { text: "me", em: true }]}
+            className={HEADING + " mb-8 block"}
+          />
 
           {/* Bio + photo carousel */}
           <div className="grid md:grid-cols-[1fr_1.2fr] gap-16 items-stretch mb-20">
@@ -187,9 +273,10 @@ export default function Home() {
         <div className={CONTAINER}>
           <FadeIn>
             <p className={`${LABEL} mb-3`}>GET IN TOUCH</p>
-            <h2 className={`${HEADING} mb-4`}>
-              Say <em className="text-rose-DEFAULT">hello</em> ✦
-            </h2>
+            <WordReveal
+              words={[{ text: "Say" }, { text: "hello", em: true }]}
+              className={HEADING + " mb-4 block"}
+            />
             <p className={`${BODY} mb-12 max-w-md`}>
               Whether it&apos;s a collab, a co-op, or just a chat, I&apos;m always happy to connect.
             </p>
@@ -208,12 +295,12 @@ export default function Home() {
             </FadeIn>
 
             <FadeIn delay={0.14}>
-              <a href="https://linkedin.com/in/lalithya-raavi" target="_blank" rel="noopener noreferrer"
+              <a href="https://www.linkedin.com/in/lalithyaraavi/" target="_blank" rel="noopener noreferrer"
                 className="group flex flex-col gap-3 p-6 rounded-4xl border border-rose-light/40 bg-cream-DEFAULT hover:border-rose-DEFAULT/50 hover:bg-rose-light/10 transition-all hover:shadow-lg hover:shadow-rose-light/20">
                 <span className="text-2xl">💼</span>
                 <div>
                   <p className={`${LABEL} mb-1`}>LINKEDIN</p>
-                  <p className={`${BODY} group-hover:text-rose-DEFAULT transition-colors`}>lalithya-raavi</p>
+                  <p className={`${BODY} group-hover:text-rose-DEFAULT transition-colors`}>lalithyaraavi</p>
                 </div>
               </a>
             </FadeIn>
