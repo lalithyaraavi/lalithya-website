@@ -128,16 +128,24 @@ export default function Home() {
 
           {/* Bio + photo carousel */}
           <div className="grid md:grid-cols-[1fr_1.2fr] gap-16 items-stretch mb-20">
-            <FadeIn delay={0.1}>
-              <div className={`flex flex-col justify-center h-full space-y-4 ${BODY}`}>
-                <p>
-                  Hello! I&apos;m Lali, a <span className="text-ink-DEFAULT font-medium">Systems Design Engineering</span> student at the University of Waterloo. I love breaking down messy, complex problems and rethinking them as systems that actually work for people. I&apos;ve spent a lot of time working with data and design, using both to build and iterate on solutions that are practical and user-focused.
-                </p>
-                <p>
-                  I love getting involved within the community especially mentoring younger kids, or you could always catch me with my head deep in a book or my hands deep in baking.
-                </p>
-              </div>
-            </FadeIn>
+            <div className={`flex flex-col justify-center h-full space-y-4 ${BODY}`}>
+              <motion.p
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: "-40px" }}
+                transition={{ duration: 0.6, delay: 0.1, ease: [0.22, 1, 0.36, 1] }}
+              >
+                Hello! I&apos;m Lali, a <span className="text-ink-DEFAULT font-medium">Systems Design Engineering</span> student at the University of Waterloo. I love breaking down messy, complex problems and rethinking them as systems that actually work for people. I&apos;ve spent a lot of time working with data and design, using both to build and iterate on solutions that are practical and user-focused.
+              </motion.p>
+              <motion.p
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: "-40px" }}
+                transition={{ duration: 0.6, delay: 0.22, ease: [0.22, 1, 0.36, 1] }}
+              >
+                I love getting involved within the community, especially mentoring younger kids. You could always catch me with my head deep in a book or my hands deep in baking.
+              </motion.p>
+            </div>
 
             <FadeIn delay={0.15}>
               <div className="h-full">
@@ -183,7 +191,7 @@ export default function Home() {
               Say <em className="text-rose-DEFAULT">hello</em> ✦
             </h2>
             <p className={`${BODY} mb-12 max-w-md`}>
-              Whether it&apos;s a collab, a co-op, or just a chat — I&apos;m always happy to connect.
+              Whether it&apos;s a collab, a co-op, or just a chat, I&apos;m always happy to connect.
             </p>
           </FadeIn>
 
