@@ -19,8 +19,8 @@ export default function ProjectCard({ project, index }: { project: Project; inde
             <img
               src={project.images?.[0] ?? project.image}
               alt={project.title}
-              className="w-full h-auto block"
-              style={{ filter: "none", mixBlendMode: "normal" }}
+              className="w-full object-cover object-top"
+              style={{ filter: "none", mixBlendMode: "normal", maxHeight: "180px" }}
             />
           </div>
         ) : (
