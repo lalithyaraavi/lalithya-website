@@ -153,37 +153,30 @@ export default function Home() {
       </section>
 
       {/* ── 3. ABOUT + EXPERIENCE ─────────────────────────── */}
-      <section id="about" className="px-8 md:px-20 py-24 bg-cream-warm border-y border-rose-light/30">
-        <div className="max-w-5xl mx-auto">
+      <section id="about" className="min-h-screen flex flex-col md:flex-row bg-cream-warm border-y border-rose-light/30 overflow-hidden">
+
+        {/* Left — text + experience */}
+        <div className="flex-1 flex flex-col justify-center px-8 md:px-16 py-24">
           <FadeIn>
-            <h2 className="font-display text-5xl md:text-6xl font-light text-ink-DEFAULT mb-12 leading-tight">
+            <h2 className="font-display text-5xl md:text-6xl font-light text-ink-DEFAULT mb-10 leading-tight">
               A little about <em className="text-rose-DEFAULT">me</em>
             </h2>
           </FadeIn>
 
-          {/* Bio + photo carousel */}
-          <div className="grid md:grid-cols-[1fr_1.4fr] gap-12 items-start mb-16">
-            <FadeIn delay={0.1}>
-              <div className="space-y-4 font-body text-ink-muted leading-relaxed">
-                <p>
-                  I&apos;m a <span className="text-ink-DEFAULT font-medium">Systems Design Engineering</span> student at the University of Waterloo.
-                </p>
-                <p>
-                  I care about designing things that are actually useful - products, tools, and experiences that sit at the intersection of people and technology.
-                </p>
-                <p>
-                  Outside of school, I&apos;m involved in Women in Tech on campus, I bake a lot, and I&apos;m always working on a side project.
-                </p>
-              </div>
+          <FadeIn delay={0.1}>
+            <div className="space-y-4 font-body text-ink-muted leading-relaxed mb-14">
+              <p>
+                I&apos;m a <span className="text-ink-DEFAULT font-medium">Systems Design Engineering</span> student at the University of Waterloo.
+              </p>
+              <p>
+                I care about designing things that are actually useful - products, tools, and experiences that sit at the intersection of people and technology.
+              </p>
+              <p>
+                Outside of school, I&apos;m involved in Women in Tech on campus, I bake a lot, and I&apos;m always working on a side project.
+              </p>
+            </div>
+          </FadeIn>
 
-            </FadeIn>
-
-            <FadeIn delay={0.15}>
-              <PhotoCarousel />
-            </FadeIn>
-          </div>
-
-          {/* Experience timeline */}
           <FadeIn delay={0.2}>
             <p className="font-mono text-xs text-rose-DEFAULT tracking-widest mb-6">EXPERIENCE</p>
             <div className="space-y-4">
@@ -200,6 +193,13 @@ export default function Home() {
             </div>
           </FadeIn>
         </div>
+
+        {/* Right — full height carousel */}
+        <FadeIn delay={0.15}>
+          <div className="w-full md:w-[45vw] min-h-[60vh] md:min-h-screen">
+            <PhotoCarousel fullHeight />
+          </div>
+        </FadeIn>
       </section>
 
       

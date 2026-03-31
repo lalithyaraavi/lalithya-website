@@ -21,7 +21,7 @@ const variants = {
   exit:  (dir: number) => ({ x: dir > 0 ? -200 : 200, opacity: 0, scale: 0.95 }),
 };
 
-export default function PhotoCarousel() {
+export default function PhotoCarousel({ fullHeight = false }: { fullHeight?: boolean }) {
   const [[index, dir], setIndex] = useState([0, 0]);
 
   const paginate = (newDir: number) => {
@@ -31,9 +31,9 @@ export default function PhotoCarousel() {
   const current = photos[index];
 
   return (
-    <div className="flex flex-col items-center gap-4 select-none">
+    <div className={`flex flex-col items-center gap-4 select-none ${fullHeight ? "h-full" : ""}`}>
       {/* Main card */}
-      <div className="relative w-full aspect-[3/4] rounded-4xl overflow-hidden bg-cream-warm border border-rose-light/40 shadow-xl shadow-rose-light/20">
+      <div className={`relative w-full overflow-hidden bg-cream-warm border border-rose-light/40 shadow-xl shadow-rose-light/20 ${fullHeight ? "h-full rounded-none" : "aspect-[3/4] rounded-4xl"}`}>
         <AnimatePresence custom={dir} mode="popLayout">
           <motion.div
             key={index}
@@ -96,23 +96,25 @@ export default function PhotoCarousel() {
         </button>
       </div>
 
-      {/* Dot indicators */}
-      <div className="flex gap-2">
-        {photos.map((_, i) => (
-          <button
-            key={i}
-            onClick={() => setIndex([i, i > index ? 1 : -1])}
-            className={`rounded-full transition-all duration-300 ${
-              i === index
-                ? "w-5 h-2 bg-rose-DEFAULT"
-                : "w-2 h-2 bg-rose-light hover:bg-rose-DEFAULT/50"
-            }`}
-            aria-label={`Go to photo ${i + 1}`}
-          />
-        ))}
-      </div>
-
-      <p className="font-mono text-xs text-ink-muted/50 tracking-widest">DRAG TO SWIPE</p>
+      {!fullHeight && (
+        <>
+          <div className="flex gap-2">
+            {photos.map((_, i) => (
+              <button
+                key={i}
+                onClick={() => setIndex([i, i > index ? 1 : -1])}
+                className={`rounded-full transition-all duration-300 ${
+                  i === index
+                    ? "w-5 h-2 bg-rose-DEFAULT"
+                    : "w-2 h-2 bg-rose-light hover:bg-rose-DEFAULT/50"
+                }`}
+                aria-label={`Go to photo ${i + 1}`}
+              />
+            ))}
+          </div>
+          <p className="font-mono text-xs text-ink-muted/50 tracking-widest">DRAG TO SWIPE</p>
+        </>
+      )}
     </div>
   );
 }
