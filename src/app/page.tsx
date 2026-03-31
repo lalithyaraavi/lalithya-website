@@ -156,10 +156,7 @@ export default function Home() {
       <section id="about" className="px-8 md:px-20 py-24 bg-cream-warm border-y border-rose-light/30">
         <div className="max-w-5xl mx-auto">
           <FadeIn>
-            <p className="font-mono text-xs text-rose-DEFAULT tracking-widest mb-3">ABOUT ME</p>
-            <h2 className="font-display text-5xl md:text-6xl font-light text-ink-DEFAULT mb-12 leading-tight">
-              A little about <em className="text-rose-DEFAULT">me</em>
-            </h2>
+            <p className="font-mono text-xs text-rose-DEFAULT tracking-widest mb-12">ABOUT ME</p>
           </FadeIn>
 
           {/* Bio + photo carousel */}
@@ -178,12 +175,13 @@ export default function Home() {
               </div>
 
               <a
-                href="/resume.pdf"
-                download
+                href="https://drive.google.com/file/d/1j6VyTV4V8ye_sZjhb-arsF7vOkQVspTS/view?usp=sharing"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="mt-8 inline-flex items-center gap-2 px-6 py-3 rounded-full border-2 border-rose-DEFAULT text-rose-DEFAULT font-body hover:bg-rose-DEFAULT hover:text-cream-DEFAULT transition-all group"
               >
-                <span>Download Resume</span>
-                <span className="group-hover:translate-y-0.5 transition-transform">↓</span>
+                <span>View Resume</span>
+                <span className="group-hover:translate-x-0.5 transition-transform">→</span>
               </a>
             </FadeIn>
 
