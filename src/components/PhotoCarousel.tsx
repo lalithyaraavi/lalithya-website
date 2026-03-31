@@ -2,17 +2,11 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 
-// ─────────────────────────────────────────────────────────
-// Add your own photos here!
-// Put image files in the /public/photos/ folder and update
-// the `src` paths below. Labels are optional captions.
-// ─────────────────────────────────────────────────────────
 const photos = [
   { src: "/photos/photo1.jpg", label: "📍 Waterloo" },
   { src: "/photos/photo2.jpg", label: "✨ Good times" },
   { src: "/photos/photo3.jpg", label: "🌸 Fort Mac" },
   { src: "/photos/photo4.jpg", label: "🎓 Campus" },
-  { src: "/photos/photo5.jpg", label: "💛 Me!" },
 ];
 
 const variants = {
@@ -33,7 +27,7 @@ export default function PhotoCarousel() {
   return (
     <div className="flex flex-col items-center gap-4 select-none">
       {/* Main card */}
-      <div className="relative w-full aspect-[3/4] rounded-4xl overflow-hidden bg-cream-warm border border-rose-light/40 shadow-xl shadow-rose-light/20">
+      <div className="relative w-full rounded-4xl overflow-hidden bg-cream-warm border border-rose-light/40 shadow-xl shadow-rose-light/20">
         <AnimatePresence custom={dir} mode="popLayout">
           <motion.div
             key={index}
@@ -50,27 +44,15 @@ export default function PhotoCarousel() {
               if (info.offset.x < -60) paginate(1);
               else if (info.offset.x > 60) paginate(-1);
             }}
-            className="absolute inset-0 cursor-grab active:cursor-grabbing"
+            className="cursor-grab active:cursor-grabbing"
           >
-            {/* Placeholder shown when no real photo exists */}
-            <div className="w-full h-full flex flex-col items-center justify-center bg-gradient-to-br from-rose-light/60 via-cream-warm to-lavender/30 relative">
-              {/* Try to load real image; falls back to placeholder */}
-              <img
-                src={current.src}
-                alt={current.label}
-                className="absolute inset-0 w-full h-full object-cover"
-                onError={(e) => { (e.target as HTMLImageElement).style.display = "none"; }}
-              />
-              {/* Placeholder behind image */}
-              <div className="relative z-0 flex flex-col items-center justify-center gap-3 text-center px-8">
-                <div className="text-6xl animate-float">🌸</div>
-                <p className="font-mono text-xs text-rose-DEFAULT tracking-widest">ADD YOUR PHOTO</p>
-                <p className="font-body text-xs text-ink-muted/60 leading-relaxed">
-                  Drop an image in<br />
-                  <code className="text-rose-DEFAULT">/public/photos/photo{index + 1}.jpg</code>
-                </p>
-              </div>
-            </div>
+            <img
+              src={current.src}
+              alt={current.label}
+              className="w-full h-auto block"
+              style={{ filter: "none", mixBlendMode: "normal" }}
+              onError={(e) => { (e.target as HTMLImageElement).style.display = "none"; }}
+            />
           </motion.div>
         </AnimatePresence>
 

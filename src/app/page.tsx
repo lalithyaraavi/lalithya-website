@@ -9,9 +9,8 @@ import PhotoCarousel from "@/components/PhotoCarousel";
 const ticker = ["UX Design ✦", "Systems Thinking ✦", "C++ ✦", "React ✦", "Figma ✦", "Product Design ✦", "TypeScript ✦", "Speculative Design ✦", "Waterloo SYDE ✦", "Frontend Dev ✦"];
 
 const experience = [
-  { role: "Co-op Student", company: "Suncor Energy", period: "2024", type: "Work" },
-  { role: "Women in Tech Initiative", company: "University of Waterloo", period: "2023–present", type: "Leadership" },
-  { role: "Systems Design Engineering", company: "University of Waterloo", period: "2023–2027", type: "Education" },
+  { role: "Operations Analyst", company: "Suncor Energy", period: "Jan 2026 – Apr 2026", type: "Work" },
+  { role: "Member Engagement Intern", company: "Fort McMurray Chamber of Commerce", period: "Jun 2025 – Aug 2025", type: "Work" },
 ];
 
 export default function Home() {
@@ -176,15 +175,6 @@ export default function Home() {
                 </p>
               </div>
 
-              <a
-                href="https://drive.google.com/file/d/1j6VyTV4V8ye_sZjhb-arsF7vOkQVspTS/view?usp=sharing"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="mt-8 inline-flex items-center gap-2 px-6 py-3 rounded-full border-2 border-rose-DEFAULT text-rose-DEFAULT font-body hover:bg-rose-DEFAULT hover:text-cream-DEFAULT transition-all group"
-              >
-                <span>View Resume</span>
-                <span className="group-hover:translate-x-0.5 transition-transform">→</span>
-              </a>
             </FadeIn>
 
             <FadeIn delay={0.15}>
