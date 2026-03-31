@@ -3,9 +3,9 @@ import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 
 const photos = [
-  { src: "/photos/photo1.jpg", label: "📍 Waterloo" },
-  { src: "/photos/photo2.jpg", label: "✨ Good times" },
-  { src: "/photos/photo3.jpg", label: "🌸 Fort Mac" },
+  { src: "/photos/photo.JPG", label: "📍 Waterloo" },
+  { src: "/photos/photo2.JPG", label: "✨ Good times" },
+  { src: "/photos/photo3.jpeg", label: "🌸 Fort Mac" },
   { src: "/photos/photo4.jpg", label: "🎓 Campus" },
 ];
 
