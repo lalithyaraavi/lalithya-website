@@ -122,7 +122,7 @@ export default function Home() {
         <div className={CONTAINER}>
           <FadeIn>
             <h2 className={`${HEADING} mb-8`}>
-              A little about <em className="text-rose-DEFAULT">me</em>
+              A little bit about <em className="text-rose-DEFAULT">me</em>
             </h2>
           </FadeIn>
 

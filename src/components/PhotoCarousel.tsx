@@ -89,7 +89,6 @@ export default function PhotoCarousel() {
         ))}
       </div>
 
-      <p className="font-mono text-xs text-ink-muted/50 tracking-widest">DRAG TO SWIPE</p>
     </div>
   );
 }
