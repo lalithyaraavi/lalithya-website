@@ -27,7 +27,7 @@ export default function PhotoCarousel() {
   return (
     <div className="flex flex-col items-center gap-4 select-none">
       {/* Main card */}
-      <div className="relative w-full rounded-4xl overflow-hidden bg-cream-warm border border-rose-light/40 shadow-xl shadow-rose-light/20">
+      <div className="relative w-full aspect-square rounded-4xl overflow-hidden bg-cream-warm border border-rose-light/40 shadow-xl shadow-rose-light/20">
         <AnimatePresence custom={dir} mode="popLayout">
           <motion.div
             key={index}
@@ -44,12 +44,12 @@ export default function PhotoCarousel() {
               if (info.offset.x < -60) paginate(1);
               else if (info.offset.x > 60) paginate(-1);
             }}
-            className="cursor-grab active:cursor-grabbing"
+            className="absolute inset-0 cursor-grab active:cursor-grabbing"
           >
             <img
               src={current.src}
               alt={current.label}
-              className="w-full h-auto block"
+              className="w-full h-full object-cover"
               style={{ filter: "none", mixBlendMode: "normal" }}
               onError={(e) => { (e.target as HTMLImageElement).style.display = "none"; }}
             />

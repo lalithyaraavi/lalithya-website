@@ -161,9 +161,9 @@ export default function Home() {
           </FadeIn>
 
           {/* Bio + photo carousel */}
-          <div className="grid md:grid-cols-[1fr_1.2fr] gap-16 items-start mb-20">
+          <div className="grid md:grid-cols-[1fr_1.2fr] gap-16 items-stretch mb-20">
             <FadeIn delay={0.1}>
-              <div className="space-y-5 font-body text-ink-DEFAULT text-lg leading-relaxed">
+              <div className="flex flex-col justify-center h-full space-y-5 font-body text-ink-DEFAULT text-lg leading-relaxed">
                 <p>
                   I&apos;m a <span className="font-semibold">Systems Design Engineering</span> student at the University of Waterloo.
                 </p>
@@ -177,7 +177,9 @@ export default function Home() {
             </FadeIn>
 
             <FadeIn delay={0.15}>
-              <PhotoCarousel />
+              <div className="h-full">
+                <PhotoCarousel />
+              </div>
             </FadeIn>
           </div>
 
