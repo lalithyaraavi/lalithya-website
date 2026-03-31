@@ -16,9 +16,9 @@ const experience = [
 // Shared layout constants
 const SECTION_PAD = "px-8 md:px-16";
 const CONTAINER   = "max-w-5xl mx-auto";
-const LABEL       = "font-mono text-xs text-rose-DEFAULT tracking-widest";
-const HEADING     = "font-display text-5xl md:text-6xl font-light text-ink-DEFAULT leading-tight";
-const BODY        = "font-body text-base text-ink-muted leading-relaxed";
+const LABEL       = "font-mono text-sm text-rose-DEFAULT tracking-widest";
+const HEADING     = "font-display text-6xl md:text-7xl font-light text-ink-DEFAULT leading-tight";
+const BODY        = "font-body text-lg text-ink-muted leading-relaxed";
 
 export default function Home() {
   return (
@@ -58,17 +58,17 @@ export default function Home() {
             </motion.h1>
 
             <motion.p initial={{ opacity: 0, y: 24 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7, delay: 0.55 }}
-              className={`${BODY} text-base mb-10`}>
+              className={`${BODY} mb-10`}>
               So glad you&apos;re here! I love working on things that make people&apos;s lives a little easier, and a little more interesting.
             </motion.p>
 
             <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, delay: 0.68 }}
               className="flex flex-wrap justify-center gap-4">
-              <a href="#about" className="inline-flex items-center gap-2 px-7 py-3.5 rounded-full bg-rose-DEFAULT text-cream-DEFAULT font-body text-base hover:bg-rose-dark transition-all group">
+              <a href="#about" className="inline-flex items-center gap-2 px-7 py-3.5 rounded-full bg-rose-DEFAULT text-cream-DEFAULT font-body text-lg hover:bg-rose-dark transition-all group">
                 Learn more about me
                 <motion.span animate={{ y: [0, 3, 0] }} transition={{ duration: 1.5, repeat: Infinity }}>↓</motion.span>
               </a>
-              <Link href="/projects" className="inline-flex items-center gap-2 px-7 py-3.5 rounded-full border border-rose-light/60 text-ink-DEFAULT font-body text-base hover:border-rose-DEFAULT hover:bg-rose-light/20 transition-all">
+              <Link href="/projects" className="inline-flex items-center gap-2 px-7 py-3.5 rounded-full border border-rose-light/60 text-ink-DEFAULT font-body text-lg hover:border-rose-DEFAULT hover:bg-rose-light/20 transition-all">
                 View my work →
               </Link>
             </motion.div>
@@ -174,7 +174,7 @@ export default function Home() {
                 >
                   <div className="absolute -left-[1.375rem] top-1.5 w-3 h-3 rounded-full bg-rose-DEFAULT border-2 border-cream-warm" />
                   <p className={`${LABEL} mb-1`}>{exp.period}</p>
-                  <p className="font-body text-base font-medium text-ink-DEFAULT leading-snug">{exp.role}</p>
+                  <p className="font-body text-xl font-medium text-ink-DEFAULT leading-snug">{exp.role}</p>
                   <p className={BODY}>{exp.company}</p>
                 </motion.div>
               ))}
