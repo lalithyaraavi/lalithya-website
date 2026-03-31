@@ -13,7 +13,7 @@ export default function ProjectsPage() {
         </p>
       </FadeIn>
 
-      <div className="columns-2 md:columns-3 gap-4">
+      <div className="columns-2 md:columns-3 gap-4 max-w-4xl mx-auto">
         {projects.map((p, i) => (
           <div key={p.slug} className="break-inside-avoid mb-4">
             <ProjectCard project={p} index={i} />

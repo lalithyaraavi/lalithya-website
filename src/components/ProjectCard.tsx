@@ -15,12 +15,12 @@ export default function ProjectCard({ project, index }: { project: Project; inde
       <Link href={`/projects/${project.slug}`} className="group block rounded-4xl overflow-hidden border border-rose-light/40 hover:border-rose-DEFAULT/60 transition-all duration-300 hover:shadow-xl hover:shadow-rose-light/30">
         {/* Card header */}
         {project.image || project.images?.[0] ? (
-          <div className="overflow-hidden flex items-center justify-center" style={{ backgroundColor: project.color }}>
+          <div className="overflow-hidden">
             <img
               src={project.images?.[0] ?? project.image}
               alt={project.title}
-              className="w-full object-contain"
-              style={{ filter: "none", mixBlendMode: "normal", maxHeight: "160px" }}
+              className="w-full h-auto block"
+              style={{ filter: "none", mixBlendMode: "normal" }}
             />
           </div>
         ) : (
