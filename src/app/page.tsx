@@ -129,7 +129,7 @@ export default function Home() {
             <div>
               <p className="font-mono text-xs text-rose-DEFAULT tracking-widest mb-3">SELECTED WORK</p>
               <h2 className="font-display text-5xl md:text-6xl font-light text-ink-DEFAULT mb-3">Projects</h2>
-              <p className="font-body text-ink-muted max-w-md leading-relaxed">
+              <p className="font-body text-ink-muted text-xl md:text-2xl leading-relaxed max-w-3xl">
                 Welcome to my portfolio. Here you&apos;ll find a collection of design and research projects, exploring systems thinking and problem solving as I navigate the world of engineering.
               </p>
             </div>

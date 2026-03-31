@@ -8,8 +8,8 @@ export default function ProjectsPage() {
       <FadeIn>
         <p className="font-mono text-xs text-rose-DEFAULT tracking-widest mb-4">SELECTED WORK</p>
         <h1 className="font-display text-6xl md:text-7xl font-light text-ink-DEFAULT mb-4">Projects</h1>
-        <p className="font-body text-ink-muted max-w-xl mb-16 text-lg leading-relaxed">
-          A collection of design, engineering, and speculative futures work — from safety apps to soil sensors.
+        <p className="font-body text-ink-muted text-xl md:text-2xl leading-relaxed max-w-3xl mb-16">
+          Welcome to my portfolio. Here you&apos;ll find a collection of design and research projects, exploring systems thinking and problem solving as I navigate the world of engineering.
         </p>
       </FadeIn>
 
