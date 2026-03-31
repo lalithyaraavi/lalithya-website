@@ -7,7 +7,7 @@ import FadeIn from "@/components/FadeIn";
 import PhotoCarousel from "@/components/PhotoCarousel";
 import Blobs from "@/components/Blobs";
 
-const ticker = ["UX Design ✦", "Systems Thinking ✦", "C++ ✦", "React ✦", "Figma ✦", "Product Design ✦", "TypeScript ✦", "Speculative Design ✦", "Waterloo SYDE ✦", "Frontend Dev ✦"];
+const ticker = ["UX Design ✦", "Systems Thinking ✦", "C++ ✦", "React ✦", "Figma ✦", "Product Design ✦", "SolidWorks ✦", "Data Analysis ✦", "Waterloo SYDE ✦", "Frontend Dev ✦"];
 
 const experience = [
   { role: "Operations Analyst", company: "Suncor Energy", period: "Jan 2026 – Apr 2026" },
