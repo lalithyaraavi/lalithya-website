@@ -56,11 +56,6 @@ export default function PhotoCarousel() {
           </motion.div>
         </AnimatePresence>
 
-        {/* Caption pill */}
-        <div className="absolute bottom-4 left-1/2 -translate-x-1/2 z-10 px-4 py-1.5 rounded-full bg-cream-DEFAULT/80 backdrop-blur border border-rose-light/40">
-          <p className="font-mono text-xs text-ink-DEFAULT whitespace-nowrap">{current.label}</p>
-        </div>
-
         {/* Prev / Next buttons */}
         <button
           onClick={() => paginate(-1)}

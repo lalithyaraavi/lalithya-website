@@ -123,7 +123,7 @@ export default function Home() {
       </div>
 
       {/* ── 2. PROJECTS ───────────────────────────────────── */}
-      <section id="projects" className="px-8 md:px-20 py-24">
+      <section id="projects" className="px-4 md:px-8 py-24">
         <FadeIn>
           <div className="flex items-end justify-between mb-14">
             <div>
@@ -136,7 +136,7 @@ export default function Home() {
           </div>
         </FadeIn>
 
-        <div className="columns-2 md:columns-3 gap-4 max-w-4xl mx-auto">
+        <div className="columns-2 md:columns-3 gap-4">
           {projects.slice(0, 6).map((p, i) => (
             <div key={p.slug} className="break-inside-avoid mb-4">
               <ProjectCard project={p} index={i} />
@@ -152,8 +152,8 @@ export default function Home() {
       </section>
 
       {/* ── 3. ABOUT + EXPERIENCE ─────────────────────────── */}
-      <section id="about" className="px-8 md:px-20 py-24 bg-cream-warm border-y border-rose-light/30">
-        <div className="max-w-5xl mx-auto">
+      <section id="about" className="px-8 md:px-16 py-24 bg-cream-warm border-y border-rose-light/30">
+        <div className="max-w-6xl mx-auto">
           <FadeIn>
             <h2 className="font-display text-5xl md:text-6xl font-light text-ink-DEFAULT mb-12 leading-tight">
               A little about <em className="text-rose-DEFAULT">me</em>
@@ -161,43 +161,52 @@ export default function Home() {
           </FadeIn>
 
           {/* Bio + photo carousel */}
-          <div className="grid md:grid-cols-2 gap-12 items-start mb-16">
+          <div className="grid md:grid-cols-[1fr_1.2fr] gap-16 items-start mb-20">
             <FadeIn delay={0.1}>
-              <div className="space-y-4 font-body text-ink-muted leading-relaxed">
+              <div className="space-y-5 font-body text-ink-DEFAULT text-lg leading-relaxed">
                 <p>
-                  I&apos;m a <span className="text-ink-DEFAULT font-medium">Systems Design Engineering</span> student at the University of Waterloo.
+                  I&apos;m a <span className="font-semibold">Systems Design Engineering</span> student at the University of Waterloo.
                 </p>
                 <p>
-                  I care about designing things that are actually useful - products, tools, and experiences that sit at the intersection of people and technology.
+                  I care about designing things that are actually useful — products, tools, and experiences that sit at the intersection of people and technology.
                 </p>
                 <p>
                   Outside of school, I&apos;m involved in Women in Tech on campus, I bake a lot, and I&apos;m always working on a side project.
                 </p>
               </div>
-
             </FadeIn>
 
             <FadeIn delay={0.15}>
-              <div className="max-w-xs"><PhotoCarousel /></div>
+              <PhotoCarousel />
             </FadeIn>
           </div>
 
-          {/* Experience timeline */}
+          {/* Experience — vertical timeline */}
           <FadeIn delay={0.2}>
-            <p className="font-mono text-xs text-rose-DEFAULT tracking-widest mb-6">EXPERIENCE</p>
-            <div className="space-y-4">
-              {experience.map((exp) => (
-                <div key={exp.role} className="flex items-start gap-6 p-5 rounded-3xl bg-cream-DEFAULT border border-rose-light/30 hover:border-rose-DEFAULT/40 transition-all">
-                  <span className="font-mono text-xs text-ink-muted/50 pt-0.5 w-24 shrink-0">{exp.period}</span>
-                  <div className="flex-1">
-                    <p className="font-body font-medium text-ink-DEFAULT">{exp.role}</p>
-                    <p className="font-body text-sm text-ink-muted">{exp.company}</p>
-                  </div>
-                  <span className="px-3 py-1 rounded-full bg-cream-warm text-xs font-mono text-rose-DEFAULT border border-rose-light/40 shrink-0">{exp.type}</span>
-                </div>
+            <p className="font-mono text-xs text-rose-DEFAULT tracking-widest mb-10">EXPERIENCE</p>
+          </FadeIn>
+          <div className="relative pl-6">
+            {/* Vertical line */}
+            <div className="absolute left-0 top-0 bottom-0 w-px bg-rose-light/60" />
+            <div className="space-y-10">
+              {experience.map((exp, i) => (
+                <motion.div
+                  key={exp.role}
+                  initial={{ opacity: 0, y: 24 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true, margin: "-40px" }}
+                  transition={{ duration: 0.5, delay: i * 0.1, ease: [0.22, 1, 0.36, 1] }}
+                  className="relative"
+                >
+                  {/* Dot on line */}
+                  <div className="absolute -left-[1.375rem] top-1.5 w-3 h-3 rounded-full bg-rose-DEFAULT border-2 border-cream-warm" />
+                  <p className="font-mono text-xs text-rose-DEFAULT tracking-widest mb-1">{exp.period}</p>
+                  <p className="font-body font-semibold text-ink-DEFAULT text-lg leading-snug">{exp.role}</p>
+                  <p className="font-body text-ink-muted">{exp.company}</p>
+                </motion.div>
               ))}
             </div>
-          </FadeIn>
+          </div>
         </div>
       </section>
 
