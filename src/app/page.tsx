@@ -125,12 +125,15 @@ export default function Home() {
       {/* ── 2. PROJECTS ───────────────────────────────────── */}
       <section id="projects" className="px-4 md:px-8 py-24">
         <FadeIn>
-          <div className="flex items-end justify-between mb-14">
+          <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-14">
             <div>
               <p className="font-mono text-xs text-rose-DEFAULT tracking-widest mb-3">SELECTED WORK</p>
-              <h2 className="font-display text-5xl md:text-6xl font-light text-ink-DEFAULT">Projects</h2>
+              <h2 className="font-display text-5xl md:text-6xl font-light text-ink-DEFAULT mb-3">Projects</h2>
+              <p className="font-body text-ink-muted max-w-md leading-relaxed">
+                Welcome to my portfolio. Here you&apos;ll find a collection of design and research projects, exploring systems thinking and problem solving as I navigate the world of engineering.
+              </p>
             </div>
-            <Link href="/projects" className="hidden md:flex items-center gap-2 text-sm font-body text-ink-muted hover:text-rose-DEFAULT transition-colors group">
+            <Link href="/projects" className="hidden md:flex items-center gap-2 text-sm font-body text-ink-muted hover:text-rose-DEFAULT transition-colors group shrink-0">
               All projects <span className="group-hover:translate-x-1 transition-transform">→</span>
             </Link>
           </div>
@@ -155,7 +158,7 @@ export default function Home() {
       <section id="about" className="px-8 md:px-16 py-24 bg-cream-warm border-y border-rose-light/30">
         <div className="max-w-6xl mx-auto">
           <FadeIn>
-            <h2 className="font-display text-5xl md:text-6xl font-light text-ink-DEFAULT mb-12 leading-tight">
+            <h2 className="font-display text-5xl md:text-6xl font-light text-ink-DEFAULT mb-6 leading-tight">
               A little about <em className="text-rose-DEFAULT">me</em>
             </h2>
           </FadeIn>

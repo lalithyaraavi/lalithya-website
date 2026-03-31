@@ -6,12 +6,7 @@ export default function Footer() {
       <p className="font-display italic text-ink-muted text-sm">
         Designed with care (and too much coffee) ☕
       </p>
-      <div className="flex gap-6 text-sm font-body text-ink-muted">
-        <Link href="https://linkedin.com" target="_blank" className="hover:text-rose-DEFAULT transition-colors">LinkedIn</Link>
-        <Link href="https://github.com" target="_blank" className="hover:text-rose-DEFAULT transition-colors">GitHub</Link>
-        <a href="mailto:hello@lalithya.com" className="hover:text-rose-DEFAULT transition-colors">Email</a>
-      </div>
-      <p className="font-mono text-xs text-ink-muted/60">© 2025 Lalithya Potturu</p>
+      <p className="font-mono text-xs text-ink-muted/60">© Lalithya Raavi</p>
     </footer>
   );
 }
