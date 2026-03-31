@@ -162,7 +162,7 @@ export default function Home() {
           </FadeIn>
 
           {/* Bio + photo carousel */}
-          <div className="grid md:grid-cols-2 gap-12 items-start mb-16">
+          <div className="grid md:grid-cols-[1fr_1.4fr] gap-12 items-start mb-16">
             <FadeIn delay={0.1}>
               <div className="space-y-4 font-body text-ink-muted leading-relaxed">
                 <p>
@@ -176,19 +176,10 @@ export default function Home() {
                 </p>
               </div>
 
-              <a
-                href="https://drive.google.com/file/d/1j6VyTV4V8ye_sZjhb-arsF7vOkQVspTS/view?usp=sharing"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="mt-8 inline-flex items-center gap-2 px-6 py-3 rounded-full border-2 border-rose-DEFAULT text-rose-DEFAULT font-body hover:bg-rose-DEFAULT hover:text-cream-DEFAULT transition-all group"
-              >
-                <span>View Resume</span>
-                <span className="group-hover:translate-x-0.5 transition-transform">→</span>
-              </a>
             </FadeIn>
 
             <FadeIn delay={0.15}>
-              <div className="max-w-xs"><PhotoCarousel /></div>
+              <PhotoCarousel />
             </FadeIn>
           </div>
 
