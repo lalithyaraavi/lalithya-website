@@ -4,43 +4,44 @@ import { motion } from "framer-motion";
 import { Project } from "@/data/content";
 
 export default function ProjectCard({ project, index }: { project: Project; index: number }) {
+  const img = project.images?.[0] ?? project.image;
+
   return (
     <motion.div
-      initial={{ opacity: 0, y: 32 }}
+      initial={{ opacity: 0, y: 24 }}
       whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, margin: "-40px" }}
-      transition={{ duration: 0.55, delay: index * 0.08, ease: [0.22, 1, 0.36, 1] }}
-      whileHover={{ y: -6 }}
+      viewport={{ once: true, margin: "-20px" }}
+      transition={{ duration: 0.5, delay: index * 0.06, ease: [0.22, 1, 0.36, 1] }}
     >
-      <Link href={`/projects/${project.slug}`} className="group block rounded-4xl overflow-hidden border border-rose-light/40 hover:border-rose-DEFAULT/60 transition-all duration-300 hover:shadow-xl hover:shadow-rose-light/30">
-        {/* Card header */}
-        {project.image || project.images?.[0] ? (
+      <Link
+        href={`/projects/${project.slug}`}
+        className="group block rounded-2xl overflow-hidden bg-cream-warm hover:shadow-lg hover:shadow-rose-light/25 transition-all duration-300"
+      >
+        {/* Image */}
+        {img ? (
           <div className="overflow-hidden">
-            <img
-              src={project.images?.[0] ?? project.image}
+            <motion.img
+              src={img}
               alt={project.title}
-              className="w-full h-auto block"
+              className="w-full h-auto block group-hover:scale-[1.02] transition-transform duration-500"
               style={{ filter: "none", mixBlendMode: "normal" }}
             />
           </div>
         ) : (
-          <div className="h-40 relative overflow-hidden" style={{ backgroundColor: project.color }}>
-            <div className="absolute -right-8 -top-8 w-32 h-32 rounded-full opacity-40 blob" style={{ backgroundColor: project.color, filter: "saturate(1.4) brightness(0.9)" }} />
-          </div>
+          <div className="h-32" style={{ backgroundColor: project.color }} />
         )}
 
-        {/* Content */}
-        <div className="p-2.5 bg-cream-DEFAULT">
-          <div className="flex items-start justify-between gap-2 mb-0.5">
-            <h3 className="font-display text-sm font-light text-ink-DEFAULT group-hover:text-rose-DEFAULT transition-colors leading-snug">
+        {/* Meta */}
+        <div className="px-3 py-2.5">
+          <div className="flex items-start justify-between gap-2 mb-1">
+            <h3 className="font-body text-xs font-medium text-ink-DEFAULT group-hover:text-rose-DEFAULT transition-colors leading-snug">
               {project.title}
             </h3>
-            <span className="font-mono text-[9px] text-ink-muted mt-0.5 shrink-0">{project.year}</span>
+            <span className="font-mono text-[9px] text-ink-muted/60 shrink-0 mt-px">{project.year}</span>
           </div>
-          <p className="font-body text-[10px] text-ink-muted mb-1.5 leading-relaxed">{project.tagline}</p>
           <div className="flex flex-wrap gap-1">
-            {project.tags.map((tag) => (
-              <span key={tag} className="px-1.5 py-0.5 rounded-full bg-cream-warm text-ink-muted text-[9px] font-body border border-rose-light/30">
+            {project.tags.slice(0, 2).map((tag) => (
+              <span key={tag} className="font-mono text-[8px] text-rose-DEFAULT/70 tracking-wide">
                 {tag}
               </span>
             ))}
