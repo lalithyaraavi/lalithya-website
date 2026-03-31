@@ -63,25 +63,15 @@ export default function Home() {
               So glad you&apos;re here! I love working on things that make people&apos;s lives a little easier, and a little more interesting.
             </motion.p>
 
-            <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, delay: 0.68 }}
-              className="flex flex-wrap justify-center gap-4">
-              <a href="#about" className="inline-flex items-center gap-2 px-8 py-4 rounded-full bg-rose-DEFAULT text-cream-DEFAULT font-body text-xl hover:bg-rose-dark transition-all group">
+            <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, delay: 0.68 }}>
+              <a href="#about" className="inline-flex items-center gap-2 text-ink-DEFAULT font-body text-xl hover:text-rose-DEFAULT transition-colors">
                 Learn more about me
                 <motion.span animate={{ y: [0, 3, 0] }} transition={{ duration: 1.5, repeat: Infinity }}>↓</motion.span>
               </a>
-              <Link href="/projects" className="inline-flex items-center gap-2 px-8 py-4 rounded-full border border-rose-light/60 text-ink-DEFAULT font-body text-xl hover:border-rose-DEFAULT hover:bg-rose-light/20 transition-all">
-                View my work →
-              </Link>
             </motion.div>
           </div>
         </div>
 
-        <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 1.2 }}
-          className="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2">
-          <span className={`${LABEL} opacity-40`}>SCROLL</span>
-          <motion.div animate={{ y: [0, 8, 0] }} transition={{ duration: 1.5, repeat: Infinity }}
-            className="w-px h-8 bg-gradient-to-b from-rose-DEFAULT/50 to-transparent" />
-        </motion.div>
       </section>
 
       {/* ── Skills Ticker ─────────────────────────────────── */}
@@ -141,13 +131,10 @@ export default function Home() {
             <FadeIn delay={0.1}>
               <div className={`flex flex-col justify-center h-full space-y-4 ${BODY}`}>
                 <p>
-                  I&apos;m a <span className="text-ink-DEFAULT font-medium">Systems Design Engineering</span> student at the University of Waterloo.
+                  Hello! I&apos;m Lali, a <span className="text-ink-DEFAULT font-medium">Systems Design Engineering</span> student at the University of Waterloo. I love breaking down messy, complex problems and rethinking them as systems that actually work for people. I&apos;ve spent a lot of time working with data and design, using both to build and iterate on solutions that are practical and user-focused.
                 </p>
                 <p>
-                  I care about designing things that are actually useful — products, tools, and experiences that sit at the intersection of people and technology.
-                </p>
-                <p>
-                  Outside of school, I&apos;m involved in Women in Tech on campus, I bake a lot, and I&apos;m always working on a side project.
+                  I love getting involved within the community especially mentoring younger kids, or you could always catch me with my head deep in a book or my hands deep in baking.
                 </p>
               </div>
             </FadeIn>
