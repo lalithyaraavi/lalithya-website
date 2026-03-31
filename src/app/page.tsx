@@ -5,6 +5,7 @@ import { projects } from "@/data/content";
 import ProjectCard from "@/components/ProjectCard";
 import FadeIn from "@/components/FadeIn";
 import PhotoCarousel from "@/components/PhotoCarousel";
+import Blobs from "@/components/Blobs";
 
 const ticker = ["UX Design ✦", "Systems Thinking ✦", "C++ ✦", "React ✦", "Figma ✦", "Product Design ✦", "TypeScript ✦", "Speculative Design ✦", "Waterloo SYDE ✦", "Frontend Dev ✦"];
 
@@ -16,9 +17,9 @@ const experience = [
 // Shared layout constants
 const SECTION_PAD = "px-8 md:px-16";
 const CONTAINER   = "max-w-5xl mx-auto";
-const LABEL       = "font-mono text-sm text-rose-DEFAULT tracking-widest";
-const HEADING     = "font-display text-6xl md:text-7xl font-light text-ink-DEFAULT leading-tight";
-const BODY        = "font-body text-lg text-ink-muted leading-relaxed";
+const LABEL       = "font-mono text-base text-rose-DEFAULT tracking-widest";
+const HEADING     = "font-display text-7xl md:text-8xl font-light text-ink-DEFAULT leading-tight";
+const BODY        = "font-body text-xl text-ink-muted leading-relaxed";
 
 export default function Home() {
   return (
@@ -58,17 +59,17 @@ export default function Home() {
             </motion.h1>
 
             <motion.p initial={{ opacity: 0, y: 24 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7, delay: 0.55 }}
-              className={`${BODY} mb-10`}>
+              className={`${BODY} mb-10 max-w-lg`}>
               So glad you&apos;re here! I love working on things that make people&apos;s lives a little easier, and a little more interesting.
             </motion.p>
 
             <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, delay: 0.68 }}
               className="flex flex-wrap justify-center gap-4">
-              <a href="#about" className="inline-flex items-center gap-2 px-7 py-3.5 rounded-full bg-rose-DEFAULT text-cream-DEFAULT font-body text-lg hover:bg-rose-dark transition-all group">
+              <a href="#about" className="inline-flex items-center gap-2 px-8 py-4 rounded-full bg-rose-DEFAULT text-cream-DEFAULT font-body text-xl hover:bg-rose-dark transition-all group">
                 Learn more about me
                 <motion.span animate={{ y: [0, 3, 0] }} transition={{ duration: 1.5, repeat: Infinity }}>↓</motion.span>
               </a>
-              <Link href="/projects" className="inline-flex items-center gap-2 px-7 py-3.5 rounded-full border border-rose-light/60 text-ink-DEFAULT font-body text-lg hover:border-rose-DEFAULT hover:bg-rose-light/20 transition-all">
+              <Link href="/projects" className="inline-flex items-center gap-2 px-8 py-4 rounded-full border border-rose-light/60 text-ink-DEFAULT font-body text-xl hover:border-rose-DEFAULT hover:bg-rose-light/20 transition-all">
                 View my work →
               </Link>
             </motion.div>
@@ -93,7 +94,8 @@ export default function Home() {
       </div>
 
       {/* ── 2. PROJECTS ───────────────────────────────────── */}
-      <section id="projects" className={`${SECTION_PAD} py-24`}>
+      <section id="projects" className={`relative ${SECTION_PAD} py-24 overflow-hidden`}>
+        <Blobs />
         <FadeIn>
           <div className={`${CONTAINER} flex flex-col md:flex-row md:items-end justify-between gap-4 mb-14`}>
             <div>
@@ -125,7 +127,8 @@ export default function Home() {
       </section>
 
       {/* ── 3. ABOUT + EXPERIENCE ─────────────────────────── */}
-      <section id="about" className={`${SECTION_PAD} py-24 bg-cream-warm border-y border-rose-light/30`}>
+      <section id="about" className={`relative ${SECTION_PAD} py-24 bg-cream-warm border-y border-rose-light/30 overflow-hidden`}>
+        <Blobs />
         <div className={CONTAINER}>
           <FadeIn>
             <h2 className={`${HEADING} mb-8`}>
@@ -174,7 +177,7 @@ export default function Home() {
                 >
                   <div className="absolute -left-[1.375rem] top-1.5 w-3 h-3 rounded-full bg-rose-DEFAULT border-2 border-cream-warm" />
                   <p className={`${LABEL} mb-1`}>{exp.period}</p>
-                  <p className="font-body text-xl font-medium text-ink-DEFAULT leading-snug">{exp.role}</p>
+                  <p className="font-body text-2xl font-medium text-ink-DEFAULT leading-snug">{exp.role}</p>
                   <p className={BODY}>{exp.company}</p>
                 </motion.div>
               ))}
@@ -184,7 +187,8 @@ export default function Home() {
       </section>
 
       {/* ── 4. CONTACT ────────────────────────────────────── */}
-      <section id="contact" className={`${SECTION_PAD} py-24`}>
+      <section id="contact" className={`relative ${SECTION_PAD} py-24 overflow-hidden`}>
+        <Blobs />
         <div className={CONTAINER}>
           <FadeIn>
             <p className={`${LABEL} mb-3`}>GET IN TOUCH</p>

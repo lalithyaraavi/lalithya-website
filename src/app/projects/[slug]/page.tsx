@@ -3,6 +3,7 @@ import { notFound } from "next/navigation";
 import Link from "next/link";
 import FadeIn from "@/components/FadeIn";
 import ProjectCarousel from "@/components/ProjectCarousel";
+import Blobs from "@/components/Blobs";
 
 export function generateStaticParams() {
   return projects.map((p) => ({ slug: p.slug }));
@@ -15,7 +16,8 @@ export default function ProjectPage({ params }: { params: { slug: string } }) {
   const images = project.images ?? (project.image ? [project.image] : []);
 
   return (
-    <div className="min-h-screen pt-28 pb-24 px-8 md:px-20">
+    <div className="relative min-h-screen pt-28 pb-24 px-8 md:px-20 overflow-hidden">
+      <Blobs />
 
       {/* Back link */}
       <FadeIn>
