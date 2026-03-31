@@ -156,7 +156,9 @@ export default function Home() {
       <section id="about" className="px-8 md:px-20 py-24 bg-cream-warm border-y border-rose-light/30">
         <div className="max-w-5xl mx-auto">
           <FadeIn>
-            <p className="font-mono text-xs text-rose-DEFAULT tracking-widest mb-12">ABOUT ME</p>
+            <h2 className="font-display text-5xl md:text-6xl font-light text-ink-DEFAULT mb-12 leading-tight">
+              A little about <em className="text-rose-DEFAULT">me</em>
+            </h2>
           </FadeIn>
 
           {/* Bio + photo carousel */}
@@ -239,19 +241,6 @@ export default function Home() {
             </FadeIn>
 
             <FadeIn delay={0.14}>
-              <a
-                href="tel:7807990779"
-                className="group flex flex-col gap-3 p-6 rounded-4xl border border-rose-light/40 bg-cream-DEFAULT hover:border-rose-DEFAULT/50 hover:bg-rose-light/10 transition-all hover:shadow-lg hover:shadow-rose-light/20"
-              >
-                <span className="text-3xl">📱</span>
-                <div>
-                  <p className="font-mono text-xs text-rose-DEFAULT tracking-widest mb-1">PHONE</p>
-                  <p className="font-body text-sm text-ink-DEFAULT group-hover:text-rose-DEFAULT transition-colors">(780) 799-0779</p>
-                </div>
-              </a>
-            </FadeIn>
-
-            <FadeIn delay={0.2}>
               <a
                 href="https://linkedin.com/in/lalithya-raavi"
                 target="_blank"
