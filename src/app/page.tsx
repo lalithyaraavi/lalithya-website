@@ -191,7 +191,7 @@ export default function Home() {
               Say <em className="text-rose-DEFAULT">hello</em>
             </h2>
             <p className={`${BODY} mb-12 max-w-md`}>
-              Whether it&apos;s a collab, a co-op, or just a chat, I&apos;m always happy to connect.
+              Whether it&apos;s an idea, a co-op, or just a chat, I&apos;m always happy to connect!
             </p>
           </FadeIn>
 
