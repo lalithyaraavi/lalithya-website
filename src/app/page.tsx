@@ -120,82 +120,30 @@ export default function Home() {
       <section id="about" className={`relative ${SECTION_PAD} py-24 bg-cream-warm border-y border-rose-light/30 overflow-hidden`}>
         <Blobs />
         <div className={CONTAINER}>
-          {/* Heading — word-by-word slide up */}
-          <h2 className={`${HEADING} mb-8`} aria-label="A little bit about me">
-            {["A", "little", "bit", "about"].map((word, i) => (
-              <span key={word} className="inline-block overflow-hidden leading-[1.1] mr-[0.25em]">
-                <motion.span
-                  className="inline-block"
-                  initial={{ y: "110%" }}
-                  whileInView={{ y: 0 }}
-                  viewport={{ once: true, margin: "-30px" }}
-                  transition={{ duration: 0.55, delay: i * 0.09, ease: [0.22, 1, 0.36, 1] }}
-                >
-                  {word}
-                </motion.span>
-              </span>
-            ))}
-            <span className="inline-block overflow-hidden leading-[1.1]">
-              <motion.em
-                className="not-italic text-rose-DEFAULT inline-block"
-                initial={{ y: "110%" }}
-                whileInView={{ y: 0 }}
-                viewport={{ once: true, margin: "-30px" }}
-                transition={{ duration: 0.55, delay: 0.36, ease: [0.22, 1, 0.36, 1] }}
-              >
-                me
-              </motion.em>
-            </span>
-          </h2>
+          <FadeIn>
+            <h2 className={`${HEADING} mb-8`}>
+              A little bit about <em className="text-rose-DEFAULT">me</em>
+            </h2>
+          </FadeIn>
 
           {/* Bio + photo carousel */}
           <div className="grid md:grid-cols-[1fr_1.2fr] gap-16 items-stretch mb-20">
             <div className={`flex flex-col justify-center h-full space-y-4 ${BODY}`}>
               <motion.p
-                initial={{ opacity: 0, y: 16 }}
+                initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: "-40px" }}
                 transition={{ duration: 0.6, delay: 0.1, ease: [0.22, 1, 0.36, 1] }}
               >
-                Hello!{" "}
-                <motion.span
-                  className="text-rose-DEFAULT font-medium"
-                  initial={{ opacity: 0, y: 6 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true, margin: "-40px" }}
-                  transition={{ duration: 0.5, delay: 0.35, ease: [0.22, 1, 0.36, 1] }}
-                >
-                  I&apos;m Lali
-                </motion.span>
-                , a <span className="text-ink-DEFAULT font-medium">Systems Design Engineering</span> student at the University of Waterloo. I love breaking down messy, complex problems and rethinking them as systems that actually work for people. I&apos;ve spent a lot of time working with data and design, using both to build and iterate on solutions that are practical and user-focused.
+                Hello! I&apos;m Lali, a <span className="text-ink-DEFAULT font-medium">Systems Design Engineering</span> student at the University of Waterloo. I love breaking down complex problems and rethinking them as systems that actually work for people. I&apos;ve spent a lot of time working with data and design, using both to build and iterate on solutions that are practical and user-focused.
               </motion.p>
               <motion.p
-                initial={{ opacity: 0, y: 16 }}
+                initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: "-40px" }}
                 transition={{ duration: 0.6, delay: 0.22, ease: [0.22, 1, 0.36, 1] }}
               >
-                I love getting involved within the community, especially mentoring younger kids. You could always catch me with my head deep in a{" "}
-                <motion.span
-                  className="text-rose-DEFAULT font-medium"
-                  initial={{ opacity: 0, x: -8 }}
-                  whileInView={{ opacity: 1, x: 0 }}
-                  viewport={{ once: true, margin: "-40px" }}
-                  transition={{ duration: 0.4, delay: 0.45, ease: [0.22, 1, 0.36, 1] }}
-                >
-                  book
-                </motion.span>
-                {" "}or my hands deep in{" "}
-                <motion.span
-                  className="text-rose-DEFAULT font-medium"
-                  initial={{ opacity: 0, x: -8 }}
-                  whileInView={{ opacity: 1, x: 0 }}
-                  viewport={{ once: true, margin: "-40px" }}
-                  transition={{ duration: 0.4, delay: 0.6, ease: [0.22, 1, 0.36, 1] }}
-                >
-                  baking
-                </motion.span>
-                .
+                I love getting involved within the community, especially mentoring younger kids. You could always catch me with my head deep in a book or my hands deep in baking.
               </motion.p>
             </div>
 
