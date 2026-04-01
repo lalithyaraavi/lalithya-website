@@ -1,5 +1,5 @@
 "use client";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 
 const photos = [
@@ -21,6 +21,11 @@ export default function PhotoCarousel() {
   const paginate = (newDir: number) => {
     setIndex(([prev]) => [(prev + newDir + photos.length) % photos.length, newDir]);
   };
+
+  useEffect(() => {
+    const timer = setInterval(() => paginate(1), 3500);
+    return () => clearInterval(timer);
+  }, []);
 
   const current = photos[index];
 
