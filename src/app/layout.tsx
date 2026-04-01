@@ -11,6 +11,13 @@ export const metadata: Metadata = {
     title: "Lalithya Raavi",
     description: "Systems Design Engineering student at UWaterloo. Designing human-centred things.",
     type: "website",
+    images: [{ url: "/photos/thumbnail.png" }],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Lalithya Raavi",
+    description: "Systems Design Engineering student at UWaterloo. Designing human-centred things.",
+    images: ["/photos/thumbnail.png"],
   },
 };
 
