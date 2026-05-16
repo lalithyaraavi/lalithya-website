@@ -81,7 +81,7 @@ export default function AboutPage() {
             <p className="font-mono text-xs text-rose-DEFAULT tracking-widest mb-8">EXPERIENCE</p>
             <div className="space-y-6">
               {[
-                { role: "Co-op Student", company: "Suncor Energy", period: "2024", type: "work" },
+                { role: "Data Analyst", company: "Suncor Energy", period: "2024", type: "work" },
                 { role: "Women in Tech Initiative", company: "University of Waterloo", period: "2023–present", type: "leadership" },
                 { role: "Systems Design Engineering", company: "University of Waterloo", period: "2023–2027", type: "education" },
               ].map((exp) => (
