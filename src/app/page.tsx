@@ -10,7 +10,7 @@ import Blobs from "@/components/Blobs";
 const ticker = ["UX Design ✦", "Systems Thinking ✦", "C++ ✦", "React ✦", "Figma ✦", "Product Design ✦", "SolidWorks ✦", "Data Analysis ✦", "Waterloo SYDE ✦", "Frontend Dev ✦"];
 
 const experience = [
-  { role: "Engineering Intern", company: "Suncor Energy", period: "Jan 2026 – Apr 2026" },
+  { role: "Data Analyst", company: "Suncor Energy", period: "Jan 2026 – Apr 2026" },
   { role: "Member Engagement Intern", company: "Fort McMurray Chamber of Commerce", period: "Jun 2025 – Aug 2025" },
 ];
 
