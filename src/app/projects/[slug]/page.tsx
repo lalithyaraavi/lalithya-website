@@ -104,7 +104,7 @@ export default function ProjectPage({ params }: { params: { slug: string } }) {
         {/* Right — carousel */}
         {images.length > 0 && (
           <FadeIn delay={0.15}>
-            <div className="w-full md:w-[380px] lg:w-[420px] shrink-0 sticky top-28">
+            <div className={`w-full shrink-0 sticky top-28 ${project.slug === "spotify-hues" ? "md:w-[540px] lg:w-[640px]" : "md:w-[380px] lg:w-[420px]"}`}>
               <ProjectCarousel images={images} color={project.color} title={project.title} />
             </div>
           </FadeIn>
