@@ -37,6 +37,21 @@ export type BlogPost = {
 
 export const projects: Project[] = [
   {
+    slug: "spotify-hues",
+    title: "Spotify Hues",
+    tagline: "A visual music-sharing experience built around colour and feeling",
+    tags: ["UX Design", "Product Design"],
+    year: "2025",
+    color: "#E8DDFF",
+    images: ["/photos/spotify-hues-hero.png", "/photos/spotify-hues-create.png", "/photos/spotify-hues-post.png"],
+    description:
+      "What if you could show how music feels, not just how it sounds? Spotify Hues is a social music-sharing experience that lets users express songs through custom visual artwork and colour palettes.",
+    links: [
+      { label: "Launch Video", url: "https://www.youtube.com/watch?v=I812NkuWIDU" },
+      { label: "Slide Deck", url: "https://www.figma.com/deck/qDjGfttpcseETq91AqTVSC/Spotify-Hues" },
+    ],
+  },
+  {
     slug: "presense",
     title: "PreSense",
     tagline: "An intuition-powered personal safety app",
