@@ -41,7 +41,7 @@ export const projects: Project[] = [
     title: "Spotify Hues",
     tagline: "A visual music-sharing experience built around colour and feeling",
     tags: ["UX Design", "Product Design"],
-    year: "2025",
+    year: "2026",
     color: "#E8DDFF",
     images: ["/photos/spotify-hues-hero.png", "/photos/spotify-hues-create.png", "/photos/spotify-hues-post.png"],
     description:
