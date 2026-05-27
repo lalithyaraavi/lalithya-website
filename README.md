@@ -1,4 +1,4 @@
-# Lalithya Potturu — Personal Portfolio
+# Lalithya Raavi — Personal Portfolio
 
 A personal portfolio built with **Next.js 14**, **TypeScript**, **Tailwind CSS**, and **Framer Motion**.
 
