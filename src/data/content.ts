@@ -37,6 +37,37 @@ export type BlogPost = {
 
 export const projects: Project[] = [
   {
+    slug: "sparktrace",
+    title: "SparkTrace LLM",
+    tagline: "Whether profiler evidence steers a model to the fastest kernel",
+    tags: ["CUDA", "LLM Evaluation", "Benchmarking"],
+    year: "2026",
+    color: "#DCE4F5",
+    description:
+      "SparkTrace is a CUDA study on a DGX Spark, co-authored to test whether an LLM uses Nsight Compute evidence to choose the fastest measured kernel rewrite. We scored 90 questions across 15 kernels, three evidence conditions, and both answer orders, so option position could not explain the result.\n\nOne finding: GPT-5.4 nano chose a 0.980 ms shared-memory repair over the faster 0.621 ms register rewrite when Nsight Compute counters were shown. Removing those counters returned its choice to registers. Profiler evidence can steer a model toward a slower kernel.",
+    outcome:
+      "With Nsight Compute counters shown, GPT-5.4 nano picked the slower shared-memory repair. Without them, it returned to the faster register rewrite.",
+    outcomeLabel: "FINDING",
+    links: [
+      { label: "Write-up", url: "https://x.com/anirudhbv_ce/article/2106954985758208152" },
+    ],
+  },
+  {
+    slug: "turnsight",
+    title: "TurnSight",
+    tagline: "When a late arrival at Atlanta passes delay to the next flight",
+    tags: ["Python", "SQL", "Tableau"],
+    year: "2026",
+    color: "#E4EFE8",
+    description:
+      "TurnSight links an inbound delay to the next departure on the same aircraft. I cleaned 607,000 Bureau of Transportation Statistics records in Python and SQL, then reconstructed 16,582 Atlanta turns so each late arrival could be followed to the flight that left next.\n\nThe Tableau dashboard has six filters and flight drilldowns. Across those turns, the delay rate was 15% and full recovery was 37%. Stations are ranked by delayed minutes.",
+    outcome: "16,582 Atlanta aircraft turns, a 15% delay rate, and 37% full recovery.",
+    outcomeLabel: "FINDING",
+    links: [
+      { label: "Write-up", url: "https://drive.google.com/file/d/1JhWYGXJs7RDid5aEWJ9kmu6dFNEusvu9/view?usp=sharing" },
+    ],
+  },
+  {
     slug: "spotify-hues",
     title: "Spotify Hues",
     tagline: "A visual music-sharing experience built around colour and feeling",
