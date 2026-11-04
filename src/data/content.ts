@@ -37,6 +37,22 @@ export type BlogPost = {
 
 export const projects: Project[] = [
   {
+    slug: "partner-desk",
+    title: "Partner program desk",
+    tagline: "A weekly status sheet for four fictional OEM programs",
+    tags: ["Technical Program Management", "Prototype"],
+    year: "2026",
+    color: "#E6F2C8",
+    images: ["/photos/partner-desk.png"],
+    description:
+      "Partner program desk is a one-page mock for a customer technical program manager. Four fictional OEM server programs sit on one sheet: current step, owner, customer commit, and whether a certified claim is allowed this week.\n\nHardware qualification and certification stay separate. A server can be called NVIDIA-Certified only after certification has passed. The page opens as a read view. Edits save in this browser, and each program can download a status report.",
+    outcome: "Unofficial example. The four partners, the people, and the dates are fictional.",
+    outcomeLabel: "NOTE",
+    links: [
+      { label: "Open the desk", url: "https://partner-desk-ten.vercel.app/" },
+    ],
+  },
+  {
     slug: "sparktrace",
     title: "SparkTrace LLM",
     tagline: "Whether profiler evidence steers a model to the fastest kernel",
