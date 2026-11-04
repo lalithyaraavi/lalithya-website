@@ -102,11 +102,9 @@ export default function Home() {
           </div>
         </FadeIn>
 
-        <div className={`${CONTAINER} columns-2 md:columns-3 gap-4`}>
+        <div className={`${CONTAINER} grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5`}>
           {projects.slice(0, 6).map((p, i) => (
-            <div key={p.slug} className="break-inside-avoid mb-4">
-              <ProjectCard project={p} index={i} />
-            </div>
+            <ProjectCard key={p.slug} project={p} index={i} />
           ))}
         </div>
 
