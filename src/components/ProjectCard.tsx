@@ -3,6 +3,19 @@ import Link from "next/link";
 import { motion } from "framer-motion";
 import { Project } from "@/data/content";
 
+const imageFrame: Record<string, string> = {
+  sparktrace: "h-36",
+  tile: "h-44",
+  turnsight: "h-52",
+  "spotify-hues": "h-60",
+  "partner-desk": "h-64",
+  "ascorbic-acid": "h-[17rem]",
+  "fuelling-the-future": "h-72",
+  "agro-salt": "h-[19rem]",
+  "byson-tidal": "h-80",
+  presense: "h-[22rem]",
+};
+
 export default function ProjectCard({ project, index }: { project: Project; index: number }) {
   return (
     <motion.div
@@ -15,11 +28,11 @@ export default function ProjectCard({ project, index }: { project: Project; inde
       <Link href={`/projects/${project.slug}`} className="group block rounded-4xl overflow-hidden border border-rose-light/40 hover:border-rose-DEFAULT/60 transition-all duration-300 hover:shadow-xl hover:shadow-rose-light/30">
         {/* Card header */}
         {project.image || project.images?.[0] ? (
-          <div className="max-h-72 overflow-hidden bg-cream-warm">
+          <div className={`${imageFrame[project.slug] ?? "h-72"} overflow-hidden bg-cream-warm`}>
             <img
               src={project.images?.[0] ?? project.image}
               alt={project.title}
-              className="w-full h-auto block"
+              className="w-full h-full object-cover object-top"
               style={{ filter: "none", mixBlendMode: "normal" }}
             />
           </div>
