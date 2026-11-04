@@ -82,6 +82,7 @@ export const projects: Project[] = [
     year: "2026",
     color: "#E4EFE8",
     images: [
+      "/photos/turnsight-cover.png",
       "/photos/turnsight-question.png",
       "/photos/turnsight-pipeline.png",
       "/photos/turnsight-pairing.png",
