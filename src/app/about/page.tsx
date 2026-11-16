@@ -42,7 +42,7 @@ export default function AboutPage() {
                 <ul className="space-y-4">
                   {[
                     { icon: "🎓", text: "SYDE '27 at UWaterloo" },
-                    { icon: "💼", text: "Previously at Suncor Energy" },
+                    { icon: "💼", text: "Currently at ORBCOMM" },
                     { icon: "🏆", text: "Loran Semi-Finalist" },
                     { icon: "🌸", text: "Women in Tech advocate" },
                     { icon: "🍞", text: "Bread baker (obsessively)" },
@@ -81,9 +81,10 @@ export default function AboutPage() {
             <p className="font-mono text-xs text-rose-DEFAULT tracking-widest mb-8">EXPERIENCE</p>
             <div className="space-y-6">
               {[
-                { role: "Project Analyst", company: "Suncor Energy", period: "2026", type: "work" },
-                { role: "Project Coordinator", company: "The Fort McMurray Chamber of Commerce", period: "2025", type: "work" },
-                { role: "Founder and Program Lead & Operations Coordinator", company: "W. Women In Tech", period: "2021–2025", type: "leadership" },
+                { role: "Product Data Analyst", company: "ORBCOMM", period: "2026", type: "work" },
+                { role: "Data Analyst", company: "Suncor Energy", period: "2026", type: "work" },
+                { role: "Customer Insights Coordinator", company: "The Fort McMurray Chamber of Commerce", period: "2025", type: "work" },
+                { role: "Founder and Technical Program Lead", company: "W. Women In Tech", period: "2021–2025", type: "leadership" },
                 { role: "Systems Design Engineering", company: "University of Waterloo", period: "2023–2027", type: "education" },
               ].map((exp) => (
                 <div key={exp.role} className="flex items-start gap-6 p-6 rounded-3xl border border-rose-light/30 hover:border-rose-DEFAULT/40 hover:bg-rose-light/10 transition-all">
