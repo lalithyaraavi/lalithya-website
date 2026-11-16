@@ -10,9 +10,10 @@ import Blobs from "@/components/Blobs";
 const ticker = ["UX Design ✦", "Systems Thinking ✦", "C++ ✦", "React ✦", "Figma ✦", "Product Design ✦", "SolidWorks ✦", "Data Analysis ✦", "Waterloo SYDE ✦", "Frontend Dev ✦"];
 
 const experience = [
-  { role: "Project Analyst", company: "Suncor Energy", period: "Jan 2026 – Apr 2026" },
-  { role: "Project Coordinator", company: "The Fort McMurray Chamber of Commerce", period: "Jun 2025 – Aug 2025" },
-  { role: "Founder and Program Lead & Operations Coordinator", company: "W. Women In Tech", period: "Sept 2021 – July 2025" },
+  { role: "Product Data Analyst", company: "ORBCOMM", period: "Sept 2026 – Present" },
+  { role: "Data Analyst", company: "Suncor Energy", period: "Jan 2026 – Apr 2026" },
+  { role: "Customer Insights Coordinator", company: "The Fort McMurray Chamber of Commerce", period: "Jun 2025 – Aug 2025" },
+  { role: "Founder and Technical Program Lead", company: "W. Women In Tech", period: "Sept 2021 – July 2025" },
 ];
 
 // Shared layout constants
