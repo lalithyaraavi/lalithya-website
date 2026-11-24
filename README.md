@@ -1,81 +1,33 @@
-# Lalithya Raavi — Personal Portfolio
+# Lalithya Raavi | Portfolio
 
-A personal portfolio built with **Next.js 14**, **TypeScript**, **Tailwind CSS**, and **Framer Motion**.
+This is the code for my personal website: **[lalithya-website.vercel.app](https://lalithya-website.vercel.app)**
 
-## Stack
+I'm a Systems Design Engineering student at the University of Waterloo. I built this site to show my projects, experience and awards in one place, and I keep adding to it as I build new things.
 
-- **Framework**: Next.js 14 (App Router)
-- **Language**: TypeScript
-- **Styling**: Tailwind CSS
-- **Animation**: Framer Motion
-- **Fonts**: Fraunces (display) · Plus Jakarta Sans (body) · DM Mono (mono)
-- **Deployment**: Vercel
+## What's on it
 
-## Getting Started
+- **Projects:** each one has its own page with what I built, what I found, and links to the video, dashboard or code. Some of my favourites:
+  - [AltWise](https://lalithya-website.vercel.app/projects/altwise): an accessibility audit of 422 Shopify stores and a prototype that writes missing image descriptions ([code](https://github.com/lalithyaraavi/altwise-shopify-accessibility))
+  - [TurnSight](https://lalithya-website.vercel.app/projects/turnsight): how a late arrival at Atlanta passes delay to the next flight ([code](https://github.com/lalithyaraavi/turnsight))
+  - [Partner program desk](https://lalithya-website.vercel.app/projects/partner-desk): a weekly status sheet for OEM server programs
+- **About:** my background, co-ops and what I'm interested in
+- **Awards:** scholarships and recognition I've received
+- **Blog:** short pieces I've written
+
+## How I built it
+
+- **Next.js 14** (App Router) and **TypeScript**
+- **Tailwind CSS** for styling
+- **Framer Motion** for the animations
+- Designed the look myself and deployed on **Vercel**
+
+All of the site's content (projects, awards, blog posts) lives in one file, `src/data/content.ts`, so adding a new project is just adding an entry there.
+
+## Running it locally
 
 ```bash
 npm install
 npm run dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) in your browser.
-
-## Project Structure
-
-```
-src/
-├── app/
-│   ├── about/          # About page
-│   ├── awards/         # Awards & Honours page
-│   ├── blog/           # Blog index + [slug] detail
-│   ├── contact/        # Contact page with form
-│   ├── projects/       # Projects index + [slug] detail
-│   ├── globals.css     # Global styles + font imports
-│   ├── layout.tsx      # Root layout (Nav + Footer + Cursor)
-│   └── page.tsx        # Home page
-├── components/
-│   ├── CustomCursor.tsx
-│   ├── FadeIn.tsx
-│   ├── Footer.tsx
-│   ├── Nav.tsx
-│   └── ProjectCard.tsx
-└── data/
-    └── content.ts      # All projects, awards, blog posts — edit here!
-```
-
-## Customising Content
-
-All content lives in `src/data/content.ts`. Edit the `projects`, `awards`, and `blogPosts` arrays to update your work.
-
-## Adding Blog Posts
-
-The blog currently uses placeholder content. To add real posts, consider:
-- [`next-mdx-remote`](https://github.com/hashicorp/next-mdx-remote) for MDX files
-- [`contentlayer`](https://contentlayer.dev/) for type-safe content
-
-## Deploying to Vercel
-
-```bash
-vercel --prod
-```
-
-Or connect your GitHub repo in the [Vercel dashboard](https://vercel.com).
-
-## Contact Form
-
-The contact form in `src/app/contact/page.tsx` is UI-only. Wire it up to:
-- [Formspree](https://formspree.io) — easiest, no backend needed
-- [Resend](https://resend.com) — great for custom email flows
-
-## Colour Palette
-
-| Token | Hex | Usage |
-|-------|-----|-------|
-| `rose` | `#C4788A` | Primary accent |
-| `rose-light` | `#F2DEED` | Backgrounds, borders |
-| `cream` | `#FAFAF8` | Page background |
-| `cream-warm` | `#F5F0EB` | Card backgrounds |
-| `ink` | `#2B2118` | Body text |
-| `ink-muted` | `#7A6860` | Secondary text |
-| `lavender` | `#C5BBDA` | Blob accents |
-| `peach` | `#F2C4A0` | Blob accents |
+Then open http://localhost:3000.
