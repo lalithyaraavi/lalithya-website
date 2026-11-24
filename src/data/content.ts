@@ -118,6 +118,7 @@ export const projects: Project[] = [
     links: [
       { label: "Video", url: "https://www.youtube.com/watch?v=td3Zus6y-os" },
       { label: "Dashboard", url: "https://public.tableau.com/shared/YYMC9GDCR?:display_count=n&:origin=viz_share_link" },
+      { label: "GitHub", url: "https://github.com/lalithyaraavi/turnsight" },
     ],
   },
   {
