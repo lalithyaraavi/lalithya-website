@@ -37,6 +37,29 @@ export type BlogPost = {
 
 export const projects: Project[] = [
   {
+    slug: "altwise",
+    title: "AltWise",
+    tagline: "How accessible are Shopify stores, and an AI tool to close the gap",
+    tags: ["Python", "SQL", "Web Scraping", "A/B Testing", "MCP"],
+    year: "2026",
+    color: "#DDEFE0",
+    images: [
+      "/photos/altwise-cover.png",
+      "/photos/altwise-method.png",
+      "/photos/altwise-alt-text.png",
+      "/photos/altwise-themes.png",
+      "/photos/altwise-ab-test.png",
+    ],
+    description:
+      "I scraped 422 Shopify stores, sampled 30,661 product images, and ran axe-core accessibility checks on 838 pages. The typical store leaves 47% of its product images undescribed, which makes them invisible to screen readers, search engines and AI shopping agents. A regression on 390 stores found theme, store size and brand size were not significant, so the gap is a merchant habit, not a theme problem.\n\nThen I built AltWise, a prototype that extends Shopify Sidekick to accessibility. It's an MCP server on the Shopify Admin API: a merchant asks an AI assistant to audit their store and gets a score, a suggested description for every undescribed image, and one step to save the ones they approve. On 100 real undescribed images, the AI descriptions were 97% accurate. I also designed an A/B test and checked it by simulation, where CUPED raised power from 62% to 100%.",
+    outcome: "The typical store leaves 47% of product images undescribed. AI descriptions were 97% accurate on 100 real images.",
+    outcomeLabel: "FINDING",
+    links: [
+      { label: "Demo video", url: "https://youtu.be/C0JD2wfppwM" },
+      { label: "GitHub", url: "https://github.com/lalithyaraavi/altwise-shopify-accessibility" },
+    ],
+  },
+  {
     slug: "partner-desk",
     title: "Partner program desk",
     tagline: "A weekly status sheet for four fictional OEM programs",
