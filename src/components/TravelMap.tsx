@@ -194,7 +194,21 @@ export default function TravelMap() {
                     <PosterFront post={{ from: p.name, tag: p.country } as BlogPost} flipHint={false} />
                   </div>
                 )}
-                {p.photos.map((src, i) => <img key={src} src={src} alt={`${p.name} photo ${i + 1}`} className={i === photo ? "on" : ""} />)}
+                {p.photos.map((src, i) => (
+                  <div key={src} className={`tv-shot${i === photo ? " on" : ""}`}>
+                    <img className="tv-shot-bg" src={src} alt="" aria-hidden />
+                    <img
+                      className="tv-shot-img"
+                      src={src}
+                      alt={`${p.name} photo ${i + 1}`}
+                      onLoad={(e) => {
+                        const im = e.currentTarget;
+                        // Tall (portrait) photos are shown whole instead of cropped
+                        if (im.naturalHeight > im.naturalWidth) im.parentElement?.classList.add("tall");
+                      }}
+                    />
+                  </div>
+                ))}
                 {p.photos.length > 1 && (
                   <>
                     <button className="tv-garrow l" aria-label="Previous photo" onClick={() => setPhoto((photo - 1 + p.photos.length) % p.photos.length)}>‹</button>
