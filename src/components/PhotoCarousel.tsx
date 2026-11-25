@@ -6,7 +6,7 @@ export const photos = [
   { src: "/photos/photo.JPG", label: "📍 Waterloo" },
   { src: "/photos/photo2.JPG", label: "✨ Good times" },
   { src: "/photos/photo3.jpeg", label: "⚙️ Waterloo Engineering" },
-  { src: "/photos/photo4.jpg", label: "🎓 Campus" },
+  { src: "/photos/photo4.jpg", label: "👩‍💻 Women in Tech" },
 ];
 
 const variants = {
