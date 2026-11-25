@@ -59,7 +59,7 @@ export default function Home() {
                 <div><span className="la-mono">Passenger</span><b>RAAVI/LALITHYA</b></div>
                 <div><span className="la-mono">Class</span><b>SYDE &apos;30</b></div>
                 <div><span className="la-mono">Current stop</span><b>YOW · Kanata</b></div>
-                <div><span className="la-mono">Next departure</span><b>Summer 2027</b><a href="#contact" className="la-scribble">maybe you can decide my next destination 😉</a></div>
+                <div><span className="la-mono">Next departure</span><b>Summer 2027</b></div>
               </div>
               <a href="#about" className="la-cta">Learn more about me ↓</a>
             </div>
