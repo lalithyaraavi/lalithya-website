@@ -1,228 +1,199 @@
-"use client";
-import { motion } from "framer-motion";
 import Link from "next/link";
-import { projects } from "@/data/content";
-import ProjectCard from "@/components/ProjectCard";
-import FadeIn from "@/components/FadeIn";
-import PhotoCarousel from "@/components/PhotoCarousel";
-import Blobs from "@/components/Blobs";
+import { projects, awards } from "@/data/content";
+import LaEffects, { PLANE } from "@/components/LaEffects";
 
-const ticker = ["UX Design ✦", "Systems Thinking ✦", "C++ ✦", "React ✦", "Figma ✦", "Product Design ✦", "SolidWorks ✦", "Data Analysis ✦", "Waterloo SYDE ✦", "Frontend Dev ✦"];
+const ticker = ["UX Design", "Systems Thinking", "C++", "React", "Figma", "Product Design", "SolidWorks", "Data Analysis", "Waterloo SYDE", "Frontend Dev", "Please keep your curiosity fastened"];
 
 const experience = [
-  { role: "Product Data Analyst", company: "ORBCOMM", period: "Sept 2026 – Present" },
-  { role: "Data Analyst", company: "Suncor Energy", period: "Jan 2026 – Apr 2026" },
-  { role: "Customer Insights Coordinator", company: "The Fort McMurray Chamber of Commerce", period: "Jun 2025 – Aug 2025" },
-  { role: "Founder and Technical Program Lead", company: "W. Women In Tech", period: "Sept 2021 – July 2025" },
+  { code: "ORB26", role: "Product Data Analyst", company: "ORBCOMM", period: "Sept 2026 – Present", live: true },
+  { code: "SUN26", role: "Data Analyst", company: "Suncor Energy", period: "Jan 2026 – Apr 2026" },
+  { code: "FMC25", role: "Customer Insights Coordinator", company: "The Fort McMurray Chamber of Commerce", period: "Jun 2025 – Aug 2025" },
+  { code: "WWT21", role: "Founder and Technical Program Lead", company: "W. Women In Tech", period: "Sept 2021 – July 2025" },
 ];
 
-// Shared layout constants
-const SECTION_PAD = "px-8 md:px-16";
-const CONTAINER   = "max-w-5xl mx-auto";
-const LABEL       = "font-mono text-base text-rose-DEFAULT tracking-widest";
-const HEADING     = "font-display text-7xl md:text-8xl font-light text-ink-DEFAULT leading-tight";
-const BODY        = "font-body text-xl text-ink-muted leading-relaxed";
+const tagColours = ["var(--brick)", "var(--denim)", "var(--forest)", "var(--ink)", "var(--plum)", "var(--mustard)"];
+const stampStyle = [
+  { cls: "round", r: "-12deg", c: "var(--brick)" },
+  { cls: "rect", r: "6deg", c: "var(--denim)" },
+  { cls: "rect", r: "-4deg", c: "var(--forest)" },
+  { cls: "round", r: "12deg", c: "var(--plum)" },
+  { cls: "rect", r: "-7deg", c: "var(--mustard)" },
+];
+
+const Plane = ({ style }: { style?: React.CSSProperties }) => (
+  <svg viewBox="0 0 24 24" style={style} aria-hidden><path fill="currentColor" d={PLANE} /></svg>
+);
 
 export default function Home() {
+  const tickerItems = [...ticker, ...ticker];
   return (
-    <div className="min-h-screen">
+    <div className="pb-10">
+      <LaEffects />
 
-      {/* ── 1. HERO ─────────────────────────────────────────── */}
-      <section className={`relative min-h-screen flex flex-col justify-center ${SECTION_PAD} pt-28 pb-20 overflow-hidden`}>
-        <div className="absolute top-16 right-8 w-80 h-80 rounded-full blob opacity-25" style={{ background: "radial-gradient(circle, #F2DEED 0%, #C4788A 100%)" }} />
-        <div className="absolute bottom-24 left-4 w-56 h-56 rounded-full blob blob-delay opacity-15" style={{ background: "radial-gradient(circle, #E8E2F5 0%, #ADBCA5 100%)" }} />
-        <div className="absolute top-1/2 left-[-6rem] w-64 h-64 rounded-full blob opacity-10" style={{ background: "radial-gradient(circle, #F9E4EC 0%, #C4788A 100%)", animationDelay: "1.2s" }} />
-        <div className="absolute bottom-8 right-16 w-44 h-44 rounded-full blob blob-delay opacity-20" style={{ background: "radial-gradient(circle, #EDE8F5 0%, #9B8DB8 100%)", animationDelay: "0.6s" }} />
-        <div className="absolute top-32 left-1/3 w-32 h-32 rounded-full blob opacity-10" style={{ background: "radial-gradient(circle, #FDEEF4 0%, #E8A0B0 100%)", animationDelay: "2s" }} />
+      <div className="la-wrap">
+        {/* ── Boarding pass hero ── */}
+        <header className="la-hero">
+          <p className="la-mono la-r">Now boarding · Gate SYDE</p>
+          <h1 className="la-r">Hi! I&apos;m <span>Lali</span>.</h1>
+          <p className="sub la-r">So glad you&apos;re here! I love working on things that make people&apos;s lives a little easier, and a little more interesting.</p>
 
-        <div className="relative w-full flex flex-col items-center text-center gap-8">
-          <motion.div
-            initial={{ opacity: 0, y: -20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
-            className="w-52 md:w-64 shrink-0"
-          >
-            <div className="relative aspect-square rounded-full overflow-hidden border-4 border-rose-light/50 shadow-xl shadow-rose-light/20 bg-cream-warm">
-              <img src="/photos/me.jpg" alt="Lali" className="absolute inset-0 w-full h-full object-cover object-top" />
+          <div className="la-pass la-r">
+            <div className="la-pass-main">
+              <div className="la-pass-top"><span className="la-airline">LALI AIR · BOARDING PASS</span><span className="la-mono">Flight LR 2030</span></div>
+              <div className="la-cities">
+                <div><div className="la-code">YMM</div><small>Fort McMurray, AB</small></div>
+                <div className="la-leg"><Plane style={{ transform: "rotate(90deg)" }} /></div>
+                <div style={{ textAlign: "right" }}><div className="la-code">YKF</div><small>Waterloo, ON</small></div>
+              </div>
+              <div className="la-details">
+                <div><span className="la-mono">Passenger</span><b>RAAVI/LALITHYA</b></div>
+                <div><span className="la-mono">Class</span><b>SYDE &apos;30</b></div>
+                <div><span className="la-mono">Current stop</span><b>YOW · Kanata</b></div>
+                <div><span className="la-mono">Next departure</span><b>Summer 2027</b></div>
+              </div>
+              <a href="#about" className="la-cta">Learn more about me ↓</a>
             </div>
-          </motion.div>
-
-          <div className="max-w-2xl">
-            <motion.p initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, delay: 0.3 }}
-              className={`${LABEL} mb-5`}>
-              systems design engineering @ university of waterloo
-            </motion.p>
-
-            <motion.h1 initial={{ opacity: 0, y: 32 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.75, delay: 0.4, ease: [0.22, 1, 0.36, 1] }}
-              className="font-display text-6xl md:text-8xl font-light leading-[1.05] text-ink-DEFAULT mb-6">
-              Hi! I&apos;m{" "}
-              <em className="not-italic text-rose-DEFAULT">Lali</em>
-              <span className="text-rose-light">.</span>
-            </motion.h1>
-
-            <motion.p initial={{ opacity: 0, y: 24 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7, delay: 0.55 }}
-              className={`${BODY} mb-10 max-w-lg`}>
-              So glad you&apos;re here! I love working on things that make people&apos;s lives a little easier, and a little more interesting.
-            </motion.p>
-
-            <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, delay: 0.68 }}>
-              <a href="#about" className="inline-flex items-center gap-2 text-ink-DEFAULT font-body text-xl hover:text-rose-DEFAULT transition-colors">
-                Learn more about me
-                <motion.span animate={{ y: [0, 3, 0] }} transition={{ duration: 1.5, repeat: Infinity }}>↓</motion.span>
-              </a>
-            </motion.div>
+            <div className="la-stub">
+              <img src="/photos/me.jpg" alt="Lali" />
+              <div>
+                <div className="la-seat">
+                  <div><span className="la-mono">Seat</span><b>2A</b></div>
+                  <div style={{ textAlign: "right" }}><span className="la-mono">Gate</span><b>W</b></div>
+                </div>
+                <div className="la-barcode" />
+              </div>
+            </div>
           </div>
-        </div>
+        </header>
+      </div>
 
-      </section>
-
-      {/* ── Skills Ticker ─────────────────────────────────── */}
-      <div className="py-5 bg-cream-warm border-y border-rose-light/30 overflow-hidden">
-        <div className="animate-scroll-left whitespace-nowrap">
-          {[...ticker, ...ticker].map((item, i) => (
-            <span key={i} className={`inline-block mx-6 ${LABEL} opacity-70`}>{item}</span>
-          ))}
+      {/* ── Cabin announcement ticker ── */}
+      <div className="la-ticker" aria-label="Skills">
+        <div className="track">
+          {tickerItems.map((t, i) => <span key={i}><i>✈</i>{i % ticker.length === 0 ? `Now boarding: ${t}` : t}</span>)}
         </div>
       </div>
 
-      {/* ── 2. PROJECTS ───────────────────────────────────── */}
-      <section id="projects" className={`relative ${SECTION_PAD} py-24 overflow-hidden`}>
-        <Blobs />
-        <FadeIn>
-          <div className={`${CONTAINER} flex flex-col md:flex-row md:items-end justify-between gap-4 mb-14`}>
-            <div>
-              <p className={`${LABEL} mb-3`}>SELECTED WORK</p>
-              <h2 className={`${HEADING} mb-4`}>Projects</h2>
-              <p className={`${BODY} max-w-xl`}>
-                Welcome to my portfolio. Here you&apos;ll find a collection of design and research projects, exploring systems thinking and problem solving as I navigate the world of engineering.
-              </p>
-            </div>
-            <Link href="/projects" className={`hidden md:flex items-center gap-2 ${BODY} hover:text-rose-DEFAULT transition-colors shrink-0`}>
-              All projects <span className="group-hover:translate-x-1 transition-transform">→</span>
-            </Link>
+      <div className="la-wrap">
+        {/* ── Departures (experience) ── */}
+        <section className="la-section" id="experience">
+          <div className="la-head la-r">
+            <div><p className="la-mono">Departures</p><h2 className="la-h2">Where I&apos;ve flown</h2></div>
+            <p className="la-mono">Local time <span id="la-clock">--:--</span></p>
           </div>
-        </FadeIn>
-
-        <div className={`${CONTAINER} columns-1 sm:columns-2 lg:columns-3 gap-5`}>
-          {projects.slice(0, 6).map((p, i) => (
-            <div key={p.slug} className="mb-5 break-inside-avoid">
-              <ProjectCard project={p} index={i} />
-            </div>
-          ))}
-        </div>
-
-        <div className="mt-10 md:hidden text-center">
-          <Link href="/projects" className={`${BODY} text-rose-DEFAULT underline underline-offset-4`}>
-            See all projects →
-          </Link>
-        </div>
-      </section>
-
-      {/* ── 3. ABOUT + EXPERIENCE ─────────────────────────── */}
-      <section id="about" className={`relative ${SECTION_PAD} py-24 bg-cream-warm border-y border-rose-light/30 overflow-hidden`}>
-        <Blobs />
-        <div className={CONTAINER}>
-          <FadeIn>
-            <h2 className={`${HEADING} mb-8`}>
-              A little bit about <em className="text-rose-DEFAULT">me</em>
-            </h2>
-          </FadeIn>
-
-          {/* Bio + photo carousel */}
-          <div className="grid md:grid-cols-[1fr_1.2fr] gap-16 items-stretch mb-20">
-            <div className={`flex flex-col justify-center h-full space-y-4 ${BODY}`}>
-              <motion.p
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, margin: "-40px" }}
-                transition={{ duration: 0.6, delay: 0.1, ease: [0.22, 1, 0.36, 1] }}
-              >
-                Hello! I&apos;m Lali, a <span className="text-ink-DEFAULT font-medium">Systems Design Engineering</span> student at the University of Waterloo. I love breaking down complex problems and rethinking them as systems that actually work for people. I&apos;ve spent a lot of time working with data and design, using both to build and iterate on solutions that are practical and user-focused.
-              </motion.p>
-              <motion.p
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, margin: "-40px" }}
-                transition={{ duration: 0.6, delay: 0.22, ease: [0.22, 1, 0.36, 1] }}
-              >
-                I love getting involved within the community, especially mentoring younger kids. You could always catch me with my head deep in a book or my hands deep in baking.
-              </motion.p>
-            </div>
-
-            <FadeIn delay={0.15}>
-              <div className="h-full">
-                <PhotoCarousel />
+          <div className="la-board la-r">
+            <div className="la-bh"><span>Flight</span><span>Role</span><span>Carrier</span><span>Time</span><span>Status</span></div>
+            {experience.map((e) => (
+              <div className="la-row" key={e.code}>
+                <span className="la-flap" data-t={e.code}>{e.code.split("").map((c, i) => <s key={i}>{c}</s>)}</span>
+                <span className="la-role">{e.role}</span>
+                <span className="la-co">{e.company}</span>
+                <span className="la-co">{e.period}</span>
+                <span className={`la-st ${e.live ? "on" : "done"}`}>{e.live ? "IN FLIGHT" : "LANDED"}</span>
               </div>
-            </FadeIn>
+            ))}
           </div>
+        </section>
 
-          {/* Experience — vertical timeline */}
-          <FadeIn delay={0.2}>
-            <p className={`${LABEL} mb-10`}>EXPERIENCE</p>
-          </FadeIn>
-          <div className="relative pl-6">
-            <div className="absolute left-0 top-0 bottom-0 w-px bg-rose-light/60" />
-            <div className="space-y-10">
-              {experience.map((exp, i) => (
-                <motion.div
-                  key={exp.role}
-                  initial={{ opacity: 0, y: 24 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true, margin: "-40px" }}
-                  transition={{ duration: 0.5, delay: i * 0.1, ease: [0.22, 1, 0.36, 1] }}
-                  className="relative"
-                >
-                  <div className="absolute -left-[1.375rem] top-1.5 w-3 h-3 rounded-full bg-rose-DEFAULT border-2 border-cream-warm" />
-                  <p className={`${LABEL} mb-1`}>{exp.period}</p>
-                  <p className="font-body text-2xl font-medium text-ink-DEFAULT leading-snug">{exp.role}</p>
-                  <p className={BODY}>{exp.company}</p>
-                </motion.div>
-              ))}
+        {/* ── Baggage claim (projects) ── */}
+        <section className="la-section" id="projects">
+          <div className="la-head la-r">
+            <div><p className="la-mono">Baggage claim · Carousel 1</p><h2 className="la-h2">Things I&apos;ve packed</h2></div>
+            <Link href="/projects" className="la-mono" style={{ color: "var(--ink)", borderBottom: "1px solid var(--ink)" }}>All projects →</Link>
+          </div>
+          <div className="la-carousel">
+            {projects.slice(0, 6).map((p, i) => {
+              const img = p.images?.[0] ?? p.image;
+              return (
+                <Link key={p.slug} href={`/projects/${p.slug}`} className="la-tag la-r" style={{ ["--c" as string]: tagColours[i % tagColours.length] }}>
+                  <span className="hole" />
+                  <span className="vert">{p.slug.replace(/[^a-z]/g, "").slice(0, 4).toUpperCase()}</span>
+                  {img && <div className="shot"><img src={img} alt={p.title} loading="lazy" /></div>}
+                  <div className="top"><span className="la-mono">{p.year}</span><span className="la-mono">→</span></div>
+                  <h3>{p.title}</h3>
+                  <p>{p.tagline}</p>
+                  <div className="chips">{p.tags.join(" · ")}</div>
+                </Link>
+              );
+            })}
+          </div>
+        </section>
+
+        {/* ── Route map teaser → travel log ── */}
+        <section className="la-section">
+          <div className="la-head la-r">
+            <div><p className="la-mono">Route map</p><h2 className="la-h2">The journey so far</h2></div>
+            <Link href="/travel" className="la-mono" style={{ color: "var(--ink)", borderBottom: "1px solid var(--ink)" }}>Open travel log →</Link>
+          </div>
+          <Link href="/travel" className="la-map la-r" aria-label="Open the travel log">
+            <svg viewBox="0 0 1000 300" role="img" aria-label="Route from Fort McMurray to Waterloo to Kanata">
+              <path d="M60 250 Q 140 40 520 40 T 960 120" fill="none" stroke="var(--rule)" strokeWidth="1" />
+              <path className="arc" d="M110 200 Q 380 20 690 190" pathLength={600} />
+              <path className="arc" d="M690 190 Q 760 90 860 130" pathLength={600} style={{ transitionDelay: "1.2s" }} />
+              <circle cx="110" cy="200" r="7" fill="var(--brick)" /><circle cx="110" cy="200" r="15" fill="none" stroke="var(--brick)" opacity=".3" />
+              <circle cx="690" cy="190" r="7" fill="var(--ink)" />
+              <circle cx="860" cy="130" r="7" fill="var(--denim)" /><circle cx="860" cy="130" r="15" fill="none" stroke="var(--denim)" opacity=".3" />
+              <text x="110" y="240" textAnchor="middle">YMM</text><text x="110" y="258" textAnchor="middle" className="sub">HOME</text>
+              <text x="690" y="230" textAnchor="middle">YKF</text><text x="690" y="248" textAnchor="middle" className="sub">SCHOOL</text>
+              <text x="860" y="170" textAnchor="middle">YOW</text><text x="860" y="188" textAnchor="middle" className="sub">NOW</text>
+            </svg>
+          </Link>
+        </section>
+
+        {/* ── Passport (about) ── */}
+        <section className="la-section" id="about">
+          <div className="la-head la-r"><div><p className="la-mono">Passport</p><h2 className="la-h2">A little bit about me</h2></div></div>
+          <div className="la-passport la-r">
+            <div className="la-ppl">
+              <div className="photo">
+                <img src="/photos/photo.JPG" alt="Lali in Waterloo" />
+                <dl>
+                  <div><dt>Surname</dt><dd>RAAVI</dd></div>
+                  <div><dt>Given name</dt><dd>LALITHYA</dd></div>
+                  <div><dt>Program</dt><dd>SYSTEMS DESIGN</dd></div>
+                  <div><dt>Base</dt><dd>WATERLOO, ON</dd></div>
+                </dl>
+              </div>
+              <div className="la-mrz">P&lt;LRAIR&lt;RAAVI&lt;&lt;LALITHYA&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;<br />SYDE2030&lt;&lt;YMM&lt;YKF&lt;YOW&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;</div>
+            </div>
+            <div className="la-ppr">
+              <p className="la-mono">Visas and entries</p>
+              <p>Hello! I&apos;m Lali, a <span style={{ color: "var(--ink)", fontWeight: 500 }}>Systems Design Engineering</span> student at the University of Waterloo. I love breaking down complex problems and rethinking them as systems that actually work for people. I&apos;ve spent a lot of time working with data and design, using both to build and iterate on solutions that are practical and user-focused.</p>
+              <p>I love getting involved within the community, especially mentoring younger kids. You could always catch me with my head deep in a book or my hands deep in baking.</p>
+              <div className="la-stamps">
+                {awards.slice(0, 5).map((a, i) => {
+                  const s = stampStyle[i % stampStyle.length];
+                  return (
+                    <div key={a.title} className={`la-stamp ${s.cls}`} style={{ ["--r" as string]: s.r, color: s.c, transitionDelay: `${0.1 + i * 0.22}s` }}>
+                      {a.title}
+                    </div>
+                  );
+                })}
+              </div>
             </div>
           </div>
-        </div>
-      </section>
+        </section>
 
-      {/* ── 4. CONTACT ────────────────────────────────────── */}
-      <section id="contact" className={`relative ${SECTION_PAD} py-24 overflow-hidden`}>
-        <Blobs />
-        <div className={CONTAINER}>
-          <FadeIn>
-            <p className={`${LABEL} mb-3`}>GET IN TOUCH</p>
-            <h2 className={`${HEADING} mb-4`}>
-              Say <em className="text-rose-DEFAULT">hello</em>
-            </h2>
-            <p className={`${BODY} mb-12 max-w-md`}>
-              Whether it&apos;s an idea, a co-op, or just a chat, I&apos;m always happy to connect!
-            </p>
-          </FadeIn>
-
-          <div className="grid sm:grid-cols-2 gap-5 max-w-lg">
-            <FadeIn delay={0.08}>
-              <a href="mailto:lraavi@uwaterloo.ca"
-                className="group flex flex-col gap-3 p-6 rounded-4xl border border-rose-light/40 bg-cream-DEFAULT hover:border-rose-DEFAULT/50 hover:bg-rose-light/10 transition-all hover:shadow-lg hover:shadow-rose-light/20">
-                <span className="text-2xl">✉️</span>
-                <div>
-                  <p className={`${LABEL} mb-1`}>EMAIL</p>
-                  <p className={`${BODY} group-hover:text-rose-DEFAULT transition-colors break-all`}>lraavi@uwaterloo.ca</p>
-                </div>
-              </a>
-            </FadeIn>
-
-            <FadeIn delay={0.14}>
-              <a href="https://www.linkedin.com/in/lalithyaraavi/" target="_blank" rel="noopener noreferrer"
-                className="group flex flex-col gap-3 p-6 rounded-4xl border border-rose-light/40 bg-cream-DEFAULT hover:border-rose-DEFAULT/50 hover:bg-rose-light/10 transition-all hover:shadow-lg hover:shadow-rose-light/20">
-                <span className="text-2xl">💼</span>
-                <div>
-                  <p className={`${LABEL} mb-1`}>LINKEDIN</p>
-                  <p className={`${BODY} group-hover:text-rose-DEFAULT transition-colors`}>lalithyaraavi</p>
-                </div>
-              </a>
-            </FadeIn>
+        {/* ── Postcard (contact) ── */}
+        <section className="la-section" id="contact">
+          <div className="la-postcard la-r">
+            <div className="la-pc-left">
+              <p className="la-mono">Arrivals · Get in touch</p>
+              <h2>Wish you were here.</h2>
+              <p className="note">Whether it&apos;s an idea, a co-op, or just a chat, I&apos;m always happy to connect!</p>
+            </div>
+            <div className="la-pc-right">
+              <div className="la-postmark">WATERLOO<br />ON<br />2026</div>
+              <div className="la-pstamp"><div>LALI<br />AIR<br />✈</div></div>
+              <div className="la-lines">
+                <a href="mailto:lraavi@uwaterloo.ca">lraavi@uwaterloo.ca <span>→</span></a>
+                <a href="https://www.linkedin.com/in/lalithyaraavi/" target="_blank" rel="noopener noreferrer">LinkedIn <span>→</span></a>
+                <a href="https://github.com/lalithyaraavi" target="_blank" rel="noopener noreferrer">GitHub <span>→</span></a>
+              </div>
+            </div>
           </div>
-        </div>
-      </section>
-
+        </section>
+      </div>
     </div>
   );
 }

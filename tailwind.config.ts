@@ -1,21 +1,31 @@
 import type { Config } from "tailwindcss";
 
+// Lali Air palette: vintage travel-poster colours.
+// The old colour names (rose, cream, ink...) are kept so every page picks up the new palette.
 const config: Config = {
   content: ["./src/**/*.{js,ts,jsx,tsx,mdx}"],
   theme: {
     extend: {
       colors: {
-        rose:    { DEFAULT: "#C4788A", light: "#F2DEED", dark: "#a85e70" },
-        cream:   { DEFAULT: "#FAFAF8", warm: "#F5F0EB" },
-        ink:     { DEFAULT: "#2B2118", muted: "#7A6860" },
-        peach:   "#F2C4A0",
-        sage:    "#ADBCA5",
-        lavender:"#C5BBDA",
+        rose:    { DEFAULT: "#B4472C", light: "#E9D5C2", dark: "#8E3721" }, // brick
+        cream:   { DEFAULT: "#FBF6EC", warm: "#F2EBDD" },
+        ink:     { DEFAULT: "#22281F", muted: "#5E5A4E" },
+        peach:   "#D9A23A", // mustard
+        sage:    "#36533F", // forest
+        lavender:"#4E6A86", // denim
+        mustard: "#D9A23A",
+        forest:  "#36533F",
+        denim:   "#4E6A86",
+        plum:    "#6E4256",
+        olive:   "#8B8A4C",
+        dusty:   "#D39C8E",
+        sand:    "#E8D7B5",
       },
       fontFamily: {
-        display: ["var(--font-fraunces)", "Georgia", "serif"],
-        body:    ["var(--font-plus-jakarta)", "sans-serif"],
-        mono:    ["var(--font-dm-mono)", "monospace"],
+        display: ["var(--font-serif)", "Georgia", "serif"],
+        body:    ["var(--font-sans)", "system-ui", "sans-serif"],
+        mono:    ["var(--font-mono)", "monospace"],
+        hand:    ["var(--font-hand)", "cursive"],
       },
       borderRadius: { "4xl": "2rem", "5xl": "3rem" },
       animation: {

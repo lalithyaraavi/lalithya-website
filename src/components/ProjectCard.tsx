@@ -25,7 +25,7 @@ export default function ProjectCard({ project, index }: { project: Project; inde
       transition={{ duration: 0.55, delay: index * 0.08, ease: [0.22, 1, 0.36, 1] }}
       whileHover={{ y: -6 }}
     >
-      <Link href={`/projects/${project.slug}`} className="group block rounded-4xl overflow-hidden border border-rose-light/40 hover:border-rose-DEFAULT/60 transition-all duration-300 hover:shadow-xl hover:shadow-rose-light/30">
+      <Link href={`/projects/${project.slug}`} className="group block rounded-4xl overflow-hidden border border-rose-light/40 hover:border-rose/60 transition-all duration-300 hover:shadow-xl hover:shadow-rose-light/30">
         {/* Card header */}
         {project.image || project.images?.[0] ? (
           <div className={`${imageFrame[project.slug] ?? "h-72"} overflow-hidden bg-cream-warm`}>
@@ -43,9 +43,9 @@ export default function ProjectCard({ project, index }: { project: Project; inde
         )}
 
         {/* Content */}
-        <div className="p-4 bg-cream-DEFAULT">
+        <div className="p-4 bg-cream">
           <div className="flex items-start justify-between gap-2 mb-1.5">
-            <h3 className="font-display text-base font-light text-ink-DEFAULT group-hover:text-rose-DEFAULT transition-colors leading-snug">
+            <h3 className="font-display text-base font-light text-ink group-hover:text-rose transition-colors leading-snug">
               {project.title}
             </h3>
             <span className="font-mono text-xs text-ink-muted mt-0.5 shrink-0">{project.year}</span>

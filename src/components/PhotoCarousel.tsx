@@ -64,14 +64,14 @@ export default function PhotoCarousel() {
         {/* Prev / Next buttons */}
         <button
           onClick={() => paginate(-1)}
-          className="absolute left-3 top-1/2 -translate-y-1/2 z-10 w-8 h-8 rounded-full bg-cream-DEFAULT/80 backdrop-blur border border-rose-light/40 flex items-center justify-center text-ink-muted hover:text-rose-DEFAULT hover:border-rose-DEFAULT/50 transition-all"
+          className="absolute left-3 top-1/2 -translate-y-1/2 z-10 w-8 h-8 rounded-full bg-cream/80 backdrop-blur border border-rose-light/40 flex items-center justify-center text-ink-muted hover:text-rose hover:border-rose/50 transition-all"
           aria-label="Previous photo"
         >
           ‹
         </button>
         <button
           onClick={() => paginate(1)}
-          className="absolute right-3 top-1/2 -translate-y-1/2 z-10 w-8 h-8 rounded-full bg-cream-DEFAULT/80 backdrop-blur border border-rose-light/40 flex items-center justify-center text-ink-muted hover:text-rose-DEFAULT hover:border-rose-DEFAULT/50 transition-all"
+          className="absolute right-3 top-1/2 -translate-y-1/2 z-10 w-8 h-8 rounded-full bg-cream/80 backdrop-blur border border-rose-light/40 flex items-center justify-center text-ink-muted hover:text-rose hover:border-rose/50 transition-all"
           aria-label="Next photo"
         >
           ›
@@ -86,8 +86,8 @@ export default function PhotoCarousel() {
             onClick={() => setIndex([i, i > index ? 1 : -1])}
             className={`rounded-full transition-all duration-300 ${
               i === index
-                ? "w-5 h-2 bg-rose-DEFAULT"
-                : "w-2 h-2 bg-rose-light hover:bg-rose-DEFAULT/50"
+                ? "w-5 h-2 bg-rose"
+                : "w-2 h-2 bg-rose-light hover:bg-rose/50"
             }`}
             aria-label={`Go to photo ${i + 1}`}
           />

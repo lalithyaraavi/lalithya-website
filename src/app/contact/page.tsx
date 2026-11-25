@@ -19,10 +19,10 @@ export default function ContactPage() {
         {/* Left — copy */}
         <div>
           <FadeIn>
-            <p className="font-mono text-xs text-rose-DEFAULT tracking-widest mb-4">GET IN TOUCH</p>
-            <h1 className="font-display text-6xl md:text-7xl font-light text-ink-DEFAULT mb-6 leading-tight">
+            <p className="font-mono text-xs text-rose tracking-widest mb-4">GET IN TOUCH</p>
+            <h1 className="font-display text-6xl md:text-7xl font-light text-ink mb-6 leading-tight">
               Say<br />
-              <em className="text-rose-DEFAULT">hello</em> ✦
+              <em className="text-rose">hello</em> ✦
             </h1>
             <p className="font-body text-ink-muted leading-relaxed mb-8 text-lg">
               Whether you&apos;re looking to collaborate, hire, or just swap design recs — my inbox is always open.
@@ -41,12 +41,12 @@ export default function ContactPage() {
                   href={link.href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="group flex items-center gap-4 p-5 rounded-3xl border border-rose-light/40 hover:border-rose-DEFAULT/50 bg-cream-DEFAULT hover:bg-rose-light/10 transition-all"
+                  className="group flex items-center gap-4 p-5 rounded-3xl border border-rose-light/40 hover:border-rose/50 bg-cream hover:bg-rose-light/10 transition-all"
                 >
                   <span className="text-2xl">{link.icon}</span>
                   <div>
-                    <p className="font-mono text-xs text-rose-DEFAULT tracking-widest mb-0.5">{link.label}</p>
-                    <p className="font-body text-sm text-ink-DEFAULT group-hover:text-rose-DEFAULT transition-colors">{link.value}</p>
+                    <p className="font-mono text-xs text-rose tracking-widest mb-0.5">{link.label}</p>
+                    <p className="font-body text-sm text-ink group-hover:text-rose transition-colors">{link.value}</p>
                   </div>
                 </a>
               ))}
@@ -58,7 +58,7 @@ export default function ContactPage() {
         <FadeIn delay={0.15}>
           <div className="relative">
             <div className="absolute -inset-4 rounded-5xl bg-gradient-to-br from-rose-light/40 to-lavender/20 blob" />
-            <div className="relative rounded-4xl bg-cream-DEFAULT border border-rose-light/40 p-8 shadow-xl shadow-rose-light/10">
+            <div className="relative rounded-4xl bg-cream border border-rose-light/40 p-8 shadow-xl shadow-rose-light/10">
               {submitted ? (
                 <motion.div
                   initial={{ opacity: 0, scale: 0.95 }}
@@ -66,12 +66,12 @@ export default function ContactPage() {
                   className="text-center py-10"
                 >
                   <div className="text-5xl mb-4 animate-float">🌸</div>
-                  <h2 className="font-display text-3xl font-light text-ink-DEFAULT mb-2">Got it!</h2>
+                  <h2 className="font-display text-3xl font-light text-ink mb-2">Got it!</h2>
                   <p className="font-body text-ink-muted">I&apos;ll get back to you soon ✦</p>
                 </motion.div>
               ) : (
                 <form onSubmit={handleSubmit} className="space-y-5">
-                  <p className="font-mono text-xs text-rose-DEFAULT tracking-widest mb-6">SEND A MESSAGE</p>
+                  <p className="font-mono text-xs text-rose tracking-widest mb-6">SEND A MESSAGE</p>
 
                   {[
                     { id: "name", label: "Your name", type: "text", placeholder: "Ada Lovelace" },
@@ -88,7 +88,7 @@ export default function ContactPage() {
                         required
                         value={form[field.id as "name" | "email"]}
                         onChange={(e) => setForm({ ...form, [field.id]: e.target.value })}
-                        className="w-full px-4 py-3 rounded-2xl border border-rose-light/40 bg-cream-warm text-ink-DEFAULT font-body text-sm placeholder:text-ink-muted/40 focus:outline-none focus:border-rose-DEFAULT/60 focus:ring-2 focus:ring-rose-light/40 transition-all"
+                        className="w-full px-4 py-3 rounded-2xl border border-rose-light/40 bg-cream-warm text-ink font-body text-sm placeholder:text-ink-muted/40 focus:outline-none focus:border-rose/60 focus:ring-2 focus:ring-rose-light/40 transition-all"
                       />
                     </div>
                   ))}
@@ -104,7 +104,7 @@ export default function ContactPage() {
                       required
                       value={form.message}
                       onChange={(e) => setForm({ ...form, message: e.target.value })}
-                      className="w-full px-4 py-3 rounded-2xl border border-rose-light/40 bg-cream-warm text-ink-DEFAULT font-body text-sm placeholder:text-ink-muted/40 focus:outline-none focus:border-rose-DEFAULT/60 focus:ring-2 focus:ring-rose-light/40 transition-all resize-none"
+                      className="w-full px-4 py-3 rounded-2xl border border-rose-light/40 bg-cream-warm text-ink font-body text-sm placeholder:text-ink-muted/40 focus:outline-none focus:border-rose/60 focus:ring-2 focus:ring-rose-light/40 transition-all resize-none"
                     />
                   </div>
 
@@ -112,7 +112,7 @@ export default function ContactPage() {
                     type="submit"
                     whileHover={{ scale: 1.02 }}
                     whileTap={{ scale: 0.98 }}
-                    className="w-full py-3.5 rounded-full bg-rose-DEFAULT text-cream-DEFAULT font-body hover:bg-rose-dark transition-colors"
+                    className="w-full py-3.5 rounded-full bg-rose text-cream font-body hover:bg-rose-dark transition-colors"
                   >
                     Send it ✦
                   </motion.button>

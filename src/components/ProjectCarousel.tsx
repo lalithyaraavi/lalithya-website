@@ -44,14 +44,14 @@ export default function ProjectCarousel({ images, color, title }: { images: stri
           {/* Arrows */}
           <button
             onClick={() => paginate(-1)}
-            className="absolute left-4 top-1/2 -translate-y-1/2 z-10 w-10 h-10 rounded-full bg-cream-DEFAULT/80 backdrop-blur border border-rose-light/40 flex items-center justify-center text-ink-DEFAULT hover:text-rose-DEFAULT hover:border-rose-DEFAULT/50 transition-all text-lg"
+            className="absolute left-4 top-1/2 -translate-y-1/2 z-10 w-10 h-10 rounded-full bg-cream/80 backdrop-blur border border-rose-light/40 flex items-center justify-center text-ink hover:text-rose hover:border-rose/50 transition-all text-lg"
             aria-label="Previous image"
           >
             ‹
           </button>
           <button
             onClick={() => paginate(1)}
-            className="absolute right-4 top-1/2 -translate-y-1/2 z-10 w-10 h-10 rounded-full bg-cream-DEFAULT/80 backdrop-blur border border-rose-light/40 flex items-center justify-center text-ink-DEFAULT hover:text-rose-DEFAULT hover:border-rose-DEFAULT/50 transition-all text-lg"
+            className="absolute right-4 top-1/2 -translate-y-1/2 z-10 w-10 h-10 rounded-full bg-cream/80 backdrop-blur border border-rose-light/40 flex items-center justify-center text-ink hover:text-rose hover:border-rose/50 transition-all text-lg"
             aria-label="Next image"
           >
             ›
@@ -64,7 +64,7 @@ export default function ProjectCarousel({ images, color, title }: { images: stri
                 key={i}
                 onClick={() => setIndex([i, i > index ? 1 : -1])}
                 className={`rounded-full transition-all duration-300 ${
-                  i === index ? "w-5 h-2 bg-cream-DEFAULT" : "w-2 h-2 bg-cream-DEFAULT/50 hover:bg-cream-DEFAULT/80"
+                  i === index ? "w-5 h-2 bg-cream" : "w-2 h-2 bg-cream/50 hover:bg-cream/80"
                 }`}
                 aria-label={`Image ${i + 1}`}
               />

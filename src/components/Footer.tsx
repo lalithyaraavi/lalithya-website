@@ -1,12 +1,11 @@
-import Link from "next/link";
-
 export default function Footer() {
   return (
-    <footer className="border-t border-rose-light/40 px-8 py-10 flex flex-col md:flex-row justify-between items-center gap-4 bg-cream-warm">
-      <p className="font-display italic text-ink-muted text-sm">
-        Built with Next.js, TypeScript, Framer Motion, and too many Figma frames
-      </p>
-      <p className="font-mono text-xs text-ink-muted/60">© Lalithya Raavi</p>
+    <footer className="relative z-[2] mt-24 border-t border-rose-light">
+      <div className="max-w-[1080px] mx-auto px-7 py-10 flex flex-col md:flex-row justify-between items-center gap-4">
+        <p className="font-mono text-[11px] uppercase tracking-[.12em] text-ink-muted/70">Lali Air · Thanks for flying with us</p>
+        <p className="font-display italic text-ink-muted text-base">Built with Next.js, TypeScript, Framer Motion, and too many Figma frames</p>
+        <p className="font-mono text-[11px] uppercase tracking-[.12em] text-ink-muted/70">© Lalithya Raavi</p>
+      </div>
     </footer>
   );
 }

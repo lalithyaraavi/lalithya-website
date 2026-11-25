@@ -33,6 +33,7 @@ export type BlogPost = {
   excerpt: string;
   tag: string;
   readTime: string;
+  from?: string; // "Greetings from ___" on the postcard front
 };
 
 export const projects: Project[] = [
@@ -275,6 +276,7 @@ export const awards: Award[] = [
 export const blogPosts: BlogPost[] = [
   {
     slug: "trusting-your-gut",
+    from: "my sketchbook",
     title: "On trusting your gut (and why I'm designing a tool to help with that)",
     date: "March 2025",
     excerpt:
@@ -284,6 +286,7 @@ export const blogPosts: BlogPost[] = [
   },
   {
     slug: "syde-first-year",
+    from: "Waterloo",
     title: "What nobody tells you about SYDE at Waterloo",
     date: "January 2025",
     excerpt:
@@ -293,6 +296,7 @@ export const blogPosts: BlogPost[] = [
   },
   {
     slug: "fort-mcmurray-design",
+    from: "Fort McMurray",
     title: "Growing up in Fort Mac and finding design",
     date: "November 2024",
     excerpt:

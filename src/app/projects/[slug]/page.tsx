@@ -21,7 +21,7 @@ export default function ProjectPage({ params }: { params: { slug: string } }) {
 
       {/* Back link */}
       <FadeIn>
-        <Link href="/projects" className="inline-flex items-center gap-2 text-sm font-body text-ink-muted hover:text-rose-DEFAULT transition-colors group mb-10 block">
+        <Link href="/projects" className="inline-flex items-center gap-2 text-sm font-body text-ink-muted hover:text-rose transition-colors group mb-10 block">
           <span className="group-hover:-translate-x-1 transition-transform inline-block">←</span> All projects
         </Link>
       </FadeIn>
@@ -35,13 +35,13 @@ export default function ProjectPage({ params }: { params: { slug: string } }) {
             <div className="flex flex-wrap items-center gap-3 mb-5">
               <span className="font-mono text-xs text-ink-muted/50 tracking-widest">{project.year}</span>
               {project.featured && (
-                <span className="px-3 py-1 rounded-full bg-rose-DEFAULT text-cream-DEFAULT text-xs font-mono">✦ Featured</span>
+                <span className="px-3 py-1 rounded-full bg-rose text-cream text-xs font-mono">✦ Featured</span>
               )}
             </div>
-            <h1 className="font-display text-5xl md:text-6xl font-light text-ink-DEFAULT leading-[1.05] mb-4">
+            <h1 className="font-display text-5xl md:text-6xl font-light text-ink leading-[1.05] mb-4">
               {project.title}
             </h1>
-            <p className="font-body text-xl text-rose-DEFAULT mb-8">{project.tagline}</p>
+            <p className="font-body text-xl text-rose mb-8">{project.tagline}</p>
             <div className="flex flex-wrap gap-2 mb-10">
               {project.tags.map((tag) => (
                 <span key={tag} className="px-3 py-1 rounded-full bg-cream-warm border border-rose-light/40 text-sm font-body text-ink-muted">
@@ -52,12 +52,12 @@ export default function ProjectPage({ params }: { params: { slug: string } }) {
           </FadeIn>
 
           <FadeIn delay={0.18}>
-            <div className="w-12 h-px bg-rose-DEFAULT/40 mb-10" />
+            <div className="w-12 h-px bg-rose/40 mb-10" />
           </FadeIn>
 
           {project.links && project.links.length > 0 && (
             <FadeIn delay={0.2}>
-              <p className="font-mono text-xs text-rose-DEFAULT tracking-widest mb-4">VIEW PROJECT</p>
+              <p className="font-mono text-xs text-rose tracking-widest mb-4">VIEW PROJECT</p>
               <div className="flex flex-wrap gap-3 mb-10">
                 {project.links.map((link) => (
                   <a
@@ -65,7 +65,7 @@ export default function ProjectPage({ params }: { params: { slug: string } }) {
                     href={link.url}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center gap-2 px-6 py-3 rounded-full border border-rose-DEFAULT text-rose-DEFAULT font-body text-sm hover:bg-rose-DEFAULT hover:text-cream-DEFAULT transition-all"
+                    className="inline-flex items-center gap-2 px-6 py-3 rounded-full border border-rose text-rose font-body text-sm hover:bg-rose hover:text-cream transition-all"
                   >
                     {link.label} →
                   </a>
@@ -75,7 +75,7 @@ export default function ProjectPage({ params }: { params: { slug: string } }) {
           )}
 
           <FadeIn delay={0.25}>
-            <p className="font-body text-ink-DEFAULT leading-loose text-base mb-12 whitespace-pre-line">
+            <p className="font-body text-ink leading-loose text-base mb-12 whitespace-pre-line">
               {project.description}
             </p>
           </FadeIn>
@@ -83,18 +83,18 @@ export default function ProjectPage({ params }: { params: { slug: string } }) {
           {project.outcome && (
             <FadeIn delay={0.3}>
               <div className="p-6 rounded-3xl bg-rose-light/30 border border-rose-light/50 mb-10">
-                <p className="font-mono text-xs text-rose-DEFAULT tracking-widest mb-3">{project.outcomeLabel ?? "OUTCOME"}</p>
+                <p className="font-mono text-xs text-rose tracking-widest mb-3">{project.outcomeLabel ?? "OUTCOME"}</p>
                 {project.outcomeLabel === "AWARDS" ? (
                   <ul className="space-y-1">
                     {project.outcome!.split("\n").map((item) => (
-                      <li key={item} className="font-body text-ink-DEFAULT flex items-start gap-2">
-                        <span className="text-rose-DEFAULT mt-1 shrink-0">✦</span>
+                      <li key={item} className="font-body text-ink flex items-start gap-2">
+                        <span className="text-rose mt-1 shrink-0">✦</span>
                         {item}
                       </li>
                     ))}
                   </ul>
                 ) : (
-                  <p className="font-body text-ink-DEFAULT leading-relaxed">{project.outcome}</p>
+                  <p className="font-body text-ink leading-relaxed">{project.outcome}</p>
                 )}
               </div>
             </FadeIn>

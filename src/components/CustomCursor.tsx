@@ -27,14 +27,14 @@ export default function CustomCursor() {
     <>
       {/* Outer ring */}
       <motion.div
-        className="fixed top-0 left-0 pointer-events-none z-[9999] rounded-full border border-rose-DEFAULT mix-blend-multiply"
+        className="fixed top-0 left-0 pointer-events-none z-[9999] rounded-full border border-rose mix-blend-multiply"
         animate={{ x: pos.x - 20, y: pos.y - 20, scale: hovered ? 1.6 : 1, opacity: 0.7 }}
         transition={{ type: "spring", stiffness: 180, damping: 22, mass: 0.5 }}
         style={{ width: 40, height: 40 }}
       />
       {/* Inner dot */}
       <motion.div
-        className="fixed top-0 left-0 pointer-events-none z-[9999] rounded-full bg-rose-DEFAULT"
+        className="fixed top-0 left-0 pointer-events-none z-[9999] rounded-full bg-rose"
         animate={{ x: pos.x - 4, y: pos.y - 4, scale: hovered ? 0.5 : 1 }}
         transition={{ type: "spring", stiffness: 300, damping: 28 }}
         style={{ width: 8, height: 8 }}
