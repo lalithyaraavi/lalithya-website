@@ -296,3 +296,7 @@
 .tv-poster{position:absolute;inset:0;padding:8px}
 .tv-poster .pc-greet{right:30%}
 .tv-poster .pc-greet h3{font-size:34px}
+
+.tv-credit{font-family:var(--font-mono);font-size:10px;letter-spacing:.04em;color:var(--faint);margin-top:8px}
+.tv-credit a{text-decoration:underline;text-underline-offset:2px}
+.tv-credit a:hover{color:var(--accent)}

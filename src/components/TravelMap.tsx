@@ -203,6 +203,11 @@ export default function TravelMap() {
                   </>
                 )}
               </div>
+              {p.credit && (
+                <p className="tv-credit">
+                  Photo: <a href={p.credit.url} target="_blank" rel="noopener noreferrer">{p.credit.by}</a> · {p.credit.license} · Wikimedia Commons
+                </p>
+              )}
               {p.note && <p className="tv-note">{p.note}</p>}
               <div className="tv-meta">
                 <div><span className="la-mono">{p.when ? "When" : "Country"}</span><b>{p.when ?? p.country}</b></div>
