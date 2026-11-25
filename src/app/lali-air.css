@@ -322,3 +322,13 @@
 .la-pa p a{color:var(--ink);border-bottom:1px solid var(--brick);transition:color .25s}
 .la-pa p a:hover{color:var(--brick)}
 @media (prefers-reduced-motion:reduce){.la-pa p{opacity:1;transform:none}}
+
+.tv-credits{margin:4px 0 40px;font-family:var(--font-mono);font-size:11px;color:var(--faint);letter-spacing:.03em}
+.tv-credits summary{cursor:pointer;text-transform:uppercase;letter-spacing:.12em;list-style:none}
+.tv-credits summary::-webkit-details-marker{display:none}
+.tv-credits summary::after{content:" +"}
+.tv-credits[open] summary::after{content:" −"}
+.tv-credits p{margin:10px 0 6px}
+.tv-credits ul{columns:2;column-gap:28px;list-style:none;padding:0;margin:0;line-height:1.8}
+.tv-credits a{text-decoration:underline;text-underline-offset:2px}
+@media (max-width:640px){.tv-credits ul{columns:1}}

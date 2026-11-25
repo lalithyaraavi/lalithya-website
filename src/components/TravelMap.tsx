@@ -217,11 +217,6 @@ export default function TravelMap() {
                   </>
                 )}
               </div>
-              {p.credit && (
-                <p className="tv-credit">
-                  Photo: <a href={p.credit.url} target="_blank" rel="noopener noreferrer">{p.credit.by}</a> · {p.credit.license} · Wikimedia Commons
-                </p>
-              )}
               {p.note && <p className="tv-note">{p.note}</p>}
               <div className="tv-meta">
                 <div><span className="la-mono">{p.when ? "When" : "Country"}</span><b>{p.when ?? p.country}</b></div>
@@ -236,6 +231,18 @@ export default function TravelMap() {
       <div className="tv-strip">
         {places.map((pl, i) => <button key={pl.code} className={i === active ? "on" : ""} onClick={() => setActive(i)}>{pl.code} · {pl.name}</button>)}
       </div>
+
+      <details className="tv-credits">
+        <summary>Photo credits</summary>
+        <p>Photos of places I haven&apos;t shared my own pictures of are from Wikimedia Commons, used under their free licenses.</p>
+        <ul>
+          {places.filter((pl) => pl.credit).map((pl) => (
+            <li key={pl.code}>
+              {pl.name}: <a href={pl.credit!.url} target="_blank" rel="noopener noreferrer">{pl.credit!.by}</a>, {pl.credit!.license}
+            </li>
+          ))}
+        </ul>
+      </details>
     </>
   );
 }
