@@ -281,80 +281,48 @@ export const blogPosts: BlogPost[] = [
     title: "Notes from seat 2A",
     date: "November 2026",
     excerpt:
-      "My website turned into a boarding pass, and honestly it makes sense. A little log of where I've been, what airports taught me about systems, and why I keep looking for the next gate.",
-    tag: "Travel",
-    readTime: "4 min",
+      "Four terms, two co-ops, and a lot of connecting flights. A look back at the trip from 1A to 2A before the next one starts.",
+    tag: "Student life",
+    readTime: "3 min",
     body: [
       {
-        heading: "Boarding",
-        stamp: "GATE W",
+        heading: "Departure",
+        stamp: "1A",
         text: [
-          "My website is a boarding pass now. I didn't plan that. Every time I tried to describe myself, I ended up talking about where I'd been and where I was going next, so I stopped fighting it and leaned in.",
-          "Right now my seat says 2A, the term I'm heading into. It also happens to be a window seat, which feels right. I've always been the person with my face pressed to the glass, trying to figure out how all the little roads and rivers connect.",
+          "Starting at Waterloo felt like the first leg of a long trip. New city, new people, and a program that takes a minute to explain. Systems Design made sense to me because it isn't really one subject. It's how all of them connect.",
+          "There's a photo of me in front of the Waterloo Engineering sign on my travel log. It's filed under home now, which still feels a little funny to write.",
         ],
       },
       {
-        heading: "Where it started",
-        stamp: "YMM",
+        heading: "First layover",
+        stamp: "CO-OP 1",
         text: [
-          "I grew up in Fort McMurray. Most people know it from the news, and it's a lot further from everything than it looks on a map. When you grow up somewhere that remote, leaving isn't a quick getaway. It's an event. Every trip felt like a door opening a little wider.",
-          "Since then I've been lucky enough to stamp a lot of that map: Banff and Jasper, Vancouver and Halifax, Montreal and Toronto, Dublin, London, Wales and Paris, Hyderabad and Kuwait, New York, Dallas, Orlando and Las Vegas, Cancún, Puerto Vallarta and a few Caribbean beaches. 28 checkpoints, 9 countries, and counting.",
+          "My first co-op was at Suncor as a data analyst. I spent the term in Power BI and dispatch data, and started caring less about how a dashboard looks and more about whether someone will actually open it on a Monday morning.",
         ],
       },
       {
-        heading: "Cruising altitude",
-        stamp: "ATL",
+        heading: "Connecting flight",
+        stamp: "1B",
         text: [
-          "Here's something nobody tells you: airports are one of the best systems design classrooms in the world. Every gate, every bag tag, every departures board is a decision someone made about how thousands of strangers should move without ever talking to each other. When it works, nobody notices. When it doesn't, everybody does.",
-          "That's what pulled me into TurnSight. I wanted to know what happens when one late arrival at Atlanta pushes its delay onto the next flight, and then the next. One small slip and the whole board changes colour. Systems are like that. People are too, honestly.",
+          "1B was five courses at once: calculus, linear algebra, human factors, digital circuits, and data structures. I implemented AVL trees in C++, which was its own kind of turbulence.",
+          "The one that stuck with me was Human Factors. I did an AcciMap of the Boeing 737 MAX crash, tracing how one decision led to the next until something went badly wrong. It's hard to look at a small design choice the same way after that.",
         ],
       },
       {
-        heading: "Turbulence",
-        stamp: "FASTEN",
+        heading: "Layover in Kanata",
+        stamp: "CO-OP 2",
         text: [
-          "Being on the move a lot isn't all window seats. You learn to make home portable: a good book, a playlist, a recipe you can bake in any kitchen. You learn that starting over gets easier, even if it never gets easy.",
-          "And you learn to pay attention. Once you've seen how differently people live, eat, commute and solve problems, you can't unsee it. Every \"that's just how it's done\" starts to look like a design choice that someone could make differently.",
+          "Right now I'm at ORBCOMM, building Power BI dashboards from device data for teams across the company. On the side I built AltWise and the partner program desk, mostly because I had questions I wanted answered.",
         ],
       },
       {
-        heading: "Landing",
-        stamp: "ARRIVED",
+        heading: "Now boarding",
+        stamp: "2A",
         text: [
-          "I don't know exactly where the next flight goes. My boarding pass just says Summer 2027. If you have ideas, the postcard at the bottom of my homepage is the best way to reach me. I'd love to hear them.",
-          "Until then, I'll be in seat 2A. Window shade up, notebook out, figuring out how everything connects.",
+          "Next up is 2A, back in Waterloo. The seat number on my boarding pass is a small joke about that. Window seat, obviously.",
+          "After 2A, my boarding pass just says Summer 2027. I don't know where that flight goes yet, and I'm okay with that. If you have ideas, you know where to find me.",
         ],
       },
     ],
-  },
-  {
-    slug: "trusting-your-gut",
-    from: "my sketchbook",
-    title: "On trusting your gut (and why I'm designing a tool to help with that)",
-    date: "March 2025",
-    excerpt:
-      "Indecision isn't a personality flaw. It's a design problem. Here's why I built GUT and what I learned about intuition along the way.",
-    tag: "Design Thinking",
-    readTime: "5 min",
-  },
-  {
-    slug: "syde-first-year",
-    from: "Waterloo",
-    title: "What nobody tells you about SYDE at Waterloo",
-    date: "January 2025",
-    excerpt:
-      "Systems Design is one of the most misunderstood programs on campus. Here's what the first year actually feels like.",
-    tag: "Student Life",
-    readTime: "7 min",
-  },
-  {
-    slug: "fort-mcmurray-design",
-    from: "Fort McMurray",
-    title: "Growing up in Fort Mac and finding design",
-    date: "November 2024",
-    excerpt:
-      "There aren't many designers from Fort McMurray. Here's how a science fair obsession and a lot of baking led me here.",
-    tag: "Personal",
-    readTime: "4 min",
   },
 ];

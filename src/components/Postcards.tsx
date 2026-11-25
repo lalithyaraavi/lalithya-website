@@ -20,7 +20,7 @@ export default function Postcards({ posts }: { posts: BlogPost[] }) {
           <h1>Wish you<br />were <em>here</em></h1>
           <p className="sub">Notes on design, engineering, student life, and whatever else is on my mind. Tap a postcard to flip it.</p>
         </div>
-        <div className="pc-rack">
+        <div className="pc-rack" style={cats.length <= 2 ? { display: "none" } : undefined}>
           {cats.map((c) => <button key={c} className={c === cat ? "on" : ""} onClick={() => setCat(c)}>{c}</button>)}
         </div>
       </div>

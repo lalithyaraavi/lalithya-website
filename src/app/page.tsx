@@ -36,7 +36,7 @@ export default function Home() {
         <header className="la-hero">
           <p className="la-mono la-r">Now boarding · Gate SYDE</p>
           <h1 className="la-r">Hi! I&apos;m <span>Lali</span>.</h1>
-          <p className="sub la-r">So glad you&apos;re here! I love working on things that make people&apos;s lives a little easier, and a little more interesting.</p>
+          <p className="sub la-r">I grew up a long way from everywhere, so I got used to looking out the window and asking how it all connects. I still do that, just with data, design, and systems now.</p>
 
           <div className="la-pass la-r">
             <div className="la-pass-main">
