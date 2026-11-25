@@ -17,8 +17,8 @@ export type Place = {
 
 export const places: Place[] = [
   // Home bases
-  { code: "YMM", name: "Fort McMurray", region: "Alberta", country: "Canada", lat: 56.73, lon: -111.38, home: true, when: "Grew up here", note: "Where it all started.", photos: ["/photos/photo3.jpeg"] },
-  { code: "YKF", name: "Waterloo", region: "Ontario", country: "Canada", lat: 43.46, lon: -80.52, home: true, when: "SYDE '30", note: "Home for school.", photos: ["/photos/photo.JPG", "/photos/photo4.jpg"] },
+  { code: "YMM", name: "Fort McMurray", region: "Alberta", country: "Canada", lat: 56.73, lon: -111.38, home: true, when: "Grew up here", note: "Where it all started.", photos: [] },
+  { code: "YKF", name: "Waterloo", region: "Ontario", country: "Canada", lat: 43.46, lon: -80.52, home: true, when: "SYDE '30", note: "Home for school.", photos: ["/photos/photo3.jpeg", "/photos/photo.JPG", "/photos/photo4.jpg"] },
   { code: "YOW", name: "Kanata", region: "Ontario", country: "Canada", lat: 45.31, lon: -75.91, when: "Fall 2026", note: "Co-op term at ORBCOMM.", photos: [] },
 
   // Canada

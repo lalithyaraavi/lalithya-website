@@ -1,29 +1,27 @@
+import type { Metadata } from "next";
 import { projects } from "@/data/content";
-import ProjectCard from "@/components/ProjectCard";
-import FadeIn from "@/components/FadeIn";
-import Blobs from "@/components/Blobs";
+import ProjectTags from "@/components/ProjectTags";
+import LaEffects from "@/components/LaEffects";
+
+export const metadata: Metadata = { title: "Projects · Lalithya Raavi" };
 
 export default function ProjectsPage() {
   return (
-    <div className="relative min-h-screen pt-32 pb-24 px-4 md:px-8 overflow-hidden">
-      <Blobs />
-      <div className="max-w-6xl mx-auto">
-        <FadeIn>
-          <p className="font-mono text-base text-rose tracking-widest mb-4">SELECTED WORK</p>
-          <h1 className="font-display text-7xl md:text-8xl font-light text-ink mb-4">Projects</h1>
-          <p className="font-body text-ink-muted text-xl leading-relaxed max-w-2xl mb-16">
-            Welcome to my portfolio. Here you&apos;ll find a collection of design and research projects, exploring systems thinking and problem solving as I navigate the world of engineering.
-          </p>
-        </FadeIn>
-
-        <div className="columns-1 sm:columns-2 lg:columns-3 gap-5">
-          {projects.map((p, i) => (
-            <div key={p.slug} className="mb-5 break-inside-avoid">
-              <ProjectCard project={p} index={i} />
-            </div>
-          ))}
+    <div className="la-wrap pb-10">
+      <LaEffects />
+      <header className="la-section" style={{ paddingTop: 140 }}>
+        <div className="la-head la-r">
+          <div>
+            <p className="la-mono">Baggage claim · All carousels</p>
+            <h1 className="la-h2" style={{ fontSize: "clamp(56px,8vw,96px)" }}>Things I&apos;ve packed</h1>
+            <p style={{ color: "var(--soft)", fontSize: 18, lineHeight: 1.65, maxWidth: 560, marginTop: 16 }}>
+              Welcome to my portfolio. Here you&apos;ll find a collection of design and research projects, exploring systems thinking and problem solving as I navigate the world of engineering.
+            </p>
+          </div>
+          <p className="la-mono">{projects.length} bags checked</p>
         </div>
-      </div>
+      </header>
+      <ProjectTags items={projects} />
     </div>
   );
 }

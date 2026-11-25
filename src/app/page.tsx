@@ -2,6 +2,7 @@ import Link from "next/link";
 import { projects, awards } from "@/data/content";
 import LaEffects, { PLANE } from "@/components/LaEffects";
 import PassportPhotos from "@/components/PassportPhotos";
+import ProjectTags from "@/components/ProjectTags";
 
 const ticker = ["UX Design", "Systems Thinking", "C++", "React", "Figma", "Product Design", "SolidWorks", "Data Analysis", "Waterloo SYDE", "Frontend Dev", "Please keep your curiosity fastened"];
 
@@ -12,7 +13,6 @@ const experience = [
   { code: "WWT21", role: "Founder and Technical Program Lead", company: "W. Women In Tech", period: "Sept 2021 – July 2025" },
 ];
 
-const tagColours = ["var(--brick)", "var(--denim)", "var(--forest)", "var(--ink)", "var(--plum)", "var(--mustard)"];
 const stampStyle = [
   { cls: "round", r: "-12deg", c: "var(--brick)" },
   { cls: "rect", r: "6deg", c: "var(--denim)" },
@@ -50,7 +50,7 @@ export default function Home() {
                 <div><span className="la-mono">Passenger</span><b>RAAVI/LALITHYA</b></div>
                 <div><span className="la-mono">Class</span><b>SYDE &apos;30</b></div>
                 <div><span className="la-mono">Current stop</span><b>YOW · Kanata</b></div>
-                <div><span className="la-mono">Next departure</span><b>Summer 2027</b></div>
+                <div><span className="la-mono">Next departure</span><b>Summer 2027</b><a href="#contact" className="la-scribble">maybe you can decide my next destination 😉</a></div>
               </div>
               <a href="#about" className="la-cta">Learn more about me ↓</a>
             </div>
@@ -102,22 +102,7 @@ export default function Home() {
             <div><p className="la-mono">Baggage claim · Carousel 1</p><h2 className="la-h2">Things I&apos;ve packed</h2></div>
             <Link href="/projects" className="la-mono" style={{ color: "var(--ink)", borderBottom: "1px solid var(--ink)" }}>All projects →</Link>
           </div>
-          <div className="la-carousel">
-            {projects.slice(0, 6).map((p, i) => {
-              const img = p.images?.[0] ?? p.image;
-              return (
-                <Link key={p.slug} href={`/projects/${p.slug}`} className="la-tag la-r" style={{ ["--c" as string]: tagColours[i % tagColours.length] }}>
-                  <span className="hole" />
-                  <span className="vert">{p.slug.replace(/[^a-z]/g, "").slice(0, 4).toUpperCase()}</span>
-                  {img && <div className="shot"><img src={img} alt={p.title} loading="lazy" /></div>}
-                  <div className="top"><span className="la-mono">{p.year}</span><span className="la-mono">→</span></div>
-                  <h3>{p.title}</h3>
-                  <p>{p.tagline}</p>
-                  <div className="chips">{p.tags.join(" · ")}</div>
-                </Link>
-              );
-            })}
-          </div>
+          <ProjectTags items={projects.slice(0, 6)} />
         </section>
 
         {/* ── Route map teaser → travel log ── */}

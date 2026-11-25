@@ -34,6 +34,7 @@ export type BlogPost = {
   tag: string;
   readTime: string;
   from?: string; // "Greetings from ___" on the postcard front
+  body?: { heading?: string; stamp?: string; text: string[] }[];
 };
 
 export const projects: Project[] = [
@@ -274,6 +275,58 @@ export const awards: Award[] = [
 ];
 
 export const blogPosts: BlogPost[] = [
+  {
+    slug: "notes-from-seat-2a",
+    from: "seat 2A",
+    title: "Notes from seat 2A",
+    date: "November 2026",
+    excerpt:
+      "My website turned into a boarding pass, and honestly it makes sense. A little log of where I've been, what airports taught me about systems, and why I keep looking for the next gate.",
+    tag: "Travel",
+    readTime: "4 min",
+    body: [
+      {
+        heading: "Boarding",
+        stamp: "GATE W",
+        text: [
+          "My website is a boarding pass now. I didn't plan that. Every time I tried to describe myself, I ended up talking about where I'd been and where I was going next, so I stopped fighting it and leaned in.",
+          "Right now my seat says 2A, the term I'm heading into. It also happens to be a window seat, which feels right. I've always been the person with my face pressed to the glass, trying to figure out how all the little roads and rivers connect.",
+        ],
+      },
+      {
+        heading: "Where it started",
+        stamp: "YMM",
+        text: [
+          "I grew up in Fort McMurray. Most people know it from the news, and it's a lot further from everything than it looks on a map. When you grow up somewhere that remote, leaving isn't a quick getaway. It's an event. Every trip felt like a door opening a little wider.",
+          "Since then I've been lucky enough to stamp a lot of that map: Banff and Jasper, Vancouver and Halifax, Montreal and Toronto, Dublin, London, Wales and Paris, Hyderabad and Kuwait, New York, Dallas, Orlando and Las Vegas, Cancún, Puerto Vallarta and a few Caribbean beaches. 28 checkpoints, 9 countries, and counting.",
+        ],
+      },
+      {
+        heading: "Cruising altitude",
+        stamp: "ATL",
+        text: [
+          "Here's something nobody tells you: airports are one of the best systems design classrooms in the world. Every gate, every bag tag, every departures board is a decision someone made about how thousands of strangers should move without ever talking to each other. When it works, nobody notices. When it doesn't, everybody does.",
+          "That's what pulled me into TurnSight. I wanted to know what happens when one late arrival at Atlanta pushes its delay onto the next flight, and then the next. One small slip and the whole board changes colour. Systems are like that. People are too, honestly.",
+        ],
+      },
+      {
+        heading: "Turbulence",
+        stamp: "FASTEN",
+        text: [
+          "Being on the move a lot isn't all window seats. You learn to make home portable: a good book, a playlist, a recipe you can bake in any kitchen. You learn that starting over gets easier, even if it never gets easy.",
+          "And you learn to pay attention. Once you've seen how differently people live, eat, commute and solve problems, you can't unsee it. Every \"that's just how it's done\" starts to look like a design choice that someone could make differently.",
+        ],
+      },
+      {
+        heading: "Landing",
+        stamp: "ARRIVED",
+        text: [
+          "I don't know exactly where the next flight goes. My boarding pass just says Summer 2027. If you have ideas, the postcard at the bottom of my homepage is the best way to reach me. I'd love to hear them.",
+          "Until then, I'll be in seat 2A. Window shade up, notebook out, figuring out how everything connects.",
+        ],
+      },
+    ],
+  },
   {
     slug: "trusting-your-gut",
     from: "my sketchbook",

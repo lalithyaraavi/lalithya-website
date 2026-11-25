@@ -36,9 +36,21 @@ export default function BlogPostPage({ params }: { params: { slug: string } }) {
           <p className="font-body text-lg text-ink-muted leading-relaxed mb-10 border-b border-rose-light pb-10">{post.excerpt}</p>
         </FadeIn>
 
-        <FadeIn delay={0.2}>
-          <p className="font-hand text-3xl text-rose">Full postcard coming soon :)</p>
-        </FadeIn>
+        {post.body ? (
+          <article className="pc-post">
+            {post.body.map((section, i) => (
+              <FadeIn key={i} delay={0.05}>
+                {section.heading && <h2>{section.heading}{section.stamp && <span>{section.stamp}</span>}</h2>}
+                {section.text.map((t, j) => <p key={j}>{t}</p>)}
+              </FadeIn>
+            ))}
+            <FadeIn><p className="font-hand text-3xl text-rose" style={{ marginTop: 36 }}>— Lali</p></FadeIn>
+          </article>
+        ) : (
+          <FadeIn delay={0.2}>
+            <p className="font-hand text-3xl text-rose">Full postcard coming soon :)</p>
+          </FadeIn>
+        )}
       </div>
     </div>
   );

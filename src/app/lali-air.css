@@ -34,6 +34,8 @@
 @keyframes la-leg{0%{left:0;opacity:0}8%{opacity:1}72%{left:calc(100% - 22px);opacity:1}88%,100%{left:calc(100% - 22px);opacity:0}}
 .la-details{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;padding-top:18px;border-top:1px dashed var(--rule)}
 .la-details b{display:block;font-family:var(--font-mono);font-weight:600;font-size:14px;margin-top:4px}
+.la-scribble{display:block;font-family:var(--font-hand);font-size:19px;line-height:1.1;color:var(--brick);margin-top:6px;transform:rotate(-2deg);transform-origin:left;transition:color .25s}
+.la-scribble:hover{color:var(--ink)}
 .la-cta{display:inline-flex;gap:8px;margin-top:24px;font-family:var(--font-mono);font-size:13px;border-bottom:1px solid var(--ink);padding-bottom:2px;transition:color .25s,border-color .25s}
 .la-cta:hover{color:var(--accent);border-color:var(--accent)}
 .la-stub{position:relative;padding:22px;border-left:2px dashed var(--rule);display:flex;flex-direction:column;justify-content:space-between;gap:16px}
@@ -96,7 +98,7 @@
 .la-passport > div{padding:34px}
 .la-ppl{background:#F6EEDD}
 .la-ppl .photo{display:flex;gap:22px;align-items:flex-start}
-.la-pp{width:200px;flex:none;margin:0}
+.la-pp{width:300px;flex:none;margin:0}
 .la-pp-frame{position:relative;width:100%;aspect-ratio:4/5;border-radius:10px;overflow:hidden;background:var(--sand);box-shadow:0 0 0 1px var(--rule)}
 .la-pp-frame img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transform:scale(1.03);transition:opacity .8s var(--ease),transform 1.6s var(--ease)}
 .la-pp-frame img.on{opacity:1;transform:none}
@@ -143,7 +145,7 @@
   .la-stub img{width:100%;aspect-ratio:4/5}
   .la-stub-info{display:flex;flex-direction:column;justify-content:flex-end;gap:14px}
   .la-seat{justify-content:flex-start;gap:36px}
-  .la-pp{width:100%;max-width:260px}
+  .la-pp{width:100%;max-width:340px}
   .la-stub-info{min-width:0}
   .la-pass-top{flex-wrap:wrap;gap:6px}
   .la-cities{gap:14px;padding:24px 0}
@@ -268,3 +270,13 @@
 .pc-read{margin-top:14px;font-family:var(--font-mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--brick)}
 .pc-read:hover{text-decoration:underline}
 @media (max-width:860px){.pc-head{grid-template-columns:1fr}.pc-rack{justify-content:flex-start}.pc-card.featured{height:auto;aspect-ratio:3/2}.pc-back{grid-template-columns:1fr}.pc-addr{display:none}.pc-msg{border:0;padding:0}}
+
+/* travel log quote */
+.tv-quote{margin:0 0 30px;padding:26px 0 0;border-top:1px dashed var(--rule);display:grid;grid-template-columns:auto 1fr;gap:18px;align-items:start;max-width:760px}
+.tv-quote::before{content:"\201C";font-family:var(--font-serif);font-size:84px;line-height:.7;color:var(--brick)}
+.tv-quote p{font-family:var(--font-serif);font-style:italic;font-size:clamp(24px,2.6vw,32px);line-height:1.25;color:var(--ink)}
+
+/* blog post body */
+.pc-post h2{font-family:var(--font-serif);font-weight:400;font-size:32px;line-height:1.1;margin:40px 0 10px;color:var(--ink);display:flex;align-items:center;gap:12px}
+.pc-post h2 span{font-family:var(--font-mono);font-size:11px;letter-spacing:.14em;color:var(--brick);border:1px solid currentColor;border-radius:999px;padding:3px 8px}
+.pc-post p{font-size:17px;line-height:1.8;color:var(--soft);margin-top:14px}

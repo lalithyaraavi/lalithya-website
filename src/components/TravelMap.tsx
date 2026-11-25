@@ -166,6 +166,10 @@ export default function TravelMap() {
         </div>
       </div>
 
+      <blockquote className="tv-quote">
+        <p>When you see and experience too much of the world from a young age, it&apos;s nearly impossible to settle for an ordinary life.</p>
+      </blockquote>
+
       <div ref={stageRef} className={`tv-stage${p ? " open" : ""}`}>
         <svg ref={svgRef} className="tv-map" role="img" aria-label="Map of places Lali has travelled to" />
         <div className="tv-hint">Click a checkpoint ✈</div>
