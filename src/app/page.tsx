@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { projects, awards } from "@/data/content";
 import LaEffects, { PLANE } from "@/components/LaEffects";
+import PassportPhotos from "@/components/PassportPhotos";
 
 const ticker = ["UX Design", "Systems Thinking", "C++", "React", "Figma", "Product Design", "SolidWorks", "Data Analysis", "Waterloo SYDE", "Frontend Dev", "Please keep your curiosity fastened"];
 
@@ -55,7 +56,7 @@ export default function Home() {
             </div>
             <div className="la-stub">
               <img src="/photos/me.jpg" alt="Lali" />
-              <div>
+              <div className="la-stub-info">
                 <div className="la-seat">
                   <div><span className="la-mono">Seat</span><b>2A</b></div>
                   <div style={{ textAlign: "right" }}><span className="la-mono">Gate</span><b>W</b></div>
@@ -146,7 +147,7 @@ export default function Home() {
           <div className="la-passport la-r">
             <div className="la-ppl">
               <div className="photo">
-                <img src="/photos/photo.JPG" alt="Lali in Waterloo" />
+                <PassportPhotos />
                 <dl>
                   <div><dt>Surname</dt><dd>RAAVI</dd></div>
                   <div><dt>Given name</dt><dd>LALITHYA</dd></div>

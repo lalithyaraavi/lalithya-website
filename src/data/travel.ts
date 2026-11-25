@@ -38,6 +38,7 @@ export const places: Place[] = [
   { code: "EWR", name: "New Jersey", region: "New Jersey", country: "United States", lat: 40.73, lon: -74.17, photos: [] },
   { code: "MCO", name: "Orlando", region: "Florida", country: "United States", lat: 28.54, lon: -81.38, photos: [] },
   { code: "DFW", name: "Dallas", region: "Texas", country: "United States", lat: 32.78, lon: -96.80, photos: [] },
+  { code: "PHL", name: "Pennsylvania", region: "Pennsylvania", country: "United States", lat: 39.95, lon: -75.17, photos: [] },
   { code: "LAS", name: "Las Vegas", region: "Nevada", country: "United States", lat: 36.17, lon: -115.14, photos: [] },
 
   // Mexico and the Caribbean
@@ -51,6 +52,7 @@ export const places: Place[] = [
   { code: "CWL", name: "Wales", region: "Wales", country: "United Kingdom", lat: 51.48, lon: -3.18, photos: [] },
   { code: "CDG", name: "Paris", region: "Île-de-France", country: "France", lat: 48.86, lon: 2.35, photos: [] },
 
-  // Asia
+  // Middle East and Asia
+  { code: "KWI", name: "Kuwait", region: "Kuwait City", country: "Kuwait", lat: 29.38, lon: 47.99, photos: [] },
   { code: "HYD", name: "Hyderabad", region: "Telangana", country: "India", lat: 17.39, lon: 78.49, photos: [] },
 ];

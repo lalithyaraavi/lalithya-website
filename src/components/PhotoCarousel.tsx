@@ -2,7 +2,7 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 
-const photos = [
+export const photos = [
   { src: "/photos/photo.JPG", label: "📍 Waterloo" },
   { src: "/photos/photo2.JPG", label: "✨ Good times" },
   { src: "/photos/photo3.jpeg", label: "🌸 Fort Mac" },

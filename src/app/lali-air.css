@@ -40,7 +40,8 @@
 .la-stub::before,.la-stub::after{content:"";position:absolute;left:-13px;width:24px;height:24px;border-radius:50%;background:var(--bg)}
 .la-stub::before{top:-12px}.la-stub::after{bottom:-12px}
 .la-stub img{width:100%;aspect-ratio:1;object-fit:cover;object-position:top;border-radius:14px;background:var(--sand)}
-.la-seat{display:flex;justify-content:space-between;align-items:end}
+.la-seat{display:flex;justify-content:space-between;align-items:end;gap:24px}
+.la-seat .la-mono{display:block;margin-bottom:6px}
 .la-seat b{display:block;font-family:var(--font-mono);font-size:24px;font-weight:600;line-height:1}
 .la-barcode{height:44px;margin-top:14px;background:repeating-linear-gradient(90deg,var(--ink) 0 2px,transparent 2px 4px,var(--ink) 4px 5px,transparent 5px 8px,var(--ink) 8px 11px,transparent 11px 12px,var(--ink) 12px 13px,transparent 13px 16px)}
 
@@ -95,7 +96,18 @@
 .la-passport > div{padding:34px}
 .la-ppl{background:#F6EEDD}
 .la-ppl .photo{display:flex;gap:22px;align-items:flex-start}
-.la-ppl img{width:170px;aspect-ratio:4/5;object-fit:cover;border-radius:10px;background:var(--sand)}
+.la-pp{width:200px;flex:none;margin:0}
+.la-pp-frame{position:relative;width:100%;aspect-ratio:4/5;border-radius:10px;overflow:hidden;background:var(--sand);box-shadow:0 0 0 1px var(--rule)}
+.la-pp-frame img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transform:scale(1.03);transition:opacity .8s var(--ease),transform 1.6s var(--ease)}
+.la-pp-frame img.on{opacity:1;transform:none}
+.la-pp-arrow{position:absolute;top:50%;transform:translateY(-50%);width:28px;height:28px;border-radius:50%;border:0;background:rgba(251,246,236,.85);color:var(--ink);cursor:pointer;opacity:0;transition:opacity .3s}
+.la-pp:hover .la-pp-arrow,.la-pp-arrow:focus{opacity:1}
+.la-pp-arrow.l{left:8px}.la-pp-arrow.r{right:8px}
+.la-pp figcaption{display:flex;justify-content:space-between;align-items:center;margin-top:10px;gap:8px}
+.la-pp figcaption .la-mono{text-transform:none;letter-spacing:.04em;font-size:12px;color:var(--soft)}
+.la-pp-dots{display:flex;gap:5px}
+.la-pp-dots button{width:6px;height:6px;border-radius:50%;border:0;padding:0;background:var(--rule);cursor:pointer;transition:width .3s var(--ease),background .3s}
+.la-pp-dots button.on{width:16px;border-radius:3px;background:var(--accent)}
 .la-ppl dl{display:grid;gap:10px}
 .la-ppl dt{font-family:var(--font-mono);font-size:10px;letter-spacing:.14em;color:var(--faint);text-transform:uppercase}
 .la-ppl dd{font-family:var(--font-mono);font-size:13px;font-weight:600}
@@ -123,8 +135,19 @@
 
 @media (max-width:860px){
   .la-route{display:none}
-  .la-pass{grid-template-columns:1fr}.la-stub{border-left:0;border-top:2px dashed var(--rule);flex-direction:row;align-items:center}
-  .la-stub::before,.la-stub::after{display:none}.la-stub img{width:110px}
+  .la-pass{grid-template-columns:1fr}
+  .la-pass-main{padding:24px 22px}
+  .la-stub{border-left:0;border-top:2px dashed var(--rule);display:grid;grid-template-columns:minmax(110px,140px) 1fr;gap:22px;align-items:stretch;padding:22px}
+  .la-stub::before,.la-stub::after{top:-13px;bottom:auto}
+  .la-stub::before{left:-12px}.la-stub::after{left:auto;right:-12px}
+  .la-stub img{width:100%;aspect-ratio:4/5}
+  .la-stub-info{display:flex;flex-direction:column;justify-content:flex-end;gap:14px}
+  .la-seat{justify-content:flex-start;gap:36px}
+  .la-pp{width:100%;max-width:260px}
+  .la-stub-info{min-width:0}
+  .la-pass-top{flex-wrap:wrap;gap:6px}
+  .la-cities{gap:14px;padding:24px 0}
+  .la-code{font-size:clamp(44px,13vw,80px)}
   .la-details{grid-template-columns:repeat(2,1fr)}
   .la-bh{display:none}.la-row{grid-template-columns:1fr auto;gap:4px 12px}
   .la-passport,.la-postcard{grid-template-columns:1fr}.la-passport::after{display:none}
