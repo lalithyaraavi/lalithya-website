@@ -280,6 +280,7 @@
 .tv-quote{margin:0 0 30px;padding:26px 0 0;border-top:1px dashed var(--rule);display:grid;grid-template-columns:auto 1fr;gap:18px;align-items:start;max-width:760px}
 .tv-quote::before{content:"\201C";font-family:var(--font-serif);font-size:84px;line-height:.7;color:var(--brick)}
 .tv-quote p{font-family:var(--font-serif);font-style:italic;font-size:clamp(24px,2.6vw,32px);line-height:1.25;color:var(--ink)}
+.tv-quote p::after{content:"\201D";font-style:normal;font-size:1.5em;line-height:0;vertical-align:-.12em;margin-left:3px;color:var(--brick)}
 
 /* blog post body */
 .pc-post h2{font-family:var(--font-serif);font-weight:400;font-size:32px;line-height:1.1;margin:40px 0 10px;color:var(--ink);display:flex;align-items:center;gap:12px}
