@@ -1,6 +1,6 @@
 "use client";
 import { useEffect, useRef, useState, useCallback } from "react";
-import { geoNaturalEarth1, geoPath, geoGraticule10, geoBounds, geoDistance, type GeoProjection } from "d3-geo";
+import { geoNaturalEarth1, geoPath, geoGraticule10, geoBounds, type GeoProjection } from "d3-geo";
 import { select } from "d3-selection";
 import { zoom as d3zoom, zoomIdentity, type ZoomBehavior } from "d3-zoom";
 import "d3-transition";
@@ -17,22 +17,7 @@ export default function TravelMap() {
   const api = useRef<{ focus: (i: number) => void; reset: () => void } | null>(null);
   const [active, setActive] = useState<number | null>(null);
   const [photo, setPhoto] = useState(0);
-  const [km, setKm] = useState(0);
-
-  const total = places.slice(1).reduce((s, p, i) => s + geoDistance([places[i].lon, places[i].lat], [p.lon, p.lat]) * 6371, 0);
-
-  // count-up km
-  useEffect(() => {
-    let raf = 0;
-    const t0 = performance.now();
-    const step = (t: number) => {
-      const k = Math.min(1, (t - t0) / 1600);
-      setKm(Math.round(total * (1 - Math.pow(1 - k, 3))));
-      if (k < 1) raf = requestAnimationFrame(step);
-    };
-    raf = requestAnimationFrame(step);
-    return () => cancelAnimationFrame(raf);
-  }, [total]);
+  const countries = new Set(places.map((p) => p.country)).size;
 
   // draw map once
   useEffect(() => {
@@ -47,14 +32,17 @@ export default function TravelMap() {
     const topo = world as unknown as Topology<{ countries: GeometryCollection }>;
     const land = feature(topo, topo.objects.countries);
 
+    // Fit the view to the places, with room around them (clamped so it never wraps past 180°).
     const b = geoBounds({ type: "MultiPoint", coordinates: places.map((p) => [p.lon, p.lat]) });
-    const padLon = Math.max(18, (b[1][0] - b[0][0]) * 0.35);
-    const padLat = Math.max(10, (b[1][1] - b[0][1]) * 0.4);
-    const proj: GeoProjection = geoNaturalEarth1().fitExtent([[40, 60], [W - 40, H - 60]], {
+    const padLon = Math.max(14, (b[1][0] - b[0][0]) * 0.08);
+    const padLat = Math.max(8, (b[1][1] - b[0][1]) * 0.25);
+    const clampLon = (x: number) => Math.max(-179, Math.min(179, x));
+    const clampLat = (y: number) => Math.max(-80, Math.min(80, y));
+    const proj: GeoProjection = geoNaturalEarth1().fitExtent([[30, 50], [W - 30, H - 50]], {
       type: "MultiPoint",
       coordinates: [
-        [b[0][0] - padLon, b[0][1] - padLat], [b[1][0] + padLon, b[0][1] - padLat],
-        [b[1][0] + padLon, b[1][1] + padLat], [b[0][0] - padLon, b[1][1] + padLat],
+        [clampLon(b[0][0] - padLon), clampLat(b[0][1] - padLat)], [clampLon(b[1][0] + padLon), clampLat(b[0][1] - padLat)],
+        [clampLon(b[1][0] + padLon), clampLat(b[1][1] + padLat)], [clampLon(b[0][0] - padLon), clampLat(b[1][1] + padLat)],
       ],
     });
     const path = geoPath(proj);
@@ -68,12 +56,14 @@ export default function TravelMap() {
       const lift = Math.min(120, len * 0.28);
       return `M${a[0]},${a[1]} Q${mx - (dy / len) * lift * 0.3},${my - lift} ${c[0]},${c[1]}`;
     };
-    const legs = places.slice(1).map((p, i) => curve(xy(places[i]), xy(p)));
+    // Every route flies out from the home hub (first place), like an airline route map.
+    const hub = xy(places[0]);
+    const legs = places.slice(1).map((p) => curve(hub, xy(p)));
     const arcs = g.append("g").selectAll<SVGPathElement, string>("path").data(legs).join("path").attr("class", "arc").attr("d", (d) => d);
     arcs.each(function (_, i) {
       const L = this.getTotalLength();
       select(this).attr("stroke-dasharray", `${L} ${L}`).attr("stroke-dashoffset", L)
-        .transition().delay(400 + i * 700).duration(1100).attr("stroke-dashoffset", 0)
+        .transition().delay(300 + i * 110).duration(1000).attr("stroke-dashoffset", 0)
         .on("end", function () { select(this).attr("stroke-dasharray", "5 6"); });
     });
 
@@ -91,9 +81,9 @@ export default function TravelMap() {
           const a = (Math.atan2(q.y - p.y, q.x - p.x) * 180) / Math.PI + 90;
           return `translate(${p.x},${p.y}) rotate(${a}) scale(${1 / k})`;
         })
-        .on("end", () => window.setTimeout(() => fly(i + 1), 500));
+        .on("end", () => window.setTimeout(() => fly(i + 1 + Math.floor(Math.random() * 3)), 400));
     };
-    const flyTimer = window.setTimeout(() => fly(0), 400 + legs.length * 700 + 600);
+    const flyTimer = window.setTimeout(() => fly(0), 300 + legs.length * 110 + 1200);
 
     const pins = g.append("g").selectAll<SVGGElement, Place>("g").data(places).join("g")
       .attr("class", (d) => `pin${d.home ? " home" : ""}`)
@@ -107,6 +97,7 @@ export default function TravelMap() {
 
     const zoom: ZoomBehavior<SVGSVGElement, unknown> = d3zoom<SVGSVGElement, unknown>().scaleExtent([1, 8]).on("zoom", (e) => {
       k = e.transform.k;
+      svgEl.classList.toggle("zoomed", k >= 2.2);
       g.attr("transform", e.transform.toString());
       pins.attr("transform", (d) => `translate(${xy(d)}) scale(${1 / k})`);
       arcs.attr("stroke-width", 1.6 / k);
@@ -167,11 +158,11 @@ export default function TravelMap() {
         <div>
           <p className="la-mono">Travel log · Frequent flyer record</p>
           <h1>Places I&apos;ve been</h1>
-          <p className="sub">Tap a checkpoint on the map to open its postcard.</p>
+          <p className="sub">Every route flies out of home base in Fort McMurray. Tap a checkpoint to open its postcard, or zoom in to see the codes.</p>
         </div>
         <div className="tv-stats">
           <div><span className="la-mono">Checkpoints</span><b>{places.length}</b></div>
-          <div><span className="la-mono">Km flown</span><b>{km.toLocaleString()}</b></div>
+          <div><span className="la-mono">Countries</span><b>{countries}</b></div>
         </div>
       </div>
 
@@ -189,7 +180,7 @@ export default function TravelMap() {
                 <span className="la-mono">{p.home ? "Home base" : "Visited"}</span>
               </div>
               <div className="tv-code">{p.code}</div>
-              <div className="tv-place">{p.name} · {p.region}</div>
+              <div className="tv-place">{p.name} · {p.region === p.name ? p.country : `${p.region}, ${p.country}`}</div>
               <div className="tv-stampd">{p.code}<br />{p.home ? "HOME" : "ARRIVED"}</div>
               <div className="tv-gallery">
                 {p.photos.length === 0 && <div className="ph">Photos coming soon</div>}
@@ -202,9 +193,9 @@ export default function TravelMap() {
                   </>
                 )}
               </div>
-              <p className="tv-note">{p.note}</p>
+              {p.note && <p className="tv-note">{p.note}</p>}
               <div className="tv-meta">
-                <div><span className="la-mono">When</span><b>{p.when}</b></div>
+                <div><span className="la-mono">{p.when ? "When" : "Country"}</span><b>{p.when ?? p.country}</b></div>
                 <div><span className="la-mono">Coordinates</span><b>{p.lat.toFixed(2)}°, {p.lon.toFixed(2)}°</b></div>
               </div>
               <div className="tv-next"><button onClick={() => go(-1)}>← Previous stop</button><button onClick={() => go(1)}>Next stop →</button></div>
