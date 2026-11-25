@@ -34,17 +34,17 @@ export default function Home() {
       <div className="la-wrap">
         {/* ── Boarding pass hero ── */}
         <header className="la-hero">
-          <p className="la-mono la-r">Now boarding · Gate SYDE</p>
+          <p className="la-mono la-r">Now arriving · Gate SYDE</p>
           <h1 className="la-r">Hi! I&apos;m <span>Lali</span>.</h1>
-          <div className="la-pa la-r" role="note" aria-label="Cabin announcement">
+          <div className="la-pa la-r" role="note" aria-label="Arrival announcement">
             <div className="la-pa-head">
               <svg viewBox="0 0 24 24" width="14" height="14" aria-hidden><path fill="currentColor" d="M3 10v4h4l5 4V6L7 10H3zm13.5 2a4.5 4.5 0 0 0-2.5-4v8a4.5 4.5 0 0 0 2.5-4zM14 3.2v2.1a7 7 0 0 1 0 13.4v2.1a9 9 0 0 0 0-17.6z"/></svg>
-              <span>Cabin announcement</span>
+              <span>We&apos;ve landed</span>
               <i className="la-pa-wave" aria-hidden><b /><b /><b /></i>
             </div>
-            <p><span>To first-time visitors:</span> welcome aboard.</p>
-            <p><span>To returning passengers:</span> welcome home.</p>
-            <p><span>To recruiters:</span> I&apos;m in seat 2A, and my work is waiting in <a href="#projects">baggage claim</a> below.</p>
+            <p><span>To our visitors:</span> welcome.</p>
+            <p><span>To those returning:</span> welcome home.</p>
+            <p><span>To recruiters:</span> my work is waiting in <a href="#projects">baggage claim</a> below.</p>
           </div>
 
           <div className="la-pass la-r">
