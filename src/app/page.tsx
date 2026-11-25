@@ -4,7 +4,7 @@ import LaEffects, { PLANE } from "@/components/LaEffects";
 import PassportPhotos from "@/components/PassportPhotos";
 import ProjectTags from "@/components/ProjectTags";
 
-const ticker = ["UX Design", "Systems Thinking", "C++", "React", "Figma", "Product Design", "SolidWorks", "Data Analysis", "Waterloo SYDE", "Frontend Dev", "Please keep your curiosity fastened"];
+const ticker = ["SQL", "Python", "Power BI", "Tableau", "SAS", "C++", "A/B Testing", "Web Scraping", "Figma", "UX Design", "Product Design", "Systems Thinking", "Jira", "Git and GitHub", "Please keep your curiosity fastened"];
 
 const experience = [
   { code: "ORB26", role: "Product Data Analyst", company: "ORBCOMM", period: "Sept 2026 – Present", live: true },
