@@ -153,8 +153,9 @@ export default function Home() {
             </div>
             <div className="la-ppr">
               <p className="la-mono">Visas and entries</p>
-              <p>Hello! I&apos;m Lali, a <span style={{ color: "var(--ink)", fontWeight: 500 }}>Systems Design Engineering</span> student at the University of Waterloo. I love breaking down complex problems and rethinking them as systems that actually work for people. I&apos;ve spent a lot of time working with data and design, using both to build and iterate on solutions that are practical and user-focused.</p>
-              <p>I love getting involved within the community, especially mentoring younger kids. You could always catch me with my head deep in a book or my hands deep in baking.</p>
+              <p>I&apos;m Lali, a Systems Design Engineering student at Waterloo. Give me something messy that nobody can quite explain and I&apos;ll pull the data, sketch it out, and keep asking questions until it makes sense.</p>
+              <p>So far that&apos;s meant Power BI dashboards at Suncor and ORBCOMM, an accessibility study of 422 Shopify stores, and a lot of Figma.</p>
+              <p>Outside of work, I started W. Women in Tech back home and ran it for four years, and I still love mentoring younger students. Otherwise I&apos;m probably reading, baking something ambitious, or planning the next trip.</p>
               <div className="la-stamps">
                 {awards.slice(0, 5).map((a, i) => {
                   const s = stampStyle[i % stampStyle.length];
