@@ -32,8 +32,8 @@ export default function Postcards({ posts }: { posts: BlogPost[] }) {
           return (
             <article
               key={post.slug}
-              className={`pc-card la-r${featured ? " featured" : ""}${flipped[post.slug] ? " flipped" : ""}`}
-              style={{ ...paletteStyle(i), ["--r" as string]: featured ? "0deg" : `${TILTS[i % TILTS.length]}deg` }}
+              className={`pc-card${featured ? " featured" : ""}${flipped[post.slug] ? " flipped" : ""}`}
+              style={{ ...paletteStyle(i), ["--r" as string]: featured ? "0deg" : `${TILTS[i % TILTS.length]}deg`, animationDelay: `${i * 90}ms` }}
               onClick={() => toggle(post.slug)}
               onKeyDown={(e) => { if (e.key === "Enter") toggle(post.slug); }}
               tabIndex={0}

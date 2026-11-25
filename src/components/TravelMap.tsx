@@ -8,6 +8,8 @@ import { feature } from "topojson-client";
 import type { Topology, GeometryCollection } from "topojson-specification";
 import world from "world-atlas/countries-110m.json";
 import { places, type Place } from "@/data/travel";
+import { PosterFront, paletteStyle } from "@/components/PostcardArt";
+import type { BlogPost } from "@/data/content";
 
 const PLANE = "M0,-7 L2,-2 L8,1 L8,3 L2,1 L1.5,5 L3.5,7 L3.5,8 L0,7 L-3.5,8 L-3.5,7 L-1.5,5 L-2,1 L-8,3 L-8,1 L-2,-2Z";
 
@@ -187,7 +189,11 @@ export default function TravelMap() {
               <div className="tv-place">{p.name} · {p.region === p.name ? p.country : `${p.region}, ${p.country}`}</div>
               <div className="tv-stampd">{p.code}<br />{p.home ? "HOME" : "ARRIVED"}</div>
               <div className="tv-gallery">
-                {p.photos.length === 0 && <div className="ph">Photos coming soon</div>}
+                {p.photos.length === 0 && (
+                  <div className="tv-poster pc-front" style={paletteStyle(active)}>
+                    <PosterFront post={{ from: p.name, tag: p.country } as BlogPost} flipHint={false} />
+                  </div>
+                )}
                 {p.photos.map((src, i) => <img key={src} src={src} alt={`${p.name} photo ${i + 1}`} className={i === photo ? "on" : ""} />)}
                 {p.photos.length > 1 && (
                   <>
