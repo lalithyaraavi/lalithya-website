@@ -249,10 +249,10 @@ export const awards: Award[] = [
     emoji: "🏅",
   },
   {
-    title: "Canada Wide Science Fair — Gold & Silver",
+    title: "Canada-Wide Science Fair Bronze ×2",
     issuer: "Youth Science Canada",
     year: "2023",
-    emoji: "🥇",
+    emoji: "🥉",
   },
   {
     title: "TC Energy STEM Scholarship",
