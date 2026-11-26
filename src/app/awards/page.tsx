@@ -11,7 +11,7 @@ export default function AwardsPage() {
             Awards &amp; Honours
           </h1>
           <p className="font-body text-ink-muted text-lg max-w-xl leading-relaxed mb-16">
-            A few things I&apos;m proud of — from science fairs to scholarships.
+            A few things I&apos;m proud of, from science fairs to scholarships.
           </p>
         </FadeIn>
 
@@ -26,7 +26,14 @@ export default function AwardsPage() {
                   </h2>
                   <p className="font-body text-sm text-ink-muted mt-1">{award.issuer}</p>
                 </div>
-                <span className="font-mono text-sm text-ink-muted/60 shrink-0">{award.year}</span>
+                <div className="shrink-0 text-right">
+                  <span className="block font-mono text-sm text-ink-muted/60">{award.year}</span>
+                  {award.link && (
+                    <a href={award.link} target="_blank" rel="noopener noreferrer" className="font-mono text-xs uppercase tracking-[.12em] text-rose hover:underline">
+                      In the news ↗
+                    </a>
+                  )}
+                </div>
               </div>
             </FadeIn>
           ))}

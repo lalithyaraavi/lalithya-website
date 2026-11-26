@@ -157,12 +157,16 @@ export default function Home() {
               <p>So far that&apos;s meant Power BI dashboards at Suncor and ORBCOMM, an accessibility study of 422 Shopify stores, and a lot of Figma.</p>
               <p>Outside of work, I started W. Women in Tech back home and ran it for four years, and I still love mentoring younger students. Otherwise I&apos;m probably reading, baking something ambitious, or planning the next trip.</p>
               <div className="la-stamps">
-                {awards.slice(0, 5).map((a, i) => {
-                  const s = stampStyle[i % stampStyle.length];
-                  return (
-                    <div key={a.title} className={`la-stamp ${s.cls}`} style={{ ["--r" as string]: s.r, color: s.c, transitionDelay: `${0.1 + i * 0.22}s` }}>
+                {awards.map((a, i) => {
+                  const base = stampStyle[i % stampStyle.length];
+                  const s = { ...base, cls: a.title.length > 26 ? "rect" : base.cls };
+                  const style = { ["--r" as string]: s.r, color: s.c, transitionDelay: `${0.1 + i * 0.18}s` };
+                  return a.link ? (
+                    <a key={a.title} href={a.link} target="_blank" rel="noopener noreferrer" className={`la-stamp ${s.cls}`} style={style} title="Read the article">
                       {a.title}
-                    </div>
+                    </a>
+                  ) : (
+                    <div key={a.title} className={`la-stamp ${s.cls}`} style={style}>{a.title}</div>
                   );
                 })}
               </div>

@@ -332,3 +332,6 @@
 .tv-credits ul{columns:2;column-gap:28px;list-style:none;padding:0;margin:0;line-height:1.8}
 .tv-credits a{text-decoration:underline;text-underline-offset:2px}
 @media (max-width:640px){.tv-credits ul{columns:1}}
+
+a.la-stamp{cursor:pointer;transition:opacity .4s var(--ease),transform .5s cubic-bezier(.3,1.6,.5,1)}
+.la-stamps.in a.la-stamp:hover{opacity:1;transform:scale(1.06) rotate(0deg)}

@@ -24,6 +24,7 @@ export type Award = {
   issuer: string;
   year: string;
   emoji: string;
+  link?: string; // news article about the award
 };
 
 export type BlogPost = {
@@ -243,34 +244,51 @@ export const projects: Project[] = [
 
 export const awards: Award[] = [
   {
-    title: "Loran Semi-Finalist",
-    issuer: "Loran Scholars Foundation",
-    year: "2023",
-    emoji: "🏅",
+    title: "Canada-Wide Science Fair Bronze Medal ×2",
+    issuer: "Youth Science Canada",
+    year: "2023, 2024",
+    emoji: "🥉",
+    link: "https://www.fmpsdschools.ca/news/post/fmpsd-students-shine-at-canada-wide-science-fair",
   },
   {
-    title: "Canada-Wide Science Fair Bronze ×2",
-    issuer: "Youth Science Canada",
-    year: "2023",
-    emoji: "🥉",
+    title: "Loran Semi-Finalist and Honour Citation",
+    issuer: "Loran Scholars Foundation",
+    year: "2024",
+    emoji: "🏅",
+    link: "https://www.facebook.com/photo.php?fbid=1233659778759933&id=100063477673260&set=a.501017315357520",
   },
   {
     title: "TC Energy STEM Scholarship",
     issuer: "TC Energy",
-    year: "2023",
+    year: "2025",
     emoji: "✨",
   },
   {
     title: "Finning Canada STEM Award",
-    issuer: "Finning Canada",
-    year: "2023",
+    issuer: "Girls Inc. of Northern Alberta and Finning Canada",
+    year: "2025",
     emoji: "🏆",
+    link: "https://www.girlsincofnorthernalberta.org/news/girls-inc-of-northern-alberta-and-finning-canada-announce-2025-finning-stem-award-recipients",
   },
   {
-    title: "UWaterloo President's Scholarship",
-    issuer: "University of Waterloo",
-    year: "2023",
-    emoji: "🎓",
+    title: "University of Toronto National Book Award",
+    issuer: "University of Toronto",
+    year: "2025",
+    emoji: "📚",
+  },
+  {
+    title: "RMWB Youth Excellence Award",
+    issuer: "Regional Municipality of Wood Buffalo",
+    year: "2025",
+    emoji: "🌟",
+    link: "https://www.rmwb.ca/news/posts/community-champions-celebrated-at-council-s-excellence-awards-ceremony/",
+  },
+  {
+    title: "YMM Future Star",
+    issuer: "YMM Parent",
+    year: "2024",
+    emoji: "⭐",
+    link: "https://ymmonline.ca/downloads/ymm-parent/issue7/",
   },
 ];
 
