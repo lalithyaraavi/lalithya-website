@@ -116,12 +116,6 @@
 .la-ppl dd{font-family:var(--font-mono);font-size:13px;font-weight:600}
 .la-mrz{font-family:var(--font-mono);font-size:12px;letter-spacing:.16em;color:var(--soft);margin-top:28px;line-height:1.6;word-break:break-all}
 .la-ppr p{color:var(--soft);margin-top:10px;line-height:1.65}
-.la-stamps{display:flex;flex-wrap:wrap;gap:16px 20px;margin-top:26px;align-items:center}
-.la-stamp{font-family:var(--font-mono);font-size:11px;font-weight:600;letter-spacing:.1em;border:2px solid currentColor;padding:10px 12px;text-align:center;line-height:1.35;text-transform:uppercase;opacity:0;transform:scale(1.4) rotate(var(--r));transition:opacity .4s var(--ease),transform .5s cubic-bezier(.3,1.6,.5,1);max-width:150px}
-.la-stamps.in .la-stamp{opacity:.85;transform:scale(1) rotate(var(--r))}
-.la-stamp.round{border-radius:50%;width:104px;height:104px;display:grid;place-items:center;padding:8px}
-.la-stamp.rect{border-radius:6px}
-
 /* postcard contact */
 .la-postcard{display:grid;grid-template-columns:1.1fr 1fr;background:var(--paper);border-radius:18px;border:1px solid var(--rule);box-shadow:0 30px 60px -40px rgba(34,40,31,.4);transform:rotate(-.6deg);transition:transform .7s var(--ease)}
 .la-postcard:hover{transform:rotate(0)}
@@ -157,7 +151,7 @@
   .la-ppl .photo{flex-direction:column}
   .la-pc-left{border-right:0;border-bottom:1px solid var(--rule)}
 }
-@media (prefers-reduced-motion:reduce){.la-r,.la-stamp{opacity:1!important;transform:none!important}}
+@media (prefers-reduced-motion:reduce){.la-r,.la-ps{opacity:1!important;transform:rotate(var(--r))!important}}
 
 /* ── Travel log ── */
 .tv-head{padding:130px 0 28px;display:flex;justify-content:space-between;align-items:end;gap:20px;flex-wrap:wrap}
@@ -333,5 +327,15 @@
 .tv-credits a{text-decoration:underline;text-underline-offset:2px}
 @media (max-width:640px){.tv-credits ul{columns:1}}
 
-a.la-stamp{cursor:pointer;transition:opacity .4s var(--ease),transform .5s cubic-bezier(.3,1.6,.5,1)}
-.la-stamps.in a.la-stamp:hover{opacity:1;transform:scale(1.06) rotate(0deg)}
+/* passport stamps */
+.la-stamps{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:6px 10px;align-items:center;justify-items:center;margin-top:30px}
+.la-ps{display:block;width:100%;mix-blend-mode:multiply;opacity:0;transform:scale(1.5) rotate(var(--r));transition:opacity .35s var(--ease),transform .45s cubic-bezier(.3,1.6,.5,1)}
+.la-ps.circle{max-width:150px}
+.la-ps.rect{max-width:178px}
+.la-stamps.in .la-ps{opacity:.88;transform:scale(1) rotate(var(--r))}
+.la-ps:nth-child(3n+2){margin-top:22px}
+.la-ps:nth-child(3n){margin-top:-10px}
+.la-ps:nth-child(7){grid-column:2}
+a.la-ps:hover{opacity:1!important;transform:scale(1.07) rotate(0deg)!important;transition-delay:0s!important}
+.la-ps-svg{display:block;width:100%;height:auto;overflow:visible;font-family:var(--font-mono)}
+@media (max-width:860px){.la-stamps{grid-template-columns:repeat(2,minmax(0,1fr))}.la-ps:nth-child(7){grid-column:auto}}

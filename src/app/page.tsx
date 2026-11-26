@@ -3,6 +3,7 @@ import { projects, awards } from "@/data/content";
 import LaEffects, { PLANE } from "@/components/LaEffects";
 import PassportPhotos from "@/components/PassportPhotos";
 import ProjectTags from "@/components/ProjectTags";
+import PassportStamp, { StampInkFilter } from "@/components/PassportStamp";
 
 const ticker = ["SQL", "Python", "Power BI", "Tableau", "SAS", "C++", "A/B Testing", "Web Scraping", "Figma", "UX Design", "Product Design", "Systems Thinking", "Jira", "Git and GitHub", "Please keep your curiosity fastened"];
 
@@ -13,13 +14,8 @@ const experience = [
   { code: "WWT21", role: "Founder and Technical Program Lead", company: "W. Women In Tech", period: "Sept 2021 – July 2025" },
 ];
 
-const stampStyle = [
-  { cls: "round", r: "-12deg", c: "var(--brick)" },
-  { cls: "rect", r: "6deg", c: "var(--denim)" },
-  { cls: "rect", r: "-4deg", c: "var(--forest)" },
-  { cls: "round", r: "12deg", c: "var(--plum)" },
-  { cls: "rect", r: "-7deg", c: "var(--mustard)" },
-];
+const STAMP_INK = ["var(--brick)", "var(--denim)", "var(--forest)", "var(--plum)", "#B8862E", "var(--brick)", "var(--denim)"];
+const STAMP_TILT = ["-8deg", "5deg", "-3deg", "9deg", "-6deg", "4deg", "-10deg"];
 
 const Plane = ({ style }: { style?: React.CSSProperties }) => (
   <svg viewBox="0 0 24 24" style={style} aria-hidden><path fill="currentColor" d={PLANE} /></svg>
@@ -156,17 +152,18 @@ export default function Home() {
               <p>I&apos;m Lali, a Systems Design Engineering student at Waterloo. Give me something messy that nobody can quite explain and I&apos;ll pull the data, sketch it out, and keep asking questions until it makes sense.</p>
               <p>So far that&apos;s meant Power BI dashboards at Suncor and ORBCOMM, an accessibility study of 422 Shopify stores, and a lot of Figma.</p>
               <p>Outside of work, I started W. Women in Tech back home and ran it for four years, and I still love mentoring younger students. Otherwise I&apos;m probably reading, baking something ambitious, or planning the next trip.</p>
+              <StampInkFilter />
               <div className="la-stamps">
                 {awards.map((a, i) => {
-                  const base = stampStyle[i % stampStyle.length];
-                  const s = { ...base, cls: a.title.length > 26 ? "rect" : base.cls };
-                  const style = { ["--r" as string]: s.r, color: s.c, transitionDelay: `${0.1 + i * 0.18}s` };
+                  const style = { ["--r" as string]: STAMP_TILT[i % STAMP_TILT.length], color: STAMP_INK[i % STAMP_INK.length], transitionDelay: `${0.1 + i * 0.16}s` };
                   return a.link ? (
-                    <a key={a.title} href={a.link} target="_blank" rel="noopener noreferrer" className={`la-stamp ${s.cls}`} style={style} title="Read the article">
-                      {a.title}
+                    <a key={a.title} href={a.link} target="_blank" rel="noopener noreferrer" className={`la-ps ${a.stamp?.shape ?? "rect"}`} style={style} title={`${a.title}: read the article`}>
+                      <PassportStamp award={a} />
                     </a>
                   ) : (
-                    <div key={a.title} className={`la-stamp ${s.cls}`} style={style}>{a.title}</div>
+                    <div key={a.title} className={`la-ps ${a.stamp?.shape ?? "rect"}`} style={style} title={a.title}>
+                      <PassportStamp award={a} />
+                    </div>
                   );
                 })}
               </div>

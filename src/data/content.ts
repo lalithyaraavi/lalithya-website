@@ -25,6 +25,8 @@ export type Award = {
   year: string;
   emoji: string;
   link?: string; // news article about the award
+  // How it looks as a passport stamp on the homepage
+  stamp?: { shape: "circle" | "rect"; top: string; main: string; sub: string };
 };
 
 export type BlogPost = {
@@ -245,6 +247,7 @@ export const projects: Project[] = [
 export const awards: Award[] = [
   {
     title: "Canada-Wide Science Fair Bronze Medal ×2",
+    stamp: { shape: "circle", top: "CANADA-WIDE SCIENCE FAIR", main: "BRONZE", sub: "MEDAL ×2" },
     issuer: "Youth Science Canada",
     year: "2023, 2024",
     emoji: "🥉",
@@ -252,6 +255,7 @@ export const awards: Award[] = [
   },
   {
     title: "Loran Semi-Finalist and Honour Citation",
+    stamp: { shape: "rect", top: "LORAN SCHOLARS FOUNDATION", main: "HONOUR CITATION", sub: "SEMI-FINALIST · 2024" },
     issuer: "Loran Scholars Foundation",
     year: "2024",
     emoji: "🏅",
@@ -259,12 +263,14 @@ export const awards: Award[] = [
   },
   {
     title: "TC Energy STEM Scholarship",
+    stamp: { shape: "rect", top: "TC ENERGY", main: "STEM SCHOLAR", sub: "★ 2025 ★" },
     issuer: "TC Energy",
     year: "2025",
     emoji: "✨",
   },
   {
     title: "Finning Canada STEM Award",
+    stamp: { shape: "circle", top: "FINNING CANADA", main: "STEM", sub: "AWARD" },
     issuer: "Girls Inc. of Northern Alberta and Finning Canada",
     year: "2025",
     emoji: "🏆",
@@ -272,12 +278,14 @@ export const awards: Award[] = [
   },
   {
     title: "University of Toronto National Book Award",
+    stamp: { shape: "rect", top: "UNIVERSITY OF TORONTO", main: "NATIONAL BOOK AWARD", sub: "★ 2025 ★" },
     issuer: "University of Toronto",
     year: "2025",
     emoji: "📚",
   },
   {
     title: "RMWB Youth Excellence Award",
+    stamp: { shape: "circle", top: "WOOD BUFFALO · RMWB", main: "YOUTH", sub: "EXCELLENCE" },
     issuer: "Regional Municipality of Wood Buffalo",
     year: "2025",
     emoji: "🌟",
@@ -285,6 +293,7 @@ export const awards: Award[] = [
   },
   {
     title: "YMM Future Star",
+    stamp: { shape: "rect", top: "YMM PARENT", main: "FUTURE STAR", sub: "★ 2024 ★" },
     issuer: "YMM Parent",
     year: "2024",
     emoji: "⭐",
